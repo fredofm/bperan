@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS `bperan`.`usuario`;
+CREATE TABLE  `bperan`.`usuario` (
+  `IDUSUARIO` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `NOMBRE` varchar(45) NOT NULL,
+  `CREATED_DATE` datetime NOT NULL
+  PRIMARY KEY (`IDUSUARIO`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
