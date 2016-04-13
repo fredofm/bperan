@@ -17,7 +17,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>elm</finalName>
+		<finalName>BPeran</finalName>
 
 		<pluginManagement>
 			<plugins>
