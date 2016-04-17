@@ -4,10 +4,10 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
  
 	<!-- Database Configuration -->
-	<import resource="config/database/spring/DataSource.xml"/>
-	<import resource="config/database/spring/HibernateSessionFactory.xml"/>
+	<import resource="config/spring/DataSource.xml"/>
+	<import resource="config/spring/HibernateSessionFactory.xml"/>
  
 	<!-- Beans Declaration -->
-	<import resource="spring/CustomerBean.xml"/>
+	<import resource="spring/UsuariosBean.xml"/>
 	
 </beans>

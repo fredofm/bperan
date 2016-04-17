@@ -10,7 +10,7 @@ import org.apache.struts.action.ActionMapping;
 import org.springframework.web.struts.ActionSupport;
 
 import es.project.bperan.bo.UsuariosBO;
-import es.project.bperan.vo.UsuarioVO;
+import es.project.bperan.pojo.Usuario;
 import es.project.bperan.web.form.UsuarioForm;
 
 public class AddUsuarioAction extends ActionSupport {
@@ -20,7 +20,7 @@ public class AddUsuarioAction extends ActionSupport {
 		UsuariosBO usuarioBo = (UsuariosBO) getWebApplicationContext().getBean("customerBo");
 
 		UsuarioForm usuarioForm = (UsuarioForm) form;
-		UsuarioVO usuario = new UsuarioVO();
+		Usuario usuario = new Usuario();
 
 		// copy customerform to model
 		BeanUtils.copyProperties(usuario, usuarioForm);

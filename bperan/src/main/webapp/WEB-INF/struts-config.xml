@@ -2,55 +2,43 @@
 <!DOCTYPE struts-config PUBLIC 
 "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
 "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
- 
+
 <struts-config>
- 
+
 	<form-beans>
-		<form-bean name="usuarioForm"   
-		      type="es.project.bperan.web.form.UsuarioForm" />
-		
-		<form-bean name="dynaUsuarioListForm"   
-		      type="org.apache.struts.action.DynaActionForm">
-		      <form-property name="listaUsuarios" type="java.util.List"/>
-		</form-bean>		
+		<form-bean name="usuarioForm" type="es.project.bperan.web.form.UsuarioForm" />
+
+		<form-bean name="dynaUsuarioListForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="listaUsuarios" type="java.util.List" />
+		</form-bean>
 	</form-beans>
-	
+
 	<action-mappings>
 
-	 	<action
-			path="/AddCustomerPage"
-			type="org.apache.struts.actions.ForwardAction"
-			parameter="/pages/tiles/addUsuario.jsp"/>
+		<action path="/AddUsuarioPage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/pages/tiles/addUsuario.jsp" />
 
 
-		<action
-			path="/AddUsuario"
-			type="com.mkyong.customer.action.AddUsuarioAction"
-			name="usuarioForm"
-			validate="true"
-			input="/pages/tiles/addUsuario.jsp">	
- 
-			<forward name="success" redirect="true" path="/ListUsuario.do"/>
+		<action path="/AddUsuario" type="es.project.bperan.web.action.AddUsuarioAction"
+			name="usuarioForm" validate="true" input="/pages/tiles/addUsuario.jsp">
+
+			<forward name="success" redirect="true" path="/ListUsuario.do" />
 		</action>
-		
-		<action
-			path="/ListUsuario"
-			type="com.mkyong.customer.action.ListUsuarioAction"
-			name="dynaUsuarioListForm">	
- 
-			<forward name="success" path="/pages/tiles/listUsuario.jsp"/>
+
+		<action path="/ListUsuario" type="es.project.bperan.web.action.ListUsuarioAction"
+			name="dynaUsuarioListForm">
+
+			<forward name="success" path="/pages/tiles/listUsuario.jsp" />
 		</action>
-		
-		
+
+
 	</action-mappings>
- 
-	<message-resources
-		parameter="com.mkyong.customer.properties.Customer" />
- 
- 	<!-- Spring Struts plugin -->
- 	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
-		<set-property property="contextConfigLocation"
-		value="/WEB-INF/classes/SpringBeans.xml" />
-  	</plug-in>
- 
+
+	<message-resources parameter="properties.applicationresources.properties" />
+
+	<!-- Spring Struts plugin -->
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation" value="/WEB-INF/classes/SpringBeans.xml" />
+	</plug-in>
+
 </struts-config>

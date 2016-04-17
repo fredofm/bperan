@@ -12,17 +12,17 @@ import org.apache.struts.action.DynaActionForm;
 import org.springframework.web.struts.ActionSupport;
 
 import es.project.bperan.bo.UsuariosBO;
-import es.project.bperan.vo.UsuarioVO;
+import es.project.bperan.pojo.Usuario;
 
 public class ListUsuarioAction extends ActionSupport {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
-		UsuariosBO usuariosBo = (UsuariosBO) getWebApplicationContext().getBean("customerBo");
+		UsuariosBO usuariosBo = (UsuariosBO) getWebApplicationContext().getBean("usuarioBo");
 
 		DynaActionForm dynaUsuariosListForm = (DynaActionForm) form;
 
-		Collection<UsuarioVO> list = usuariosBo.findAllUsuario();
+		Collection<Usuario> list = usuariosBo.findAllUsuario();
 
 		dynaUsuariosListForm.set("listaUsuarios", list);
 

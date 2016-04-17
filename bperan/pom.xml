@@ -123,6 +123,12 @@
 		</dependency>
 		<!-- Hibernate query library dependecy end -->
 
+		<dependency>
+			<groupId>javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.12.1.GA</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -144,12 +150,12 @@
 					<groupId>org.apache.tomcat.maven</groupId>
 					<artifactId>tomcat7-maven-plugin</artifactId>
 					<version>2.2</version>
-					<configuration>												
+					<configuration>
 						<url>http://localhost:8080/manager/text</url>
-				        <server>tomcat7</server>
-				        <path>/BPeran</path>
-				        <username>mavenuser</username>
-				        <password>password</password>
+						<server>tomcat7</server>
+						<path>/BPeran</path>
+						<username>mavenuser</username>
+						<password>password</password>
 					</configuration>
 				</plugin>
 			</plugins>

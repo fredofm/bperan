@@ -2,10 +2,10 @@ package es.project.bperan.bo;
 
 import java.util.Collection;
 
-import es.project.bperan.vo.UsuarioVO;
+import es.project.bperan.pojo.Usuario;
 
 public interface UsuariosBO {
-	public void addUsuario(UsuarioVO usuario);
+	public void addUsuario(Usuario usuario);
 
-	public Collection<UsuarioVO> findAllUsuario();
+	public Collection<Usuario> findAllUsuario();
 }

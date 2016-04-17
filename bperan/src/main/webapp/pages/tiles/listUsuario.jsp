@@ -13,10 +13,10 @@
 <table border="1">
 <tr><td>Customer Name</td><td>Address</td></tr>
 
-<logic:iterate id="customer" name="dynaCustomerListForm" property="customerList">
+<logic:iterate id="usuario" name="dynaCustomerListForm" property="listaUsuarios">
 <tr>	
-<td><bean:write name="customer" property="name"/></td>
-<td><bean:write name="customer" property="address"/></td>
+<td><bean:write name="usuario" property="nombre"/></td>
+<td><bean:write name="usuario" property="fechacreacion"/></td>
 </tr>
 </logic:iterate> 
 
@@ -24,7 +24,7 @@
 
 <br/>
 <br/>
-<html:link action="/AddCustomerPage.do">Add Customer</html:link>
+<html:link action="/AddUsuarioPage.do">Add Usuario</html:link>
  
 </body>
 </html>

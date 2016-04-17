@@ -1,16 +1,20 @@
 /**
  * 
  */
-package es.project.bperan.vo;
+package es.project.bperan.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public class UsuarioVO implements Serializable {
+public class Usuario implements Serializable {
 
 	private int idusuario;
 	
-	private String nombre;
+	private String nombre;	
+	
+	public Usuario() {
+		
+	}
 	
 	public int getIdusuario() {
 		return idusuario;
@@ -28,13 +32,13 @@ public class UsuarioVO implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public Date getFechaCreacion() {
-		return fechaCreacion;
+	public Date getFechacreacion() {
+		return fechacreacion;
 	}
 
-	public void setFechaCreacion(Date fechaCreacion) {
-		this.fechaCreacion = fechaCreacion;
+	public void setFechacreacion(Date fechaCreacion) {
+		this.fechacreacion = fechaCreacion;
 	}
 
-	private Date fechaCreacion;
+	private Date fechacreacion;
 }

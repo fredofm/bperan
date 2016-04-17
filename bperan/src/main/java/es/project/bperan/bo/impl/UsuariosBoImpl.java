@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import es.project.bperan.bo.UsuariosBO;
 import es.project.bperan.dao.UsuarioDAO;
-import es.project.bperan.vo.UsuarioVO;
+import es.project.bperan.pojo.Usuario;
 
 public class UsuariosBoImpl implements UsuariosBO {
 
@@ -15,13 +15,13 @@ public class UsuariosBoImpl implements UsuariosBO {
 	}
 
 	@Override
-	public void addUsuario(UsuarioVO usuario) {
+	public void addUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Collection<UsuarioVO> findAllUsuario() {
+	public Collection<Usuario> findAllUsuario() {
 		// TODO Auto-generated method stub
 		return null;
 	}
