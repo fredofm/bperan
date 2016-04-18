@@ -9,6 +9,6 @@
 	</bean>
 
 	<bean id="usuarioBo" class="es.project.bperan.bo.impl.UsuariosBoImpl">
-		<property name="usuarioDAO" ref="usuarioDDAO" />
+		<property name="usuarioDAO" ref="usuarioDAO" />
 	</bean>	
 </beans>

@@ -9,7 +9,7 @@
 		<form-bean name="usuarioForm" type="es.project.bperan.web.form.UsuarioForm" />
 
 		<form-bean name="dynaUsuarioListForm" type="org.apache.struts.action.DynaActionForm">
-			<form-property name="listaUsuarios" type="java.util.List" />
+			<form-property name="listaUsuarios" type="java.util.Collection" />
 		</form-bean>
 	</form-beans>
 

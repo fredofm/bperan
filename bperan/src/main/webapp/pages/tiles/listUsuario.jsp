@@ -13,7 +13,7 @@
 <table border="1">
 <tr><td>Customer Name</td><td>Address</td></tr>
 
-<logic:iterate id="usuario" name="dynaCustomerListForm" property="listaUsuarios">
+<logic:iterate id="usuario" name="listaUsuarios" scope="request">
 <tr>	
 <td><bean:write name="usuario" property="nombre"/></td>
 <td><bean:write name="usuario" property="fechacreacion"/></td>

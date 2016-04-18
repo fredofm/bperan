@@ -16,14 +16,13 @@ public class UsuariosBoImpl implements UsuariosBO {
 
 	@Override
 	public void addUsuario(Usuario usuario) {
-		// TODO Auto-generated method stub
+		usuarioDAO.addUsuario(usuario);
 		
 	}
 
 	@Override
 	public Collection<Usuario> findAllUsuario() {
-		// TODO Auto-generated method stub
-		return null;
+		return usuarioDAO.findAllUsuario();
 	}
 	
 	

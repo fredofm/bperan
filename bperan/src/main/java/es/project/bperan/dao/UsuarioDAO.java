@@ -7,5 +7,5 @@ import es.project.bperan.pojo.Usuario;
 public interface UsuarioDAO {
 	public void addUsuario(Usuario usuario);
 
-	public Collection findAllUsuario();
+	public Collection<Usuario> findAllUsuario();
 }

@@ -20,11 +20,9 @@ public class ListUsuarioAction extends ActionSupport {
 
 		UsuariosBO usuariosBo = (UsuariosBO) getWebApplicationContext().getBean("usuarioBo");
 
-		DynaActionForm dynaUsuariosListForm = (DynaActionForm) form;
-
 		Collection<Usuario> list = usuariosBo.findAllUsuario();
 
-		dynaUsuariosListForm.set("listaUsuarios", list);
+		request.setAttribute("listaUsuarios", list);
 
 		return mapping.findForward("success");
 
