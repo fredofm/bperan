@@ -16,31 +16,12 @@
 	</repositories>
 
 	<dependencies>
-		<dependency>
+		<!-- <dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
 			<scope>test</scope>
-		</dependency>
-
-		<!-- Spring framework -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring</artifactId>
-			<version>2.5.6</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>2.5.6</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-struts</artifactId>
-			<version>2.0.8</version>
-		</dependency>
+		</dependency> -->		
 
 		<!-- J2EE library -->
 		<dependency>
@@ -87,7 +68,69 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate</artifactId>
 			<version>3.2.7.ga</version>
+			<exclusions>
+                <exclusion>
+                    <groupId>asm</groupId>
+                    <artifactId>asm</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>asm</groupId>
+                    <artifactId>asm-attrs</artifactId>
+                </exclusion>
+            </exclusions>
 		</dependency>
+		<dependency>
+            <groupId>asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>2.2</version>
+        </dependency>
+        
+        <!-- Spring framework -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring</artifactId>
+			<version>2.5.6</version>
+			<exclusions>
+                <exclusion>
+                    <groupId>asm</groupId>
+                    <artifactId>asm</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>asm</groupId>
+                    <artifactId>asm-attrs</artifactId>
+                </exclusion>
+            </exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>2.5.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-struts</artifactId>
+			<version>2.0.8</version>
+		</dependency>
+<!-- 
+<dependency>
+        <groupId>javax.validation</groupId>
+        <artifactId>validation-api</artifactId>
+        <version>1.0.0.GA</version>
+    </dependency>
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>3.1.0.GA</version>
+    </dependency>
+    
+    	<dependency>
+			<groupId>javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.12.1.GA</version>
+		</dependency>-->
+		
 
 		<!-- Hibernate core library dependecy start -->
 		<dependency>
@@ -108,26 +151,20 @@
 			<version>3.2.1</version>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
 			<version>2.2</version>
-		</dependency>
+		</dependency>-->
 		<!-- Hibernate core library dependecy end -->
 
 		<!-- Hibernate query library dependecy start -->
 		<dependency>
 			<groupId>antlr</groupId>
 			<artifactId>antlr</artifactId>
-			<version>2.7.7</version>
+			<version>2.7.2</version>
 		</dependency>
-		<!-- Hibernate query library dependecy end -->
-
-		<dependency>
-			<groupId>javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>3.12.1.GA</version>
-		</dependency>
+		<!-- Hibernate query library dependecy end -->	
 
 	</dependencies>
 
