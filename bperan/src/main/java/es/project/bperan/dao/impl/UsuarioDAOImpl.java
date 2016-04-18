@@ -13,11 +13,13 @@ public class UsuarioDAOImpl extends HibernateDaoSupport implements UsuarioDAO {
 //		super();
 //	}
 	
+	
+	
 	public void addUsuario(Usuario usuario) {
 		getHibernateTemplate().save(usuario);		
 	}
 
 	public Collection<Usuario> findAllUsuario() {
-		return getHibernateTemplate().find("from usuario");
+		return getHibernateTemplate().find("FROM Usuario");
 	}
 }

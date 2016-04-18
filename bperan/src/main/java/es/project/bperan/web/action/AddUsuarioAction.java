@@ -17,7 +17,7 @@ public class AddUsuarioAction extends ActionSupport {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
-		UsuariosBO usuarioBo = (UsuariosBO) getWebApplicationContext().getBean("customerBo");
+		UsuariosBO usuarioBo = (UsuariosBO) getWebApplicationContext().getBean("usuarioBo");
 
 		UsuarioForm usuarioForm = (UsuarioForm) form;
 		Usuario usuario = new Usuario();
