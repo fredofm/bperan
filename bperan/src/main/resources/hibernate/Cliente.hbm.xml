@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20-abr-2016 19:32:25 by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="Cliente" table="cliente" catalog="bperan" optimistic-lock="version">
+        <id name="idcliente" type="java.lang.Integer">
+            <column name="IDCLIENTE" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreempresa" type="string">
+            <column name="NOMBREEMPRESA" length="45" not-null="true" />
+        </property>
+        <property name="telefono" type="int">
+            <column name="TELEFONO" not-null="true" />
+        </property>
+        <property name="fax" type="java.lang.Integer">
+            <column name="FAX" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="DIRECCION" length="45" not-null="true" />
+        </property>
+        <property name="poblacion" type="string">
+            <column name="POBLACION" length="45" not-null="true" />
+        </property>
+        <property name="provincia" type="string">
+            <column name="PROVINCIA" length="45" not-null="true" />
+        </property>
+        <property name="codigopostal" type="int">
+            <column name="CODIGOPOSTAL" not-null="true" />
+        </property>
+        <property name="emial" type="string">
+            <column name="EMIAL" length="100" />
+        </property>
+        <property name="cifNif" type="string">
+            <column name="CIF_NIF" length="9" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="ESTADO" length="2" not-null="true" />
+        </property>
+        <set name="obrases" table="obras" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDCLIENTE" not-null="true" />
+            </key>
+            <one-to-many class="Obras" />
+        </set>
+        <set name="presupuestos" table="presupuesto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDCLIENTE" not-null="true" />
+            </key>
+            <one-to-many class="Presupuesto" />
+        </set>
+    </class>
+</hibernate-mapping>

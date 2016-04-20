@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20-abr-2016 19:32:25 by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="Presupuesto" table="presupuesto" catalog="bperan" optimistic-lock="version">
+        <id name="idpresupuesto" type="java.lang.Integer">
+            <column name="IDPRESUPUESTO" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cliente" class="Cliente" fetch="select">
+            <column name="IDCLIENTE" not-null="true" />
+        </many-to-one>
+        <many-to-one name="obras" class="Obras" fetch="select">
+            <column name="IDOBRA" not-null="true" />
+        </many-to-one>
+        <property name="costeTotal" type="int">
+            <column name="COSTE_TOTAL" not-null="true" />
+        </property>
+        <property name="fechaInicio" type="timestamp">
+            <column name="FECHA_INICIO" length="19" not-null="true" />
+        </property>
+        <property name="fechaFin" type="timestamp">
+            <column name="FECHA_FIN" length="19" not-null="true" />
+        </property>
+        <property name="estado" type="string">
+            <column name="ESTADO" length="2" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
