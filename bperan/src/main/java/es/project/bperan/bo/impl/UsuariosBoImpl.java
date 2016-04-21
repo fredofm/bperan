@@ -21,7 +21,7 @@ public class UsuariosBoImpl implements UsuariosBO {
 
 	@Override
 	public void addUsuario(Usuario usuario) {
-		usuario.setFechacreacion(new Date());
+		usuario.setFechacreacio(new Date());
 		
 		usuarioDAO.addUsuario(usuario);
 		

@@ -1,30 +1,21 @@
-<%@taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
-<%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
-<%@taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
- 
-<html>
-<head>
-</head>
-<body>
-<h1>Struts + Spring + Hibernate example</h1>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 
-<h2>List All Customers</h2>
+<table class="table table-striped">
+	<tr>
+		<td>Nombre</td>
+		<td>Fecha Creación</td>
+	</tr>
 
-<table border="1">
-<tr><td>Customer Name</td><td>Address</td></tr>
-
-<logic:iterate id="usuario" name="listaUsuarios" scope="request">
-<tr>	
-<td><bean:write name="usuario" property="nombre"/></td>
-<td><bean:write name="usuario" property="fechacreacion"/></td>
-</tr>
-</logic:iterate> 
+	<s:iterator status="usuario" value="listaUsuarios">
+		<tr>
+			<td><s:property value="nombre" /></td>
+			<td><s:property value="fechacreacio" /></td>
+		</tr>
+	</s:iterator>
 
 </table>
 
-<br/>
-<br/>
-<html:link action="/AddUsuarioPage.do">Add Usuario</html:link>
- 
-</body>
-</html>
+<s:url action="addUsuarioAction" var="urlTag" />
+<a role="button" class="btn btn-primary" href="<s:property value="#urlTag"/>"> 
+	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo
+</a>

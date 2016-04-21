@@ -4,6 +4,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
+	<bean id="usuarioAction" class="es.project.bperan.web.action.UsuarioAction">
+		<property name="usuarioBo" ref="usuarioBo" />	
+	</bean>
+
 	<bean id="usuarioDAO" class="es.project.bperan.dao.impl.UsuarioDAOImpl">
 	 <property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>

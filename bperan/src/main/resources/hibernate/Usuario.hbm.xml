@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 20-abr-2016 19:32:25 by Hibernate Tools 5.1.0.Alpha1 -->
 <hibernate-mapping>
-    <class name="Usuario" table="usuario" catalog="bperan" optimistic-lock="version">
+    <class name="es.project.bperan.pojo.Usuario" table="usuario" catalog="bperan" optimistic-lock="version">
         <id name="idusuario" type="java.lang.Integer">
             <column name="IDUSUARIO" />
             <generator class="identity" />
