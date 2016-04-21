@@ -8,7 +8,7 @@ CREATE TABLE  `bperan`.`usuario` (
   `IDUSUARIO` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
    `NOMBRE` varchar(45) NOT NULL,
    `PASSWORD` varchar(8) NOT NULL,
-  `FECHACREACIO` datetime NOT NULL,
+  `FECHACREACION` datetime NOT NULL,
   `IDROLE` varchar(25) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

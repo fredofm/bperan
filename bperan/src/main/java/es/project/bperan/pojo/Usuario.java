@@ -13,16 +13,16 @@ public class Usuario implements java.io.Serializable {
 	private Integer idusuario;
 	private String nombre;
 	private String password;
-	private Date fechacreacio;
+	private Date fechacreacion;
 	private String idrole;
 
 	public Usuario() {
 	}
 
-	public Usuario(String nombre, String password, Date fechacreacio, String idrole) {
+	public Usuario(String nombre, String password, Date fechacreacion, String idrole) {
 		this.nombre = nombre;
 		this.password = password;
-		this.fechacreacio = fechacreacio;
+		this.fechacreacion = fechacreacion;
 		this.idrole = idrole;
 	}
 
@@ -50,12 +50,12 @@ public class Usuario implements java.io.Serializable {
 		this.password = password;
 	}
 
-	public Date getFechacreacio() {
-		return this.fechacreacio;
+	public Date getFechacreacion() {
+		return this.fechacreacion;
 	}
 
-	public void setFechacreacio(Date fechacreacio) {
-		this.fechacreacio = fechacreacio;
+	public void setFechacreacion(Date fechacreacion) {
+		this.fechacreacion = fechacreacion;
 	}
 
 	public String getIdrole() {
