@@ -14,8 +14,8 @@
         <property name="password" type="string">
             <column name="PASSWORD" length="8" not-null="true" />
         </property>
-        <property name="fechacreacio" type="timestamp">
-            <column name="FECHACREACIO" length="19" not-null="true" />
+        <property name="fechacreacion" type="timestamp">
+            <column name="FECHACREACION" length="19" not-null="true" />
         </property>
         <property name="idrole" type="string">
             <column name="IDROLE" length="25" not-null="true" />
