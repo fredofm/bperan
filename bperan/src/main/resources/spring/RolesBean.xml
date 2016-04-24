@@ -4,16 +4,15 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-	<bean id="usuarioAction" class="es.project.bperan.web.action.UsuarioAction">
-		<property name="usuarioBo" ref="usuarioBo" />
+	<!-- <bean id="roleAction" class="es.project.bperan.web.action.RoleAction">
 		<property name="roleBo" ref="roleBo" />	
-	</bean>
+	</bean> -->
 
-	<bean id="usuarioDAO" class="es.project.bperan.dao.impl.UsuarioDAOImpl">
+	<bean id="roleDAO" class="es.project.bperan.dao.impl.RoleDAOImpl">
 	 <property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 
-	<bean id="usuarioBo" class="es.project.bperan.bo.impl.UsuariosBoImpl">
-		<property name="usuarioDAO" ref="usuarioDAO" />
+	<bean id="roleBo" class="es.project.bperan.bo.impl.RolesBoImpl">
+		<property name="roleDAO" ref="roleDAO" />
 	</bean>	
 </beans>

@@ -2,6 +2,14 @@ DROP DATABASE IF EXISTS bperan;
 
 CREATE DATABASE bperan;
 
+DROP TABLE IF EXISTS  `bperan`.`role`;
+
+CREATE TABLE   `bperan`.`role` (
+  `IDROLE` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `NOMBRE` varchar(45) NOT NULL,
+  `DESCRIPCION` varchar(200) NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 DROP TABLE IF EXISTS `bperan`.`usuario`;
 
 CREATE TABLE  `bperan`.`usuario` (
@@ -9,7 +17,8 @@ CREATE TABLE  `bperan`.`usuario` (
    `NOMBRE` varchar(45) NOT NULL,
    `PASSWORD` varchar(8) NOT NULL,
   `FECHACREACION` datetime NOT NULL,
-  `IDROLE` varchar(25) NOT NULL
+  `IDROLE` int(11) NOT NULL,
+   FOREIGN KEY (IDROLE) REFERENCES `bperan`.`role`(IDROLE) ON DELETE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS  `bperan`.`cliente`;

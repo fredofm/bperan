@@ -6,7 +6,7 @@
 		<td>Fecha Creación</td>
 	</tr>
 
-	<s:iterator status="usuario" value="listaUsuarios">
+	<s:iterator status="usuario" value="%{#request.listaRoles}">
 		<tr>
 			<td><s:property value="nombre" /></td>
 			<td><s:property value="fechacreacio" /></td>
@@ -15,7 +15,7 @@
 
 </table>
 
-<s:url action="addUsuarioAction" var="urlTag" />
+<s:url action="prepare_usuario" var="urlTag" />
 <a role="button" class="btn btn-primary" href="<s:property value="#urlTag"/>"> 
 	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo
 </a>

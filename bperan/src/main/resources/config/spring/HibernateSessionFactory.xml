@@ -20,6 +20,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
     <property name="mappingResources">
 	<list>
           <value>hibernate/Usuario.hbm.xml</value>
+          <value>hibernate/Role.hbm.xml</value>
 	</list>
      </property>	
  

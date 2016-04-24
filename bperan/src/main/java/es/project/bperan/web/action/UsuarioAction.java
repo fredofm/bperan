@@ -2,51 +2,60 @@ package es.project.bperan.web.action;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.interceptor.ServletRequestAware;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 
-import es.project.bperan.bo.UsuariosBO;
+import es.project.bperan.bo.GenericBO;
+import es.project.bperan.pojo.Role;
 import es.project.bperan.pojo.Usuario;
 
-public class UsuarioAction extends ActionSupport {
+public class UsuarioAction implements ModelDriven<Usuario>, ServletRequestAware  {
 	
 		Usuario usuario = new Usuario();
 		Collection<Usuario> usuarioList = new ArrayList<Usuario>();
 		
-		UsuariosBO usuarioBo;
+		GenericBO<Usuario> usuarioBo;
+		GenericBO<Role> roleBo;
 		
-		//DI via Spring
-		public void setUsuarioBo(UsuariosBO usuarioBo) {
+		private HttpServletRequest request;
+		
+		public void setServletRequest(HttpServletRequest request) {
+			this.request = request;			
+		}
+		
+		public void setUsuarioBo(GenericBO<Usuario> usuarioBo) {
 			this.usuarioBo = usuarioBo;
+		}
+		
+		public void setRoleBo(GenericBO<Role> roleBo) {
+			this.roleBo = roleBo;
 		}
 
 		public Usuario getModel() {
 			return usuario;
+		}		
+
+		public String prepare() throws Exception {
+			request.setAttribute("listaRoles", roleBo.findAll());
+			
+			return ActionSupport.SUCCESS;
 		}
 		
-		public Collection<Usuario> getUsuarioList() {
-			return usuarioList;
+		public String create() throws Exception{			
+			usuarioBo.add(usuario);
+			
+			return ActionSupport.SUCCESS;
 		}
-
-		public void setUsuarioList(List<Usuario> usuarioList) {
-			this.usuarioList = usuarioList;
-		}
-
-		//save customer
-		public String addUsuario() throws Exception{
+				
+		public String list() throws Exception{
 			
-			//save it			
-			usuarioBo.addUsuario(usuario);		 			
+			request.setAttribute("listaRoles", usuarioBo.findAll());
 			
-			return "success";		
-		}
-		
-		//list all customers
-		public String listUsuario() throws Exception{
-			
-			usuarioList = usuarioBo.findAllUsuario();
-			
-			return "success";		
+			return ActionSupport.SUCCESS;		
 		}
 }

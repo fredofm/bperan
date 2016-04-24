@@ -4,22 +4,17 @@ import java.util.Collection;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import es.project.bperan.dao.UsuarioDAO;
+import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.pojo.Usuario;
 
-public class UsuarioDAOImpl extends HibernateDaoSupport implements UsuarioDAO {
+public class UsuarioDAOImpl extends HibernateDaoSupport implements GenericDAO<Usuario> {
 
-//	public UsuarioDAOImpl() {
-//		super();
-//	}
-	
-	
-	
-	public void addUsuario(Usuario usuario) {
+	public void add(Usuario usuario) {
 		getHibernateTemplate().save(usuario);		
 	}
 
-	public Collection<Usuario> findAllUsuario() {
+	@SuppressWarnings("unchecked")
+	public Collection<Usuario> findAll() {
 		return getHibernateTemplate().find("FROM Usuario");
 	}
 }

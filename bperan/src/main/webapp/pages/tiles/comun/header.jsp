@@ -22,7 +22,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   	<li>
-                  		<s:url action="listUsuarioAction.action" var="urlTag"/>
+                  		<s:url action="list_usuario" var="urlTag"/>
                   		<a href="<s:property value="#urlTag"/>" >Usuarios</a>
                   	</li>                                    
                 </ul>

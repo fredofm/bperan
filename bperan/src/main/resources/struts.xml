@@ -11,14 +11,23 @@
 		<result-types>
 			<result-type name="tiles"
 				class="org.apache.struts2.views.tiles.TilesResult" />
-		</result-types>
-
-	    <action name="addUsuarioAction" class="usuarioAction" method="addUsuario">
-			<result name="success" type="tiles">bperan.listusuarios</result>
+		</result-types>				
+		
+		<action name="prepare_*" class="{1}Action" method="prepare">	    	
+			<result name="success" type="tiles">bperan.add.{1}</result>
 		</action>
 
-		<action name="listUsuarioAction" class="usuarioAction" method="listUsuario">
-			<result name="success" type="tiles">/bperan.listusuarios</result>
+	    <action name="add_*" class="{1}Action" method="create">
+	    	<result name="input">prepare_{1}</result>
+			<result name="success" type="chain">list_{1}</result>
+		</action>
+
+		<action name="list_*" class="{1}Action" method="list">
+			<result name="success" type="tiles">bperan.list.{1}</result>
+		</action>
+		
+		<action name="delete_*" class="{1}Action" method="delete">
+			<result name="success" type="tiles">bperan.list.{1}</result>
 		</action>
 
 	</package>

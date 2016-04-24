@@ -3,33 +3,33 @@ package es.project.bperan.bo.impl;
 import java.util.Collection;
 import java.util.Date;
 
-import es.project.bperan.bo.UsuariosBO;
-import es.project.bperan.dao.UsuarioDAO;
+import es.project.bperan.bo.GenericBO;
+import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.pojo.Usuario;
 
-public class UsuariosBoImpl implements UsuariosBO {
+public class UsuariosBoImpl implements GenericBO<Usuario> {
 
-	private UsuarioDAO usuarioDAO;
+	private GenericDAO<Usuario> usuarioDAO;
 	
 	public UsuariosBoImpl() {
 		super();
 	}
 	
-	public void setUsuarioDAO(UsuarioDAO usuarioDAO) {
+	public void setUsuarioDAO(GenericDAO<Usuario> usuarioDAO) {
 		this.usuarioDAO = usuarioDAO;
 	}
 
 	@Override
-	public void addUsuario(Usuario usuario) {
+	public void add(Usuario usuario) {
 		usuario.setFechacreacion(new Date());
 		
-		usuarioDAO.addUsuario(usuario);
+		usuarioDAO.add(usuario);
 		
 	}
 
 	@Override
-	public Collection<Usuario> findAllUsuario() {
-		return usuarioDAO.findAllUsuario();
+	public Collection<Usuario> findAll() {
+		return usuarioDAO.findAll();
 	}
 	
 	
