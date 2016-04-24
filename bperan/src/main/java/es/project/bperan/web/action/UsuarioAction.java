@@ -53,8 +53,9 @@ public class UsuarioAction implements ModelDriven<Usuario>, ServletRequestAware 
 		}
 				
 		public String list() throws Exception{
+			Collection<Usuario> listaUsuarios = usuarioBo.findAll();
 			
-			request.setAttribute("listaRoles", usuarioBo.findAll());
+			request.setAttribute("listaUsuarios", listaUsuarios);
 			
 			return ActionSupport.SUCCESS;		
 		}

@@ -16,9 +16,8 @@
         </property>
         <property name="fechacreacion" type="timestamp">
             <column name="FECHACREACION" length="19" not-null="true" />
-        </property>
-        <property name="idrole" type="string">
-            <column name="IDROLE" length="25" not-null="true" />
-        </property>
+        </property>                
+        <many-to-one name="role" class="es.project.bperan.pojo.Role"
+            column="idrole" unique="true" not-null="true" cascade="all" lazy="false"/>
     </class>
 </hibernate-mapping>

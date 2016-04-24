@@ -9,7 +9,6 @@ public class Role implements java.io.Serializable {
 	private Integer idrole;
 	private String nombre;
 	private String descripcion;
-	private Usuario usuario;
 
 	public Role() {
 	}
@@ -18,10 +17,9 @@ public class Role implements java.io.Serializable {
 		this.nombre = nombre;
 	}
 
-	public Role(String nombre, String descripcion, Usuario usuario) {
+	public Role(String nombre, String descripcion) {
 		this.nombre = nombre;
 		this.descripcion = descripcion;
-		this.usuario = usuario;
 	}
 
 	public Integer getIdrole() {
@@ -47,13 +45,4 @@ public class Role implements java.io.Serializable {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
-	public Usuario getUsuario() {
-		return this.usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-
 }

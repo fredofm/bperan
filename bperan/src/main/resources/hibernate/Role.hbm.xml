@@ -14,6 +14,5 @@
         <property name="descripcion" type="string">
             <column name="DESCRIPCION" length="200" />
         </property>
-        <one-to-one name="usuario" class="es.project.bperan.pojo.Usuario"></one-to-one>
     </class>
 </hibernate-mapping>
