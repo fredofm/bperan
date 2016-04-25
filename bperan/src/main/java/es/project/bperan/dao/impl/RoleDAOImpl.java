@@ -16,5 +16,10 @@ public class RoleDAOImpl extends HibernateDaoSupport implements GenericDAO<Role>
 	@SuppressWarnings("unchecked")
 	public Collection<Role> findAll() {
 		return getHibernateTemplate().find("FROM Role");
+	}
+
+	@Override
+	public void delete(Role pojo) {
+		getHibernateTemplate().delete(pojo);		
 	}	
 }

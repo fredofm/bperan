@@ -39,6 +39,12 @@ public class UsuarioAction implements ModelDriven<Usuario>, ServletRequestAware 
 		public Usuario getModel() {
 			return usuario;
 		}		
+		
+		public String delete() throws Exception {
+			usuarioBo.delete(usuario);
+			
+			return ActionSupport.SUCCESS;
+		}
 
 		public String prepare() throws Exception {
 			request.setAttribute("listaRoles", roleBo.findAll());

@@ -27,4 +27,10 @@ public class RolesBoImpl implements GenericBO<Role> {
 		return roleDAO.findAll();
 	}
 
+	@Override
+	public void delete(Role pojo) {
+		roleDAO.delete(pojo);
+		
+	}
+
 }

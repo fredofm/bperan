@@ -31,6 +31,12 @@ public class UsuariosBoImpl implements GenericBO<Usuario> {
 	public Collection<Usuario> findAll() {
 		return usuarioDAO.findAll();
 	}
+
+	@Override
+	public void delete(Usuario pojo) {
+		usuarioDAO.delete(pojo);
+		
+	}
 	
 	
 }

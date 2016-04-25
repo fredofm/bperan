@@ -8,6 +8,7 @@
 		<th>Nombre</th>
 		<th>Fecha Creación</th>
 		<th>Rol</th>
+		<th></th>
 	</tr>
 </thead>
 <tbody>
@@ -16,6 +17,14 @@
 			<td><s:property value="nombre" /></td>
 			<td><s:date name="fechacreacion" format="dd/MM/yyyy hh:mm:ss"/></td>
 			<td><s:property value="role.nombre" /></td>
+			<td>
+			<s:url action="delete_usuario" var="urlTag">
+				<s:param name="idusuario" value="idusuario"/>
+			</s:url>
+				<a href="<s:property value="#urlTag"/>">
+          			<span class="glyphicon glyphicon-trash"></span>
+        		</a>
+			</td>
 		</tr>
 	</s:iterator>
 </tbody>

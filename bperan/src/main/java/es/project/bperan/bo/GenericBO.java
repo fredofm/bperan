@@ -6,4 +6,6 @@ public interface GenericBO<T> {
 	public void add(T pojo);
 
 	public Collection<T> findAll();
+	
+	public void delete(T pojo);
 }
