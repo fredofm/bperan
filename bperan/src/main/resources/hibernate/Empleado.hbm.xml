@@ -1,13 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23-abr-2016 18:26:51 by Hibernate Tools 5.1.0.Alpha1 -->
+<!-- Generated 25-abr-2016 20:31:53 by Hibernate Tools 5.1.0.Alpha1 -->
 <hibernate-mapping>
     <class name="es.project.bperan.pojo.Empleado" table="empleado" catalog="bperan" optimistic-lock="version">
         <id name="idempleado" type="java.lang.Integer">
             <column name="IDEMPLEADO" />
             <generator class="identity" />
         </id>
+        <many-to-one name="obras" class="es.project.bperan.pojo.Obras" fetch="select">
+            <column name="IDOBRA" />
+        </many-to-one>
         <property name="nombre" type="string">
             <column name="NOMBRE" length="45" not-null="true" />
         </property>
@@ -53,23 +56,17 @@
         <property name="categoria" type="string">
             <column name="CATEGORIA" length="100" />
         </property>
-        <set name="obrases" table="obras" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="IDEMPLEADO" not-null="true" />
-            </key>
-            <one-to-many class="Obras" />
-        </set>
         <set name="bajalaborals" table="bajalaboral" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="IDEMPLEADO" not-null="true" />
             </key>
-            <one-to-many class="Bajalaboral" />
+            <one-to-many class="es.project.bperan.pojo.Bajalaboral" />
         </set>
         <set name="vacacioneses" table="vacaciones" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="IDEMPLEADO" not-null="true" />
             </key>
-            <one-to-many class="Vacaciones" />
+            <one-to-many class="es.project.bperan.pojo.Vacaciones" />
         </set>
     </class>
 </hibernate-mapping>

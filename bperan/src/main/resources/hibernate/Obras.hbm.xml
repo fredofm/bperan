@@ -1,19 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23-abr-2016 18:26:51 by Hibernate Tools 5.1.0.Alpha1 -->
+<!-- Generated 25-abr-2016 20:31:53 by Hibernate Tools 5.1.0.Alpha1 -->
 <hibernate-mapping>
     <class name="es.project.bperan.pojo.Obras" table="obras" catalog="bperan" optimistic-lock="version">
         <id name="idobra" type="java.lang.Integer">
             <column name="IDOBRA" />
             <generator class="identity" />
         </id>
-        <many-to-one name="cliente" class="Cliente" fetch="select">
-            <column name="IDCLIENTE" not-null="true" />
-        </many-to-one>
-        <many-to-one name="empleado" class="Empleado" fetch="select">
-            <column name="IDEMPLEADO" not-null="true" />
-        </many-to-one>
         <property name="uicacion" type="string">
             <column name="UICACION" length="45" not-null="true" />
         </property>
@@ -32,17 +26,23 @@
         <property name="estado" type="string">
             <column name="ESTADO" length="2" not-null="true" />
         </property>
+        <set name="empleados" table="empleado" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDOBRA" />
+            </key>
+            <one-to-many class="es.project.bperan.pojo.Empleado" />
+        </set>
         <set name="presupuestos" table="presupuesto" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="IDOBRA" not-null="true" />
             </key>
-            <one-to-many class="Presupuesto" />
+            <one-to-many class="es.project.bperan.pojo.Presupuesto" />
         </set>
         <set name="fotoses" table="fotos" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="IDOBRA" not-null="true" />
             </key>
-            <one-to-many class="Fotos" />
+            <one-to-many class="es.project.bperan.pojo.Fotos" />
         </set>
     </class>
 </hibernate-mapping>

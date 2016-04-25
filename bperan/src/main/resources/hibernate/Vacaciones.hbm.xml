@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23-abr-2016 18:26:51 by Hibernate Tools 5.1.0.Alpha1 -->
+<!-- Generated 25-abr-2016 20:31:53 by Hibernate Tools 5.1.0.Alpha1 -->
 <hibernate-mapping>
     <class name="es.project.bperan.pojo.Vacaciones" table="vacaciones" catalog="bperan" optimistic-lock="version">
         <id name="idvacaciones" type="java.lang.Integer">
             <column name="IDVACACIONES" />
             <generator class="identity" />
         </id>
-        <many-to-one name="empleado" class="Empleado" fetch="select">
+        <many-to-one name="empleado" class="es.project.bperan.pojo.Empleado" fetch="select">
             <column name="IDEMPLEADO" not-null="true" />
         </many-to-one>
         <property name="fechaInicio" type="timestamp">

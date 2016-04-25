@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23-abr-2016 18:26:51 by Hibernate Tools 5.1.0.Alpha1 -->
+<!-- Generated 25-abr-2016 20:31:53 by Hibernate Tools 5.1.0.Alpha1 -->
 <hibernate-mapping>
     <class name="es.project.bperan.pojo.Presupuesto" table="presupuesto" catalog="bperan" optimistic-lock="version">
         <id name="idpresupuesto" type="java.lang.Integer">
             <column name="IDPRESUPUESTO" />
             <generator class="identity" />
         </id>
-        <many-to-one name="cliente" class="Cliente" fetch="select">
+        <many-to-one name="cliente" class="es.project.bperan.pojo.Cliente" fetch="select">
             <column name="IDCLIENTE" not-null="true" />
         </many-to-one>
-        <many-to-one name="obras" class="Obras" fetch="select">
+        <many-to-one name="obras" class="es.project.bperan.pojo.Obras" fetch="select">
             <column name="IDOBRA" not-null="true" />
         </many-to-one>
         <property name="costeTotal" type="int">
