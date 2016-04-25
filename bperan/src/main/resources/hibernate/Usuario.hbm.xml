@@ -18,6 +18,6 @@
             <column name="FECHACREACION" length="19" not-null="true" />
         </property>                
         <many-to-one name="role" class="es.project.bperan.pojo.Role"
-            column="idrole" unique="true" not-null="true" cascade="all" lazy="false"/>
+            column="idrole" unique="true" not-null="true" lazy="false"/>
     </class>
 </hibernate-mapping>

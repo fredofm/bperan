@@ -22,7 +22,7 @@
                         list="%{#request.listaRoles}"
                         listKey="idrole"
                         listValue="nombre"
-                        name="idrole"
+                        name="role.idrole"
                         emptyOption="false"
                         headerKey="None"
                         headerValue="None"/>

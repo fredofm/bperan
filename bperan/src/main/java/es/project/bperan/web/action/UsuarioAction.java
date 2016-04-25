@@ -46,7 +46,7 @@ public class UsuarioAction implements ModelDriven<Usuario>, ServletRequestAware 
 			return ActionSupport.SUCCESS;
 		}
 		
-		public String create() throws Exception{			
+		public String create() throws Exception{				
 			usuarioBo.add(usuario);
 			
 			return ActionSupport.SUCCESS;
