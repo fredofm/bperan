@@ -1,7 +1,5 @@
 package es.project.bperan.pojo;
-
-// default package
-// Generated 20-abr-2016 19:25:26 by Hibernate Tools 5.1.0.Alpha1
+// Generated 25-abr-2016 20:31:53 by Hibernate Tools 5.1.0.Alpha1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,6 +10,7 @@ import java.util.Set;
 public class Cliente implements java.io.Serializable {
 
 	private Integer idcliente;
+	private Usuario usuario;
 	private String nombreempresa;
 	private int telefono;
 	private Integer fax;
@@ -22,14 +21,15 @@ public class Cliente implements java.io.Serializable {
 	private String emial;
 	private String cifNif;
 	private String estado;
-	private Set obrases = new HashSet(0);
+	private int idrole;
 	private Set presupuestos = new HashSet(0);
 
 	public Cliente() {
 	}
 
-	public Cliente(String nombreempresa, int telefono, String direccion, String poblacion, String provincia,
-			int codigopostal, String cifNif, String estado) {
+	public Cliente(Usuario usuario, String nombreempresa, int telefono, String direccion, String poblacion,
+			String provincia, int codigopostal, String cifNif, String estado, int idrole) {
+		this.usuario = usuario;
 		this.nombreempresa = nombreempresa;
 		this.telefono = telefono;
 		this.direccion = direccion;
@@ -38,11 +38,13 @@ public class Cliente implements java.io.Serializable {
 		this.codigopostal = codigopostal;
 		this.cifNif = cifNif;
 		this.estado = estado;
+		this.idrole = idrole;
 	}
 
-	public Cliente(String nombreempresa, int telefono, Integer fax, String direccion, String poblacion,
-			String provincia, int codigopostal, String emial, String cifNif, String estado, Set obrases,
+	public Cliente(Usuario usuario, String nombreempresa, int telefono, Integer fax, String direccion, String poblacion,
+			String provincia, int codigopostal, String emial, String cifNif, String estado, int idrole,
 			Set presupuestos) {
+		this.usuario = usuario;
 		this.nombreempresa = nombreempresa;
 		this.telefono = telefono;
 		this.fax = fax;
@@ -53,7 +55,7 @@ public class Cliente implements java.io.Serializable {
 		this.emial = emial;
 		this.cifNif = cifNif;
 		this.estado = estado;
-		this.obrases = obrases;
+		this.idrole = idrole;
 		this.presupuestos = presupuestos;
 	}
 
@@ -63,6 +65,14 @@ public class Cliente implements java.io.Serializable {
 
 	public void setIdcliente(Integer idcliente) {
 		this.idcliente = idcliente;
+	}
+
+	public Usuario getUsuario() {
+		return this.usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getNombreempresa() {
@@ -145,12 +155,12 @@ public class Cliente implements java.io.Serializable {
 		this.estado = estado;
 	}
 
-	public Set getObrases() {
-		return this.obrases;
+	public int getIdrole() {
+		return this.idrole;
 	}
 
-	public void setObrases(Set obrases) {
-		this.obrases = obrases;
+	public void setIdrole(int idrole) {
+		this.idrole = idrole;
 	}
 
 	public Set getPresupuestos() {

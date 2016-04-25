@@ -1,7 +1,5 @@
 package es.project.bperan.pojo;
-
-// default package
-// Generated 20-abr-2016 19:25:26 by Hibernate Tools 5.1.0.Alpha1
+// Generated 25-abr-2016 20:31:53 by Hibernate Tools 5.1.0.Alpha1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -13,24 +11,20 @@ import java.util.Set;
 public class Obras implements java.io.Serializable {
 
 	private Integer idobra;
-	private Cliente cliente;
-	private Empleado empleado;
 	private String uicacion;
 	private String descripcion;
 	private int costeTotal;
 	private Date fechaInicio;
 	private Date fechaFin;
 	private String estado;
+	private Set empleados = new HashSet(0);
 	private Set presupuestos = new HashSet(0);
 	private Set fotoses = new HashSet(0);
 
 	public Obras() {
 	}
 
-	public Obras(Cliente cliente, Empleado empleado, String uicacion, int costeTotal, Date fechaInicio, Date fechaFin,
-			String estado) {
-		this.cliente = cliente;
-		this.empleado = empleado;
+	public Obras(String uicacion, int costeTotal, Date fechaInicio, Date fechaFin, String estado) {
 		this.uicacion = uicacion;
 		this.costeTotal = costeTotal;
 		this.fechaInicio = fechaInicio;
@@ -38,16 +32,15 @@ public class Obras implements java.io.Serializable {
 		this.estado = estado;
 	}
 
-	public Obras(Cliente cliente, Empleado empleado, String uicacion, String descripcion, int costeTotal,
-			Date fechaInicio, Date fechaFin, String estado, Set presupuestos, Set fotoses) {
-		this.cliente = cliente;
-		this.empleado = empleado;
+	public Obras(String uicacion, String descripcion, int costeTotal, Date fechaInicio, Date fechaFin, String estado,
+			Set empleados, Set presupuestos, Set fotoses) {
 		this.uicacion = uicacion;
 		this.descripcion = descripcion;
 		this.costeTotal = costeTotal;
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
 		this.estado = estado;
+		this.empleados = empleados;
 		this.presupuestos = presupuestos;
 		this.fotoses = fotoses;
 	}
@@ -58,22 +51,6 @@ public class Obras implements java.io.Serializable {
 
 	public void setIdobra(Integer idobra) {
 		this.idobra = idobra;
-	}
-
-	public Cliente getCliente() {
-		return this.cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	public Empleado getEmpleado() {
-		return this.empleado;
-	}
-
-	public void setEmpleado(Empleado empleado) {
-		this.empleado = empleado;
 	}
 
 	public String getUicacion() {
@@ -122,6 +99,14 @@ public class Obras implements java.io.Serializable {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+
+	public Set getEmpleados() {
+		return this.empleados;
+	}
+
+	public void setEmpleados(Set empleados) {
+		this.empleados = empleados;
 	}
 
 	public Set getPresupuestos() {

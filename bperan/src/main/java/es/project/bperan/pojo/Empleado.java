@@ -1,7 +1,5 @@
 package es.project.bperan.pojo;
-
-// default package
-// Generated 20-abr-2016 19:25:26 by Hibernate Tools 5.1.0.Alpha1
+// Generated 25-abr-2016 20:31:53 by Hibernate Tools 5.1.0.Alpha1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -13,6 +11,7 @@ import java.util.Set;
 public class Empleado implements java.io.Serializable {
 
 	private Integer idempleado;
+	private Obras obras;
 	private String nombre;
 	private String apellidos;
 	private String nif;
@@ -28,7 +27,6 @@ public class Empleado implements java.io.Serializable {
 	private Date fechaalta;
 	private String estado;
 	private String categoria;
-	private Set obrases = new HashSet(0);
 	private Set bajalaborals = new HashSet(0);
 	private Set vacacioneses = new HashSet(0);
 
@@ -53,10 +51,11 @@ public class Empleado implements java.io.Serializable {
 		this.estado = estado;
 	}
 
-	public Empleado(String nombre, String apellidos, String nif, Date fechanacimiento, int telefono, String direccion,
-			String poblacion, String provincia, int codigopostal, int nacionalidad, int numseguridadsocial,
-			String tipocontrato, Date fechaalta, String estado, String categoria, Set obrases, Set bajalaborals,
-			Set vacacioneses) {
+	public Empleado(Obras obras, String nombre, String apellidos, String nif, Date fechanacimiento, int telefono,
+			String direccion, String poblacion, String provincia, int codigopostal, int nacionalidad,
+			int numseguridadsocial, String tipocontrato, Date fechaalta, String estado, String categoria,
+			Set bajalaborals, Set vacacioneses) {
+		this.obras = obras;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.nif = nif;
@@ -72,7 +71,6 @@ public class Empleado implements java.io.Serializable {
 		this.fechaalta = fechaalta;
 		this.estado = estado;
 		this.categoria = categoria;
-		this.obrases = obrases;
 		this.bajalaborals = bajalaborals;
 		this.vacacioneses = vacacioneses;
 	}
@@ -83,6 +81,14 @@ public class Empleado implements java.io.Serializable {
 
 	public void setIdempleado(Integer idempleado) {
 		this.idempleado = idempleado;
+	}
+
+	public Obras getObras() {
+		return this.obras;
+	}
+
+	public void setObras(Obras obras) {
+		this.obras = obras;
 	}
 
 	public String getNombre() {
@@ -203,14 +209,6 @@ public class Empleado implements java.io.Serializable {
 
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
-	}
-
-	public Set getObrases() {
-		return this.obrases;
-	}
-
-	public void setObrases(Set obrases) {
-		this.obrases = obrases;
 	}
 
 	public Set getBajalaborals() {
