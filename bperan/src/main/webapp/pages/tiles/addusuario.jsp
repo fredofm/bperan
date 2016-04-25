@@ -9,12 +9,12 @@
                 <s:textfield
                         label="Nombre"
                         name="nombre"
-                        tooltip="Introduzca el nombre del usuario"/>
+                        tooltip="Introduzca el nombre del usuario" placeholder="Nombre"/>
                         
                 <s:textfield
                         label="Password"
                         name="password"
-                        tooltip="Introduzca la password del usuario"/>
+                        tooltip="Introduzca la password del usuario" placeholder="Password"/>
 
                 <s:select
                         tooltip="Elija el rol del usuario"
@@ -25,6 +25,7 @@
                         name="role.idrole"
                         emptyOption="false"
                         headerKey="None"
-                        headerValue="None"/>
+                        headerValue="None"
+                        placeholder="Rol"/>
 	<button type="submit" class="btn btn-primary">Submit</button>
 </s:form>
