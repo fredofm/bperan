@@ -34,8 +34,15 @@ public class UsuariosBoImpl implements GenericBO<Usuario> {
 
 	@Override
 	public void delete(Usuario pojo) {
-		usuarioDAO.delete(pojo);
+		Usuario usuario = usuarioDAO.findById(pojo.getIdusuario()); 
 		
+		usuarioDAO.delete(usuario);
+		
+	}
+
+	@Override
+	public Usuario findById(int id) {
+		return usuarioDAO.findById(id);
 	}
 	
 	

@@ -21,5 +21,10 @@ public class RoleDAOImpl extends HibernateDaoSupport implements GenericDAO<Role>
 	@Override
 	public void delete(Role pojo) {
 		getHibernateTemplate().delete(pojo);		
+	}
+
+	@Override
+	public Role findById(int id) {
+		return (Role) getHibernateTemplate().get(Role.class, id);
 	}	
 }

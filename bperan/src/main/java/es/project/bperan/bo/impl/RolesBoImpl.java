@@ -5,6 +5,7 @@ import java.util.Collection;
 import es.project.bperan.bo.GenericBO;
 import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.pojo.Role;
+import es.project.bperan.pojo.Usuario;
 
 public class RolesBoImpl implements GenericBO<Role> {
 	
@@ -29,8 +30,15 @@ public class RolesBoImpl implements GenericBO<Role> {
 
 	@Override
 	public void delete(Role pojo) {
-		roleDAO.delete(pojo);
+		Role role = roleDAO.findById(pojo.getIdrole()); 
 		
+		roleDAO.delete(role);
+		
+	}
+
+	@Override
+	public Role findById(int id) {
+		return roleDAO.findById(id);
 	}
 
 }

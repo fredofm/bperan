@@ -40,7 +40,7 @@ public class UsuarioAction implements ModelDriven<Usuario>, ServletRequestAware 
 			return usuario;
 		}		
 		
-		public String delete() throws Exception {
+		public String delete() throws Exception {						
 			usuarioBo.delete(usuario);
 			
 			return ActionSupport.SUCCESS;

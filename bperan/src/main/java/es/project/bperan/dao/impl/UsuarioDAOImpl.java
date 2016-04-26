@@ -22,4 +22,8 @@ public class UsuarioDAOImpl extends HibernateDaoSupport implements GenericDAO<Us
 	public void delete(Usuario pojo) {
 		getHibernateTemplate().delete(pojo);	
 	}
+	
+	public Usuario findById(int idusuario) {
+		return (Usuario) getHibernateTemplate().get(Usuario.class, idusuario);
+	}
 }
