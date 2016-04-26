@@ -21,7 +21,7 @@
 			<s:url action="delete_usuario" var="urlTag">
 				<s:param name="idusuario" value="idusuario"/>
 			</s:url>
-				<a href="<s:property value="#urlTag"/>">
+				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para eliminar este usuario">
           			<span class="glyphicon glyphicon-trash"></span>
         		</a>
 			</td>
