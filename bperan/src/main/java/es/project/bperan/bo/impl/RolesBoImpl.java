@@ -2,11 +2,13 @@ package es.project.bperan.bo.impl;
 
 import java.util.Collection;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import es.project.bperan.bo.GenericBO;
 import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.pojo.Role;
-import es.project.bperan.pojo.Usuario;
 
+@Transactional
 public class RolesBoImpl implements GenericBO<Role> {
 	
 	private GenericDAO<Role> roleDAO;
