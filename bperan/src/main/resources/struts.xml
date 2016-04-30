@@ -29,6 +29,10 @@
 		<action name="delete_*" class="{1}Action" method="delete">
 			<result name="success" type="chain">list_{1}</result>
 		</action>
+		
+		<action name="welcome">
+		    <result type="tiles">bperan.welcome</result>
+		</action>
 
 	</package>
 </struts>

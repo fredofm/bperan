@@ -1,1 +1,3 @@
-<jsp:forward page="welcome" />
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
+<s:action name="welcome"  executeResult="true" />
