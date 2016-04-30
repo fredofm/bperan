@@ -1,6 +1,5 @@
 package es.project.bperan.web.action;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,10 +13,9 @@ import es.project.bperan.bo.GenericBO;
 import es.project.bperan.pojo.Role;
 import es.project.bperan.pojo.Usuario;
 
-public class UsuarioAction implements ModelDriven<Usuario>, ServletRequestAware  {
+public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>, ServletRequestAware  {
 	
-		Usuario usuario = new Usuario();
-		Collection<Usuario> usuarioList = new ArrayList<Usuario>();
+		Usuario usuario; 
 		
 		GenericBO<Usuario> usuarioBo;
 		GenericBO<Role> roleBo;
@@ -35,6 +33,10 @@ public class UsuarioAction implements ModelDriven<Usuario>, ServletRequestAware 
 		public void setRoleBo(GenericBO<Role> roleBo) {
 			this.roleBo = roleBo;
 		}
+		
+		public void setUsuario(Usuario usuario) {
+			this.usuario = usuario;
+		}				
 
 		public Usuario getModel() {
 			return usuario;
@@ -45,9 +47,15 @@ public class UsuarioAction implements ModelDriven<Usuario>, ServletRequestAware 
 			
 			return ActionSupport.SUCCESS;
 		}
+		
+		public void reset() {
+			usuario = new Usuario();
+		}
 
 		public String prepare() throws Exception {
 			request.setAttribute("listaRoles", roleBo.findAll());
+			
+			reset();
 			
 			return ActionSupport.SUCCESS;
 		}

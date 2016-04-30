@@ -7,6 +7,7 @@
 	<bean id="usuarioAction" class="es.project.bperan.web.action.UsuarioAction">
 		<property name="usuarioBo" ref="usuarioBo" />
 		<property name="roleBo" ref="roleBo" />	
+		<property name="usuario" ref="usuario"/>
 	</bean>
 
 	<bean id="usuarioDAO" class="es.project.bperan.dao.impl.UsuarioDAOImpl">
@@ -15,5 +16,8 @@
 
 	<bean id="usuarioBo" class="es.project.bperan.bo.impl.UsuariosBoImpl">
 		<property name="usuarioDAO" ref="usuarioDAO" />
+	</bean>
+	
+	<bean id="usuario" class="es.project.bperan.pojo.Usuario">		
 	</bean>	
 </beans>

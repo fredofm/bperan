@@ -19,7 +19,7 @@
 
 	    <action name="add_*" class="{1}Action" method="create">
 	    	<result name="input">prepare_{1}</result>
-			<result name="success" type="chain">list_{1}</result>
+			<result name="success" type="redirectAction">list_{1}</result>
 		</action>
 
 		<action name="list_*" class="{1}Action" method="list">
