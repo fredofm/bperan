@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS  `bperan`.`cliente`;
 
 CREATE TABLE   `bperan`.`cliente` (
   `IDCLIENTE` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `IDUSUARIO` INT(11) NOT NULL,
   `NOMBREEMPRESA` varchar(45) NOT NULL,
   `TELEFONO` int(9) NOT NULL,
   `FAX` int(45),
@@ -34,6 +35,20 @@ CREATE TABLE   `bperan`.`cliente` (
   `CODIGOPOSTAL` int(5) NOT NULL,
   `EMIAL` varchar(100),
   `CIF_NIF` varchar(9) NOT NULL,
+  `ESTADO` varchar(2) NOT NULL,
+  `IDROLE` int(11) NOT NULL,
+   FOREIGN KEY (IDUSUARIO) REFERENCES `bperan`.`usuario`(IDUSUARIO) 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `bperan`.`obras`;
+
+CREATE TABLE  `bperan`.`obras` (
+  `IDOBRA` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `UICACION` varchar(45) NOT NULL,
+  `DESCRIPCION` varchar(250),
+  `COSTE_TOTAL` int(20) NOT NULL,
+  `FECHA_INICIO` datetime NOT NULL,
+  `FECHA_FIN` datetime NOT NULL,
   `ESTADO` varchar(2) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -41,6 +56,7 @@ DROP TABLE IF EXISTS `bperan`.`empleado`;
 
 CREATE TABLE `bperan`.`empleado` (
   `IDEMPLEADO` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `IDOBRA` INT(11),
   `NOMBRE` varchar(45) NOT NULL,
   `APELLIDOS` varchar(45) NOT NULL,
   `NIF` varchar(9) NOT NULL,
@@ -55,7 +71,8 @@ CREATE TABLE `bperan`.`empleado` (
   `TIPOCONTRATO` varchar(45),
   `FECHAALTA` datetime NOT NULL,  
   `ESTADO` varchar(2) NOT NULL,
-  `CATEGORIA` varchar(100)
+  `CATEGORIA` varchar(100),
+  FOREIGN KEY (IDOBRA) REFERENCES `bperan`.`obras`(IDOBRA)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS  `bperan`.`vacaciones`;
@@ -76,22 +93,6 @@ CREATE TABLE  `bperan`.`bajalaboral` (
   `FECHA_INICIO` datetime NOT NULL,  
   `FECHA_FIN` datetime NOT NULL,
   `TIPO` varchar(100) NOT NULL,
-  FOREIGN KEY (IDEMPLEADO) REFERENCES `bperan`.`empleado`(IDEMPLEADO) 
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-DROP TABLE IF EXISTS `bperan`.`obras`;
-
-CREATE TABLE  `bperan`.`obras` (
-  `IDOBRA` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `IDCLIENTE` int(11) NOT NULL,
-  `IDEMPLEADO` int(11) NOT NULL,
-  `UICACION` varchar(45) NOT NULL,
-  `DESCRIPCION` varchar(250),
-  `COSTE_TOTAL` int(20) NOT NULL,
-  `FECHA_INICIO` datetime NOT NULL,
-  `FECHA_FIN` datetime NOT NULL,
-  `ESTADO` varchar(2) NOT NULL,
-  FOREIGN KEY (IDCLIENTE) REFERENCES `bperan`.`cliente`(IDCLIENTE) ,
   FOREIGN KEY (IDEMPLEADO) REFERENCES `bperan`.`empleado`(IDEMPLEADO) 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
