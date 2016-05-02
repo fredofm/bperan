@@ -36,7 +36,6 @@ CREATE TABLE   `bperan`.`cliente` (
   `EMIAL` varchar(100),
   `CIF_NIF` varchar(9) NOT NULL,
   `ESTADO` varchar(2) NOT NULL,
-  `IDROLE` int(11) NOT NULL,
    FOREIGN KEY (IDUSUARIO) REFERENCES `bperan`.`usuario`(IDUSUARIO) 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -44,7 +43,7 @@ DROP TABLE IF EXISTS `bperan`.`obras`;
 
 CREATE TABLE  `bperan`.`obras` (
   `IDOBRA` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `UICACION` varchar(45) NOT NULL,
+  `UBICACION` varchar(45) NOT NULL,
   `DESCRIPCION` varchar(250),
   `COSTE_TOTAL` int(20) NOT NULL,
   `FECHA_INICIO` datetime NOT NULL,
