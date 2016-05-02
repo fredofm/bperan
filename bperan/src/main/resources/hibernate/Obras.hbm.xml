@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 25-abr-2016 20:31:53 by Hibernate Tools 5.1.0.Alpha1 -->
+<!-- Generated 28-abr-2016 22:22:18 by Hibernate Tools 5.1.0.Alpha1 -->
 <hibernate-mapping>
     <class name="es.project.bperan.pojo.Obras" table="obras" catalog="bperan" optimistic-lock="version">
         <id name="idobra" type="java.lang.Integer">
             <column name="IDOBRA" />
             <generator class="identity" />
         </id>
-        <property name="uicacion" type="string">
-            <column name="UICACION" length="45" not-null="true" />
+        <property name="ubicacion" type="string">
+            <column name="UBICACION" length="45" not-null="true" />
         </property>
         <property name="descripcion" type="string">
             <column name="DESCRIPCION" length="250" />
