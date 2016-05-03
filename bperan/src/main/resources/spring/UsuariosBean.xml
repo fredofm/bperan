@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
 
-	<bean id="usuarioAction" class="es.project.bperan.web.action.UsuarioAction">
+	<bean id="usuarioAction" class="es.project.bperan.web.action.UsuarioAction"  scope="prototype">
 		<property name="usuarioBo" ref="usuarioBo" />
 		<property name="roleBo" ref="roleBo" />	
 		<property name="usuario" ref="usuario"/>
@@ -18,6 +18,6 @@
 		<property name="usuarioDAO" ref="usuarioDAO" />
 	</bean>
 	
-	<bean id="usuario" class="es.project.bperan.pojo.Usuario">		
+	<bean id="usuario" class="es.project.bperan.pojo.Usuario" scope="prototype">		
 	</bean>	
 </beans>

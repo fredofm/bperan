@@ -15,10 +15,9 @@ import es.project.bperan.pojo.Usuario;
 
 public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>, ServletRequestAware  {
 	
-		Usuario usuario; 
-		
-		GenericBO<Usuario> usuarioBo;
-		GenericBO<Role> roleBo;
+		private Usuario usuario; 		
+		private GenericBO<Usuario> usuarioBo;
+		private GenericBO<Role> roleBo;
 		
 		private HttpServletRequest request;
 		
@@ -36,8 +35,13 @@ public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>
 		
 		public void setUsuario(Usuario usuario) {
 			this.usuario = usuario;
-		}				
+		}
+		
+		public Usuario getUsuario() {
+			return usuario;
+		}
 
+		@Override
 		public Usuario getModel() {
 			return usuario;
 		}		
@@ -47,15 +51,17 @@ public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>
 			
 			return ActionSupport.SUCCESS;
 		}
-		
-		public void reset() {
-			usuario = new Usuario();
-		}
 
 		public String prepare() throws Exception {
-			request.setAttribute("listaRoles", roleBo.findAll());
+			request.setAttribute("listaRoles", roleBo.findAll());						
 			
-			reset();
+			try {
+				Integer idusuario = Integer.parseInt(request.getParameter("idusuario"));
+			
+				usuario = usuarioBo.findById(idusuario);
+			} catch (Throwable e) {
+				// TODO traza error
+			}						
 			
 			return ActionSupport.SUCCESS;
 		}

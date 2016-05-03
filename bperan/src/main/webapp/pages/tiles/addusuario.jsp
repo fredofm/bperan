@@ -6,6 +6,7 @@
 <s:fielderror theme="bootstrap" />
 
 <s:form action="add_usuario" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de usuarios">
+				<s:hidden name="idusuario" />
                 <s:textfield
                         label="Nombre"
                         name="nombre"
