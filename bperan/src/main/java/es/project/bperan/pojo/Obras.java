@@ -1,5 +1,5 @@
 package es.project.bperan.pojo;
-// Generated 25-abr-2016 20:31:53 by Hibernate Tools 5.1.0.Alpha1
+// Generated 28-abr-2016 22:22:17 by Hibernate Tools 5.1.0.Alpha1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -11,7 +11,8 @@ import java.util.Set;
 public class Obras implements java.io.Serializable {
 
 	private Integer idobra;
-	private String uicacion;
+	private String nombreobra;
+	private String ubicacion;
 	private String descripcion;
 	private int costeTotal;
 	private Date fechaInicio;
@@ -24,17 +25,19 @@ public class Obras implements java.io.Serializable {
 	public Obras() {
 	}
 
-	public Obras(String uicacion, int costeTotal, Date fechaInicio, Date fechaFin, String estado) {
-		this.uicacion = uicacion;
+	public Obras(String nombreobra, String ubicacion, int costeTotal, Date fechaInicio, Date fechaFin, String estado) {
+		this.nombreobra = nombreobra;
+		this.ubicacion = ubicacion;
 		this.costeTotal = costeTotal;
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
 		this.estado = estado;
 	}
 
-	public Obras(String uicacion, String descripcion, int costeTotal, Date fechaInicio, Date fechaFin, String estado,
+	public Obras(String nombreobra, String ubicacion, String descripcion, int costeTotal, Date fechaInicio, Date fechaFin, String estado,
 			Set empleados, Set presupuestos, Set fotoses) {
-		this.uicacion = uicacion;
+		this.nombreobra = nombreobra;
+		this.ubicacion = ubicacion;
 		this.descripcion = descripcion;
 		this.costeTotal = costeTotal;
 		this.fechaInicio = fechaInicio;
@@ -53,12 +56,20 @@ public class Obras implements java.io.Serializable {
 		this.idobra = idobra;
 	}
 
-	public String getUicacion() {
-		return this.uicacion;
+	public String getNombreobra() {
+		return nombreobra;
 	}
 
-	public void setUicacion(String uicacion) {
-		this.uicacion = uicacion;
+	public void setNombreobra(String nombreobra) {
+		this.nombreobra = nombreobra;
+	}
+
+	public String getUbicacion() {
+		return this.ubicacion;
+	}
+
+	public void setUbicacion(String ubicacion) {
+		this.ubicacion = ubicacion;
 	}
 
 	public String getDescripcion() {

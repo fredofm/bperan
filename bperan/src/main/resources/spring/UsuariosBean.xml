@@ -2,11 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
 
 	<bean id="usuarioAction" class="es.project.bperan.web.action.UsuarioAction">
 		<property name="usuarioBo" ref="usuarioBo" />
 		<property name="roleBo" ref="roleBo" />	
+		<property name="usuario" ref="usuario"/>
 	</bean>
 
 	<bean id="usuarioDAO" class="es.project.bperan.dao.impl.UsuarioDAOImpl">
@@ -15,5 +16,8 @@
 
 	<bean id="usuarioBo" class="es.project.bperan.bo.impl.UsuariosBoImpl">
 		<property name="usuarioDAO" ref="usuarioDAO" />
+	</bean>
+	
+	<bean id="usuario" class="es.project.bperan.pojo.Usuario">		
 	</bean>	
 </beans>

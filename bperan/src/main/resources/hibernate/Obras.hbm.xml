@@ -8,6 +8,9 @@
             <column name="IDOBRA" />
             <generator class="identity" />
         </id>
+        <property name="nombreobra" type="string">
+            <column name="NOMBREOBRA" length="45" not-null="true" />
+        </property>
         <property name="ubicacion" type="string">
             <column name="UBICACION" length="45" not-null="true" />
         </property>

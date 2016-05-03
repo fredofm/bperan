@@ -10,50 +10,44 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 import es.project.bperan.bo.GenericBO;
-import es.project.bperan.pojo.Role;
+import es.project.bperan.pojo.Obras;
 import es.project.bperan.pojo.Usuario;
 
-public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>, ServletRequestAware  {
+public class ObrasAction extends ActionSupport implements ModelDriven<Obras>, ServletRequestAware  {
 	
-		Usuario usuario; 
+		Obras obra; 
 		
-		GenericBO<Usuario> usuarioBo;
-		GenericBO<Role> roleBo;
-		
+		GenericBO<Obras> obraBo;
+			
 		private HttpServletRequest request;
 		
 		public void setServletRequest(HttpServletRequest request) {
 			this.request = request;			
 		}
 		
-		public void setUsuarioBo(GenericBO<Usuario> usuarioBo) {
-			this.usuarioBo = usuarioBo;
+		public void setObrasBo(GenericBO<Obras> obraBo) {
+			this.obraBo = obraBo;
 		}
-		
-		public void setRoleBo(GenericBO<Role> roleBo) {
-			this.roleBo = roleBo;
-		}
-		
-		public void setUsuario(Usuario usuario) {
-			this.usuario = usuario;
+				
+		public void setObras(Obras obra) {
+			this.obra = obra;
 		}				
 
-		public Usuario getModel() {
-			return usuario;
+		public Obras getModel() {
+			return obra;
 		}		
 		
 		public String delete() throws Exception {						
-			usuarioBo.delete(usuario);
+			obraBo.delete(obra);
 			
 			return ActionSupport.SUCCESS;
 		}
 		
 		public void reset() {
-			usuario = new Usuario();
+			obra = new Obras();
 		}
 
 		public String prepare() throws Exception {
-			request.setAttribute("listaRoles", roleBo.findAll());
 			
 			reset();
 			
@@ -61,15 +55,15 @@ public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>
 		}
 		
 		public String create() throws Exception{				
-			usuarioBo.add(usuario);
+			obraBo.add(obra);
 			
 			return ActionSupport.SUCCESS;
 		}
 				
 		public String list() throws Exception{
-			Collection<Usuario> listaUsuarios = usuarioBo.findAll();
+			Collection<Obras> listaObras = obraBo.findAll();
 			
-			request.setAttribute("listaUsuarios", listaUsuarios);
+			request.setAttribute("listaObras", listaObras);
 			
 			return ActionSupport.SUCCESS;		
 		}

@@ -1,5 +1,5 @@
 package es.project.bperan.pojo;
-// Generated 25-abr-2016 20:31:53 by Hibernate Tools 5.1.0.Alpha1
+// Generated 28-abr-2016 22:22:17 by Hibernate Tools 5.1.0.Alpha1
 
 import java.util.Date;
 import java.util.HashSet;

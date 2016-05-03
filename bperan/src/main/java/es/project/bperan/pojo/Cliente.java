@@ -1,5 +1,5 @@
 package es.project.bperan.pojo;
-// Generated 25-abr-2016 20:31:53 by Hibernate Tools 5.1.0.Alpha1
+// Generated 28-abr-2016 22:22:17 by Hibernate Tools 5.1.0.Alpha1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,14 +21,13 @@ public class Cliente implements java.io.Serializable {
 	private String emial;
 	private String cifNif;
 	private String estado;
-	private int idrole;
 	private Set presupuestos = new HashSet(0);
 
 	public Cliente() {
 	}
 
 	public Cliente(Usuario usuario, String nombreempresa, int telefono, String direccion, String poblacion,
-			String provincia, int codigopostal, String cifNif, String estado, int idrole) {
+			String provincia, int codigopostal, String cifNif, String estado) {
 		this.usuario = usuario;
 		this.nombreempresa = nombreempresa;
 		this.telefono = telefono;
@@ -38,12 +37,10 @@ public class Cliente implements java.io.Serializable {
 		this.codigopostal = codigopostal;
 		this.cifNif = cifNif;
 		this.estado = estado;
-		this.idrole = idrole;
 	}
 
 	public Cliente(Usuario usuario, String nombreempresa, int telefono, Integer fax, String direccion, String poblacion,
-			String provincia, int codigopostal, String emial, String cifNif, String estado, int idrole,
-			Set presupuestos) {
+			String provincia, int codigopostal, String emial, String cifNif, String estado, Set presupuestos) {
 		this.usuario = usuario;
 		this.nombreempresa = nombreempresa;
 		this.telefono = telefono;
@@ -55,7 +52,6 @@ public class Cliente implements java.io.Serializable {
 		this.emial = emial;
 		this.cifNif = cifNif;
 		this.estado = estado;
-		this.idrole = idrole;
 		this.presupuestos = presupuestos;
 	}
 
@@ -153,14 +149,6 @@ public class Cliente implements java.io.Serializable {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
-	}
-
-	public int getIdrole() {
-		return this.idrole;
-	}
-
-	public void setIdrole(int idrole) {
-		this.idrole = idrole;
 	}
 
 	public Set getPresupuestos() {

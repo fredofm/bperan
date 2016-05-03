@@ -8,7 +8,7 @@
             <column name="IDUSUARIO" />
             <generator class="identity" />
         </id>
-        <many-to-one name="role" class="es.project.bperan.pojo.Role" fetch="select" lazy="false">
+        <many-to-one name="role" class="es.project.bperan.pojo.Role" fetch="select">
             <column name="IDROLE" not-null="true" />
         </many-to-one>
         <property name="nombre" type="string">

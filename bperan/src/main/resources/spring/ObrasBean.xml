@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<bean id="obrasAction" class="es.project.bperan.web.action.ObrasAction">
+		<property name="obrasBo" ref="obrasBo" />
+		<property name="obras" ref="obras"/>
+	</bean>
+
+	<bean id="obraDAO" class="es.project.bperan.dao.impl.ObrasDAOImpl">
+	 <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="obrasBo" class="es.project.bperan.bo.impl.ObrasBoImpl">
+		<property name="obraDAO" ref="obraDAO" />
+	</bean>
+	
+	<bean id="obras" class="es.project.bperan.pojo.Obras">		
+	</bean>	
+</beans>

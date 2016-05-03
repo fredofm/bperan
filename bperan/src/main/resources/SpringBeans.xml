@@ -11,6 +11,6 @@ http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
 	<!-- Beans Declaration -->
 	<import resource="spring/UsuariosBean.xml"/>
 	<import resource="spring/RolesBean.xml"/>
-	<import resource="spring/ClientesBean.xml"/>
+	<import resource="spring/ObrasBean.xml"/>
 	
 </beans>

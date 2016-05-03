@@ -10,12 +10,14 @@ import es.project.bperan.pojo.Usuario;
 public class UsuarioDAOImpl extends HibernateDaoSupport implements GenericDAO<Usuario> {
 
 	public void add(Usuario usuario) {
+		/*Utiliza SessionFactory de Hibernate para crear la sesión y, finalmente, 
+		se utiliza el método .save () para añadir el objeto usuario en base de datos */
 		getHibernateTemplate().save(usuario);		
 	}
 
 	@SuppressWarnings("unchecked")
 	public Collection<Usuario> findAll() {
-		return getHibernateTemplate().find("FROM Usuario");
+		return (Collection<Usuario>) getHibernateTemplate().find("FROM Usuario");
 	}
 
 	@Override

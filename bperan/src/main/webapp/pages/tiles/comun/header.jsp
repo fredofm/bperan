@@ -10,7 +10,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Bahía Perán</a>
+            <a class="navbar-brand" href="#">Bahía de Perán</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -24,6 +24,12 @@
                   	<li>
                   		<s:url action="list_usuario" var="urlTag"/>
                   		<a href="<s:property value="#urlTag"/>" >Usuarios</a>
+                  	</li>                                    
+                </ul>
+                <ul class="dropdown-menu">
+                  	<li>
+                  		<s:url action="list_obras" var="urlTag"/>
+                  		<a href="<s:property value="#urlTag"/>" >Obras</a>
                   	</li>                                    
                 </ul>
               </li>                         

@@ -10,6 +10,8 @@ import es.project.bperan.pojo.Role;
 public class RoleDAOImpl extends HibernateDaoSupport implements GenericDAO<Role> {
 
 	public void add(Role role) {
+		/*Utiliza SessionFactory de Hibernate para crear la sesión y, finalmente, 
+		se utiliza el método .save () para añadir el objeto role en base de datos */
 		getHibernateTemplate().save(role);			
 	}
 
