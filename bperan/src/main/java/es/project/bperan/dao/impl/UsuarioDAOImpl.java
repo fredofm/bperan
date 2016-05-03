@@ -12,7 +12,7 @@ public class UsuarioDAOImpl extends HibernateDaoSupport implements GenericDAO<Us
 	public void add(Usuario usuario) {
 		/*Utiliza SessionFactory de Hibernate para crear la sesión y, finalmente, 
 		se utiliza el método .save () para añadir el objeto usuario en base de datos */
-		getHibernateTemplate().save(usuario);		
+		getHibernateTemplate().saveOrUpdate(usuario);	
 	}
 
 	@SuppressWarnings("unchecked")
