@@ -43,6 +43,7 @@ DROP TABLE IF EXISTS `bperan`.`obras`;
 
 CREATE TABLE  `bperan`.`obras` (
   `IDOBRA` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `NOMBREOBRA` varchar(45) NOT NULL,
   `UBICACION` varchar(45) NOT NULL,
   `DESCRIPCION` varchar(250),
   `COSTE_TOTAL` int(20) NOT NULL,
