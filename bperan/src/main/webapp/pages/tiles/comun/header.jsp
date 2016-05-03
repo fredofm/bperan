@@ -10,26 +10,23 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Bahía de Perán</a>
+            <s:url action="welcome" var="urlTag"/>
+            <a class="navbar-brand" href="<s:property value="#urlTag"/>">Bahía de Perán</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="#">Inicio</a></li>
               <li><a href="#">Clientes</a></li>
               <li><a href="#">Empleados</a></li>
-              <li><a href="#">Obras</a></li>   
+              <li>
+                   <s:url action="list_obras" var="urlTag"/>
+                  	<a href="<s:property value="#urlTag"/>" >Obras</a></li>   
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   	<li>
                   		<s:url action="list_usuario" var="urlTag"/>
                   		<a href="<s:property value="#urlTag"/>" >Usuarios</a>
-                  	</li>                                    
-                </ul>
-                <ul class="dropdown-menu">
-                  	<li>
-                  		<s:url action="list_obras" var="urlTag"/>
-                  		<a href="<s:property value="#urlTag"/>" >Obras</a>
                   	</li>                                    
                 </ul>
               </li>                         
