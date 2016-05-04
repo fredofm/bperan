@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<bean id="clienteAction" class="es.project.bperan.web.action.ClienteAction">
+		<property name="clienteBo" ref="clienteBo" />
+		<property name="cliente" ref="cliente"/>
+	</bean>
+
+	<bean id="clienteDAO" class="es.project.bperan.dao.impl.ClienteDAOImpl">
+	 <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="clienteBo" class="es.project.bperan.bo.impl.ClienteBoImpl">
+		<property name="clienteDAO" ref="clienteDAO" />
+	</bean>
+	
+	<bean id="cliente" class="es.project.bperan.pojo.Cliente">		
+	</bean>	
+</beans>

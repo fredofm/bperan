@@ -10,14 +10,15 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 import es.project.bperan.bo.GenericBO;
-import es.project.bperan.pojo.Obras;
+import es.project.bperan.pojo.Cliente;
 import es.project.bperan.pojo.Usuario;
 
-public class ObrasAction extends ActionSupport implements ModelDriven<Obras>, ServletRequestAware  {
+public class ClienteAction extends ActionSupport implements ModelDriven<Cliente>, ServletRequestAware  {
 	
-		Obras obra; 
+		Cliente cliente; 
 		
-		GenericBO<Obras> obraBo;
+		GenericBO<Cliente> clienteBo;
+		private GenericBO<Usuario> usuarioBo;
 			
 		private HttpServletRequest request;
 		
@@ -25,39 +26,43 @@ public class ObrasAction extends ActionSupport implements ModelDriven<Obras>, Se
 			this.request = request;			
 		}
 		
-		public void setObrasBo(GenericBO<Obras> obraBo) {
-			this.obraBo = obraBo;
+		public void setClienteBo(GenericBO<Cliente> clienteBo) {
+			this.clienteBo = clienteBo;
+		}
+		
+		public void setUsuarioBo(GenericBO<Usuario> usuarioBo) {
+			this.usuarioBo = usuarioBo;
 		}
 				
-		public void setObras(Obras obra) {
-			this.obra = obra;
-		}			
-		
-		public Obras getObras() {
-			return obra;
+		public void setCliente(Cliente cliente) {
+			this.cliente = cliente;
+		}				
+
+		public Cliente getCliente() {
+			return cliente;
 		}
 
-
-		public Obras getModel() {
-			return obra;
+		public Cliente getModel() {
+			return cliente;
 		}		
 		
 		public String delete() throws Exception {						
-			obraBo.delete(obra);
+			clienteBo.delete(cliente);
 			
 			return ActionSupport.SUCCESS;
 		}
 		
 		public void reset() {
-			obra = new Obras();
+			cliente = new Cliente();
 		}
 
+		/*prepare carga el cliente de la request*/
 		public String prepare() throws Exception {
 			
 			try {
-				Integer idobra = Integer.parseInt(request.getParameter("idobra"));
+				Integer idcliente = Integer.parseInt(request.getParameter("idcliente"));
 			
-				obra = obraBo.findById(idobra);
+				cliente = clienteBo.findById(idcliente);
 			} catch (Throwable e) {
 				// TODO traza error
 			}		
@@ -65,17 +70,17 @@ public class ObrasAction extends ActionSupport implements ModelDriven<Obras>, Se
 			
 			return ActionSupport.SUCCESS;
 		}
-				
+		
 		public String create() throws Exception{				
-			obraBo.add(obra);
+			clienteBo.add(cliente);
 			
 			return ActionSupport.SUCCESS;
 		}
 				
 		public String list() throws Exception{
-			Collection<Obras> listaObras = obraBo.findAll();
+			Collection<Cliente> listaCliente = clienteBo.findAll();
 			
-			request.setAttribute("listaObras", listaObras);
+			request.setAttribute("listaCliente", listaCliente);
 			
 			return ActionSupport.SUCCESS;		
 		}
