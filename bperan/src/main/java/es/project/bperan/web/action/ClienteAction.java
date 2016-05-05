@@ -29,11 +29,15 @@ public class ClienteAction extends ActionSupport implements ModelDriven<Cliente>
 		public void setClienteBo(GenericBO<Cliente> clienteBo) {
 			this.clienteBo = clienteBo;
 		}
-		
+						
+		public GenericBO<Usuario> getUsuarioBo() {
+			return usuarioBo;
+		}
+
 		public void setUsuarioBo(GenericBO<Usuario> usuarioBo) {
 			this.usuarioBo = usuarioBo;
 		}
-				
+
 		public void setCliente(Cliente cliente) {
 			this.cliente = cliente;
 		}				
@@ -58,6 +62,8 @@ public class ClienteAction extends ActionSupport implements ModelDriven<Cliente>
 
 		/*prepare carga el cliente de la request*/
 		public String prepare() throws Exception {
+					
+			request.setAttribute("listaUsuarios", usuarioBo.findAll());		
 			
 			try {
 				Integer idcliente = Integer.parseInt(request.getParameter("idcliente"));
