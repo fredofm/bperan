@@ -2,6 +2,8 @@ package es.project.bperan.dao.impl;
 
 import java.util.Collection;
 
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Example;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
@@ -27,5 +29,12 @@ public class UsuarioDAOImpl extends HibernateDaoSupport implements GenericDAO<Us
 	
 	public Usuario findById(int idusuario) {
 		return (Usuario) getHibernateTemplate().get(Usuario.class, idusuario);
+	}
+	
+	public Collection<Usuario> findByPojo(Usuario usuario) {
+		Example usuarioCriteria = Example.create(usuario);
+		Criteria criteria = getSession().createCriteria(Usuario.class).add(usuarioCriteria);
+		
+		return criteria.list();				
 	}
 }

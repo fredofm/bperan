@@ -31,6 +31,7 @@ public class UsuariosBoImpl implements GenericBO<Usuario> {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public Collection<Usuario> findAll() {
 		return usuarioDAO.findAll();
 	}

@@ -13,4 +13,17 @@
 		<a class="btn btn-lg btn-primary" href="../../components/#navbar"
 			role="button">View navbar docs &raquo;</a>
 	</p>
+	
+	<div class="row">
+	    <div class="col-sm-3" style="background-color:lavender;">.col-sm-3	      
+	    </div>
+	    <div class="col-sm-6" style="background-color:lavenderblush;">
+	    	<div class="row">
+	      	  <div class="col-sm-6" style="background-color:lightcyan;">.col-sm-6</div>
+	        	<div class="col-sm-6" style="background-color:lightgray;">.col-sm-6</div>
+	      	</div>
+	      .col-sm-6
+	      </div>
+	    <div class="col-sm-3" style="background-color:lavenderblush;">.col-sm-3</div>
+	</div>
 </div>

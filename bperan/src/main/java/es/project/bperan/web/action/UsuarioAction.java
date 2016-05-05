@@ -35,18 +35,21 @@ public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>
 		
 		public void setRoleBo(GenericBO<Role> roleBo) {
 			this.roleBo = roleBo;
-		}
-		
+		}				
+
 		public void setUsuario(Usuario usuario) {
 			this.usuario = usuario;
 		}
-		
-		public Usuario getUsuario() {
-			return usuario;
-		}
 
-		@Override
 		public Usuario getModel() {
+			try {
+				Integer idusuario = Integer.parseInt(request.getParameter("idusuario"));
+			
+				usuario = usuarioBo.findById(idusuario);
+			} catch (Throwable e) {
+				// TODO traza error
+			}
+			
 			return usuario;
 		}		
 		
@@ -58,15 +61,7 @@ public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>
 
 		/*prepare carga la lista de roles y carga el usuario de la request*/
 		public String prepare() throws Exception {
-			request.setAttribute("listaRoles", roleBo.findAll());						
-			
-			try {
-				Integer idusuario = Integer.parseInt(request.getParameter("idusuario"));
-			
-				usuario = usuarioBo.findById(idusuario);
-			} catch (Throwable e) {
-				// TODO traza error
-			}						
+			request.setAttribute("listaRoles", roleBo.findAll());																		
 			
 			return ActionSupport.SUCCESS;
 		}
