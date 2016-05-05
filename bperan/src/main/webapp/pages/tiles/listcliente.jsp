@@ -32,7 +32,7 @@
 			<td><s:property value="codigopostal" /></td>
 			<td><s:property value="emial" /></td>
 			<td><s:property value="estado" /></td>
-			<td><s:property value="usuario.idusuario" /></td>
+			<td><s:property value="usuario.nombre" /></td>
 			<td>
 			
 			<s:url action="delete_cliente" var="urlTag">
