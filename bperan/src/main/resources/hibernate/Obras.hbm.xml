@@ -17,7 +17,7 @@
         <property name="descripcion" type="string">
             <column name="DESCRIPCION" length="250" />
         </property>
-        <property name="costeTotal" type="int">
+        <property name="costeTotal" type="double">
             <column name="COSTE_TOTAL" not-null="true" />
         </property>
         <property name="fechaInicio" type="timestamp">

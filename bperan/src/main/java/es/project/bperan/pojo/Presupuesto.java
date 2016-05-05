@@ -11,7 +11,7 @@ public class Presupuesto implements java.io.Serializable {
 	private Integer idpresupuesto;
 	private Cliente cliente;
 	private Obras obras;
-	private int costeTotal;
+	private double costeTotal;
 	private Date fechaInicio;
 	private Date fechaFin;
 	private String estado;
@@ -19,7 +19,7 @@ public class Presupuesto implements java.io.Serializable {
 	public Presupuesto() {
 	}
 
-	public Presupuesto(Cliente cliente, Obras obras, int costeTotal, Date fechaInicio, Date fechaFin, String estado) {
+	public Presupuesto(Cliente cliente, Obras obras, double costeTotal, Date fechaInicio, Date fechaFin, String estado) {
 		this.cliente = cliente;
 		this.obras = obras;
 		this.costeTotal = costeTotal;
@@ -52,11 +52,11 @@ public class Presupuesto implements java.io.Serializable {
 		this.obras = obras;
 	}
 
-	public int getCosteTotal() {
+	public double getCosteTotal() {
 		return this.costeTotal;
 	}
 
-	public void setCosteTotal(int costeTotal) {
+	public void setCosteTotal(double costeTotal) {
 		this.costeTotal = costeTotal;
 	}
 

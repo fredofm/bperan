@@ -14,7 +14,7 @@
         <many-to-one name="obras" class="es.project.bperan.pojo.Obras" fetch="select">
             <column name="IDOBRA" not-null="true" />
         </many-to-one>
-        <property name="costeTotal" type="int">
+        <property name="costeTotal" type="double">
             <column name="COSTE_TOTAL" not-null="true" />
         </property>
         <property name="fechaInicio" type="timestamp">
