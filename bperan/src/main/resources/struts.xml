@@ -14,16 +14,16 @@
 		</result-types>				
 		
 		<action name="prepare_*" class="{1}Action" method="prepare">	    	
-			<result name="success" type="tiles">bperan.add.{1}</result>
+			<result name="*" type="tiles">bperan.add.{1}</result>
 		</action>
 
 	    <action name="add_*" class="{1}Action" method="create">
-	    	<result name="input">prepare_{1}</result>
+	    	<result name="input" type="chain">prepare_{1}</result>
 			<result name="success" type="redirectAction">list_{1}</result>
 		</action>
 
 		<action name="list_*" class="{1}Action" method="list">
-			<result name="success" type="tiles">bperan.list.{1}</result>
+			<result name="*" type="tiles">bperan.list.{1}</result>
 		</action>
 		
 		<action name="delete_*" class="{1}Action" method="delete">

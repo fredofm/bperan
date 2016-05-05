@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
 
-	<bean id="clienteAction" class="es.project.bperan.web.action.ClienteAction">
+	<bean id="clienteAction" class="es.project.bperan.web.action.ClienteAction"  scope="prototype">
 		<property name="clienteBo" ref="clienteBo" />
 		<property name="usuarioBo" ref="usuarioBo" />
 		<property name="cliente" ref="cliente"/>
@@ -18,6 +18,6 @@
 		<property name="clienteDAO" ref="clienteDAO" />
 	</bean>
 	
-	<bean id="cliente" class="es.project.bperan.pojo.Cliente">		
+	<bean id="cliente" class="es.project.bperan.pojo.Cliente"  scope="prototype">		
 	</bean>	
 </beans>
