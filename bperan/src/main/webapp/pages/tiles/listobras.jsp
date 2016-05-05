@@ -16,7 +16,7 @@
 	</tr>
 </thead>
 <tbody>
-	<s:iterator status="obra" value="%{#request.listaobras}">
+	<s:iterator status="obra" value="%{#request.listaObras}">
 		<tr>
 			<td><s:property value="nombreobra" /></td>
 			<td><s:property value="ubicacion" /></td>
@@ -26,7 +26,7 @@
 			<td><s:date name="fechaFin" format="dd/MM/yyyy hh:mm:ss"/></td>
 			<td><s:property value="estado" /></td>
 			<td>
-			<s:url action="delete_obra" var="urlTag">
+			<s:url action="delete_obras" var="urlTag">
 				<s:param name="idobra" value="idobra"/>
 			</s:url>
 				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para eliminar esta obra">
@@ -38,7 +38,7 @@
 </tbody>
 </table>
 
-<s:url action="prepare_obra" var="urlTag" />
+<s:url action="prepare_obras" var="urlTag" />
 <a role="button" class="btn btn-primary" href="<s:property value="#urlTag"/>"> 
-	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo
+	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva Obra
 </a>
