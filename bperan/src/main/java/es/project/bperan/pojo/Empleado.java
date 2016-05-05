@@ -21,8 +21,8 @@ public class Empleado implements java.io.Serializable {
 	private String poblacion;
 	private String provincia;
 	private int codigopostal;
-	private int nacionalidad;
-	private int numseguridadsocial;
+	private String nacionalidad;
+	private String numseguridadsocial;
 	private String tipocontrato;
 	private Date fechaalta;
 	private String estado;
@@ -34,7 +34,7 @@ public class Empleado implements java.io.Serializable {
 	}
 
 	public Empleado(String nombre, String apellidos, String nif, Date fechanacimiento, int telefono, String direccion,
-			String poblacion, String provincia, int codigopostal, int nacionalidad, int numseguridadsocial,
+			String poblacion, String provincia, int codigopostal, String nacionalidad, String numseguridadsocial,
 			Date fechaalta, String estado) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -52,8 +52,8 @@ public class Empleado implements java.io.Serializable {
 	}
 
 	public Empleado(Obras obras, String nombre, String apellidos, String nif, Date fechanacimiento, int telefono,
-			String direccion, String poblacion, String provincia, int codigopostal, int nacionalidad,
-			int numseguridadsocial, String tipocontrato, Date fechaalta, String estado, String categoria,
+			String direccion, String poblacion, String provincia, int codigopostal, String nacionalidad,
+			String numseguridadsocial, String tipocontrato, Date fechaalta, String estado, String categoria,
 			Set bajalaborals, Set vacacioneses) {
 		this.obras = obras;
 		this.nombre = nombre;
@@ -163,19 +163,19 @@ public class Empleado implements java.io.Serializable {
 		this.codigopostal = codigopostal;
 	}
 
-	public int getNacionalidad() {
+	public String getNacionalidad() {
 		return this.nacionalidad;
 	}
 
-	public void setNacionalidad(int nacionalidad) {
+	public void setNacionalidad(String nacionalidad) {
 		this.nacionalidad = nacionalidad;
 	}
 
-	public int getNumseguridadsocial() {
+	public String getNumseguridadsocial() {
 		return this.numseguridadsocial;
 	}
 
-	public void setNumseguridadsocial(int numseguridadsocial) {
+	public void setNumseguridadsocial(String numseguridadsocial) {
 		this.numseguridadsocial = numseguridadsocial;
 	}
 

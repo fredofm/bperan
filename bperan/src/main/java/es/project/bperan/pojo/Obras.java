@@ -14,7 +14,7 @@ public class Obras implements java.io.Serializable {
 	private String nombreobra;
 	private String ubicacion;
 	private String descripcion;
-	private int costeTotal;
+	private double costeTotal;
 	private Date fechaInicio;
 	private Date fechaFin;
 	private String estado;
@@ -25,7 +25,7 @@ public class Obras implements java.io.Serializable {
 	public Obras() {
 	}
 
-	public Obras(String nombreobra, String ubicacion, int costeTotal, Date fechaInicio, Date fechaFin, String estado) {
+	public Obras(String nombreobra, String ubicacion, double costeTotal, Date fechaInicio, Date fechaFin, String estado) {
 		this.nombreobra = nombreobra;
 		this.ubicacion = ubicacion;
 		this.costeTotal = costeTotal;
@@ -34,7 +34,7 @@ public class Obras implements java.io.Serializable {
 		this.estado = estado;
 	}
 
-	public Obras(String nombreobra, String ubicacion, String descripcion, int costeTotal, Date fechaInicio, Date fechaFin, String estado,
+	public Obras(String nombreobra, String ubicacion, String descripcion, double costeTotal, Date fechaInicio, Date fechaFin, String estado,
 			Set empleados, Set presupuestos, Set fotoses) {
 		this.nombreobra = nombreobra;
 		this.ubicacion = ubicacion;
@@ -80,11 +80,11 @@ public class Obras implements java.io.Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public int getCosteTotal() {
+	public double getCosteTotal() {
 		return this.costeTotal;
 	}
 
-	public void setCosteTotal(int costeTotal) {
+	public void setCosteTotal(double costeTotal) {
 		this.costeTotal = costeTotal;
 	}
 

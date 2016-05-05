@@ -12,19 +12,19 @@
                         tooltip="Introduzca el nombre de la obra" placeholder="Nombre Obra"/>
                         
                 <s:textfield
-                        label="Ubicacion"
+                        label="Ubicación"
                         name="ubicacion"
-                        tooltip="Introduzca la ubicación de la obra" placeholder="Ubicacion"/>
+                        tooltip="Introduzca la ubicación de la obra" placeholder="Ubicación"/>
                       
                  <s:textfield
-                        label="Descripcion"
+                        label="Descripción"
                         name="descripcion"
-                        tooltip="Introduzca una descripción de la obra" placeholder="Descripcion"/>
+                        tooltip="Introduzca una descripción de la obra" placeholder="Descripción"/>
                        
                   <s:textfield
                         label="Coste Total"
                         name="costeTotal"
-                        tooltip="Introduzca el coste toal de la obra" placeholder="Coste Total"/>
+                        tooltip="Introduzca el coste total de la obra" placeholder="Coste Total"/>
                        
                   <s:textfield
                         label="Fecha Inicio"

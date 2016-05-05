@@ -13,6 +13,10 @@ import es.project.bperan.bo.GenericBO;
 import es.project.bperan.pojo.Role;
 import es.project.bperan.pojo.Usuario;
 
+/**
+ * @author Carol
+ *
+ */
 public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>, ServletRequestAware  {
 	
 		private Usuario usuario; 		
@@ -52,6 +56,7 @@ public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>
 			return ActionSupport.SUCCESS;
 		}
 
+		/*prepare carga la lista de roles y carga el usuario de la request*/
 		public String prepare() throws Exception {
 			request.setAttribute("listaRoles", roleBo.findAll());						
 			
