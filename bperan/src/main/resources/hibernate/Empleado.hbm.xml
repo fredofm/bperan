@@ -38,11 +38,11 @@
         <property name="codigopostal" type="int">
             <column name="CODIGOPOSTAL" not-null="true" />
         </property>
-        <property name="nacionalidad" type="int">
-            <column name="NACIONALIDAD" not-null="true" />
+        <property name="nacionalidad" type="string">
+            <column name="NACIONALIDAD" length="45" not-null="true" />
         </property>
-        <property name="numseguridadsocial" type="int">
-            <column name="NUMSEGURIDADSOCIAL" not-null="true" />
+        <property name="numseguridadsocial" type="string">
+            <column name="NUMSEGURIDADSOCIAL" length="20" not-null="true" />
         </property>
         <property name="tipocontrato" type="string">
             <column name="TIPOCONTRATO" length="45" />

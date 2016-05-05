@@ -20,12 +20,17 @@
                    <s:url action="list_cliente" var="urlTag"/>
                   	<a href="<s:property value="#urlTag"/>" >Clientes</a>
               </li> 
+              
+               <li>
+                   <s:url action="list_empleado" var="urlTag"/>
+                  	<a href="<s:property value="#urlTag"/>" >Empleados</a>
+              </li> 
 
-              <li><a href="#">Empleados</a></li>
               <li>
                    <s:url action="list_obras" var="urlTag"/>
                   	<a href="<s:property value="#urlTag"/>" >Obras</a>
               </li>   
+              
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                 <ul class="dropdown-menu">
