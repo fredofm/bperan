@@ -11,13 +11,12 @@ import com.opensymphony.xwork2.ModelDriven;
 
 import es.project.bperan.bo.GenericBO;
 import es.project.bperan.pojo.Obras;
-import es.project.bperan.pojo.Usuario;
 
 public class ObrasAction extends ActionSupport implements ModelDriven<Obras>, ServletRequestAware  {
 	
-		Obras obra; 
+		Obras obras; 
 		
-		GenericBO<Obras> obraBo;
+		GenericBO<Obras> obrasBo;
 			
 		private HttpServletRequest request;
 		
@@ -25,39 +24,40 @@ public class ObrasAction extends ActionSupport implements ModelDriven<Obras>, Se
 			this.request = request;			
 		}
 		
-		public void setObrasBo(GenericBO<Obras> obraBo) {
-			this.obraBo = obraBo;
+		public void setObrasBo(GenericBO<Obras> obrasBo) {
+			this.obrasBo = obrasBo;
 		}
 				
-		public void setObras(Obras obra) {
-			this.obra = obra;
+		public void setObras(Obras obras) {
+			this.obras = obras;
 		}			
 		
 		public Obras getObras() {
-			return obra;
+			return obras;
 		}
 
 
 		public Obras getModel() {
-			return obra;
+			return obras;
 		}		
 		
 		public String delete() throws Exception {						
-			obraBo.delete(obra);
+			obrasBo.delete(obras);
 			
 			return ActionSupport.SUCCESS;
 		}
 		
 		public void reset() {
-			obra = new Obras();
+			obras = new Obras();
 		}
 
+		/*prepare carga la obra de la request*/
 		public String prepare() throws Exception {
 			
 			try {
 				Integer idobra = Integer.parseInt(request.getParameter("idobra"));
 			
-				obra = obraBo.findById(idobra);
+				obras = obrasBo.findById(idobra);
 			} catch (Throwable e) {
 				// TODO traza error
 			}		
@@ -67,13 +67,13 @@ public class ObrasAction extends ActionSupport implements ModelDriven<Obras>, Se
 		}
 				
 		public String create() throws Exception{				
-			obraBo.add(obra);
+			obrasBo.add(obras);
 			
 			return ActionSupport.SUCCESS;
 		}
 				
 		public String list() throws Exception{
-			Collection<Obras> listaObras = obraBo.findAll();
+			Collection<Obras> listaObras = obrasBo.findAll();
 			
 			request.setAttribute("listaObras", listaObras);
 			
