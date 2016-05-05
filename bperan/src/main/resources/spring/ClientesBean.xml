@@ -6,6 +6,7 @@
 
 	<bean id="clienteAction" class="es.project.bperan.web.action.ClienteAction">
 		<property name="clienteBo" ref="clienteBo" />
+		<property name="usuarioBo" ref="usuarioBo" />
 		<property name="cliente" ref="cliente"/>
 	</bean>
 
