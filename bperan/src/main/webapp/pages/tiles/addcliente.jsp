@@ -6,6 +6,7 @@
 <s:fielderror theme="bootstrap" />
 
 <s:form action="add_cliente" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de clientes">
+                <s:hidden name="idcliente" />
                 <s:textfield
                         label="Nombre Cliente"
                         name="nombreempresa"
@@ -61,5 +62,5 @@
                         name="usuario.idusuario"
                         tooltip="Introduzca el usuario del cliente" placeholder="Usuario"/>
                         
-	<button type="submit" class="btn btn-primary">Añadir</button>
+	<button type="submit" class="btn btn-primary">Guardar</button>
 </s:form>

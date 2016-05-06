@@ -47,6 +47,11 @@ public class ClienteBoImpl implements GenericBO<Cliente> {
 		return clienteDAO.findById(id);
 	}
 
+	@Override
+	public Collection<Cliente> findByPojo(Cliente cliente) {
+		return clienteDAO.findByPojo(cliente);
+	}
+
 	
 	
 }

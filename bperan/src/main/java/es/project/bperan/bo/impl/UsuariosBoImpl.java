@@ -48,6 +48,11 @@ public class UsuariosBoImpl implements GenericBO<Usuario> {
 	public Usuario findById(int id) {
 		return usuarioDAO.findById(id);
 	}
+
+	@Override
+	public Collection<Usuario> findByPojo(Usuario usuario) {
+		return usuarioDAO.findByPojo(usuario);
+	}
 	
 	
 }

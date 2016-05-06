@@ -15,7 +15,6 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="#">Inicio</a></li>
               <li>
                    <s:url action="list_cliente" var="urlTag"/>
                   	<a href="<s:property value="#urlTag"/>" >Clientes</a>
@@ -26,10 +25,15 @@
                   	<a href="<s:property value="#urlTag"/>" >Empleados</a>
               </li> 
 
-              <li>
-                   <s:url action="list_obras" var="urlTag"/>
-                  	<a href="<s:property value="#urlTag"/>" >Obras</a>
-              </li>   
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Obras <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  	<li>
+		                   <s:url action="list_obras" var="urlTag"/>
+		                  <a href="<s:property value="#urlTag"/>" >Listado Obras</a>
+              		</li>  
+              	</ul>
+              </li>  
               
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>

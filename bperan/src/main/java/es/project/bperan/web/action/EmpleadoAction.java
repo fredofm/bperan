@@ -2,10 +2,6 @@ package es.project.bperan.web.action;
 
 import java.util.Collection;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts2.interceptor.ServletRequestAware;
-
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -17,18 +13,12 @@ import es.project.bperan.pojo.Empleado;
  * @author Carol
  *
  */
-public class EmpleadoAction extends ActionSupport implements ModelDriven<Empleado>, ServletRequestAware  {
+public class EmpleadoAction extends BperanAction implements ModelDriven<Empleado> {
 	
 		private Empleado empleado; 		
 		private GenericBO<Empleado> empleadoBo;
 		private GenericBO<Obras> obrasBo;
-		
-		private HttpServletRequest request;
-		
-		public void setServletRequest(HttpServletRequest request) {
-			this.request = request;			
-		}
-		
+			
 		public void setEmpleadoBo(GenericBO<Empleado> empleadoBo) {
 			this.empleadoBo = empleadoBo;
 		}
@@ -45,14 +35,18 @@ public class EmpleadoAction extends ActionSupport implements ModelDriven<Emplead
 			this.empleado = empleado;
 		}
 		
-		public Empleado getEmpleado() {
-			return empleado;
-		}
-
 		@Override
 		public Empleado getModel() {
+			try {
+				if (getId() != null) {
+					empleado = empleadoBo.findById(getId());
+				}
+			} catch (Throwable e) {
+				// TODO traza error
+			}
+			
 			return empleado;
-		}		
+		}			
 		
 		public String delete() throws Exception {						
 			empleadoBo.delete(empleado);
@@ -60,21 +54,13 @@ public class EmpleadoAction extends ActionSupport implements ModelDriven<Emplead
 			return ActionSupport.SUCCESS;
 		}
 
-		/*prepare carga la lista de obras y carga el idempleado de la request*/
+		/*prepare carga la lista de obras de la request*/
 		public String prepare() throws Exception {
+			getServletRequest().setAttribute("listaObras", obrasBo.findAll());	
+																		
+  			return ActionSupport.SUCCESS;
+  		}
 			
-			request.setAttribute("listaObras", obrasBo.findAll());						
-			
-			try {
-				Integer idempleado = Integer.parseInt(request.getParameter("idempleado"));
-			
-				empleado = empleadoBo.findById(idempleado);
-			} catch (Throwable e) {
-				// TODO traza error
-			}						
-			
-			return ActionSupport.SUCCESS;
-		}
 		
 		public String create() throws Exception{				
 			empleadoBo.add(empleado);
@@ -85,7 +71,7 @@ public class EmpleadoAction extends ActionSupport implements ModelDriven<Emplead
 		public String list() throws Exception{
 			Collection<Empleado> listaEmpleados = empleadoBo.findAll();
 			
-			request.setAttribute("listaEmpleados", listaEmpleados);
+			getServletRequest().setAttribute("listaEmpleados", listaEmpleados);
 			
 			return ActionSupport.SUCCESS;		
 		}

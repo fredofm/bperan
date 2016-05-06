@@ -43,4 +43,9 @@ public class RolesBoImpl implements GenericBO<Role> {
 		return roleDAO.findById(id);
 	}
 
+	@Override
+	public Collection<Role> findByPojo(Role role) {
+		return roleDAO.findByPojo(role);
+	}
+
 }

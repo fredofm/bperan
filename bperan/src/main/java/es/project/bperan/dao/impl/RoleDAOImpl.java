@@ -2,9 +2,12 @@ package es.project.bperan.dao.impl;
 
 import java.util.Collection;
 
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Example;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
+import es.project.bperan.pojo.Obras;
 import es.project.bperan.pojo.Role;
 
 public class RoleDAOImpl extends HibernateDaoSupport implements GenericDAO<Role> {
@@ -28,5 +31,13 @@ public class RoleDAOImpl extends HibernateDaoSupport implements GenericDAO<Role>
 	@Override
 	public Role findById(int id) {
 		return (Role) getHibernateTemplate().get(Role.class, id);
-	}	
+	}
+
+	@Override
+	public Collection<Role> findByPojo(Role role) {
+		Example roleCriteria = Example.create(role);
+		Criteria criteria = getSession().createCriteria(Role.class).add(roleCriteria);
+		
+		return criteria.list();		
+	}
 }

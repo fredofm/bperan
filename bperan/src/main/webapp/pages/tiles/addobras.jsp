@@ -6,6 +6,7 @@
 <s:fielderror theme="bootstrap" />
 
 <s:form action="add_obras" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de obras">
+                <s:hidden name="idobra" />
                 <s:textfield
                         label="Nombre Obra"
                         name="nombreobra"
@@ -29,17 +30,17 @@
                   <s:textfield
                         label="Fecha Inicio"
                         name="fechaInicio"
-                        tooltip="Introduzca la fecha de inicio de la obra" placeholder="Fecha Inicio"/>
+                        tooltip="Introduzca la fecha de inicio de la obra con formato dd/mm/aaaa" placeholder="Fecha Inicio con formato dd/mm/aaaa"/>
                         
                   <s:textfield
                         label="Fecha Fin"
                         name="fechaFin"
-                        tooltip="Introduzca la fecha de fin de la obra" placeholder="Fecha Fin"/>
+                        tooltip="Introduzca la fecha de fin de la obra con formato dd/mm/aaaa" placeholder="Fecha Fin con formato dd/mm/aaaa"/>
                         
                    <s:textfield
                         label="Estado"
                         name="estado"
                         tooltip="Introduzca el estado de la obra" placeholder="Estado"/>
 
-	<button type="submit" class="btn btn-primary">Añadir</button>
+	<button type="submit" class="btn btn-primary">Guardar</button>
 </s:form>

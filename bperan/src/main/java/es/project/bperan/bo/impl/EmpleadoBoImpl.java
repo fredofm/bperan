@@ -45,6 +45,11 @@ public class EmpleadoBoImpl implements GenericBO<Empleado> {
 	public Empleado findById(int id) {
 		return empleadoDAO.findById(id);
 	}
+
+	@Override
+	public Collection<Empleado> findByPojo(Empleado empleado) {
+		return empleadoDAO.findByPojo(empleado);
+	}
 	
 	
 }

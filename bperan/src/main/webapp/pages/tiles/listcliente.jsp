@@ -5,7 +5,7 @@
 <table class="table table-striped table-hover">
 <thead>
 	<tr>
-		<th>Nombre Cliente</th>
+		<th>Nombre</th>
 		<th>CIF/NIF</th>
 		<th>Teléfono</th>
 		<th>Fax</th>
@@ -35,6 +35,15 @@
 			<td><s:property value="usuario.nombre" /></td>
 			<td>
 			
+			<td>
+				<s:url action="prepare_cliente" var="urlTag">
+					<s:param name="id" value="idcliente"/>
+				</s:url>
+					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para editar este cliente">
+	          			<span class="glyphicon glyphicon-edit"></span>
+	        		</a>
+			</td>
+			<td>
 			<s:url action="delete_cliente" var="urlTag">
 				<s:param name="idcliente" value="idcliente"/>
 			</s:url>

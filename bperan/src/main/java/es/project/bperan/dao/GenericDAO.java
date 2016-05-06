@@ -10,4 +10,6 @@ public interface GenericDAO<T> {
 	public void delete(T pojo);
 	
 	public T findById(int id);
+	
+	public Collection<T> findByPojo(T pojo);
 }

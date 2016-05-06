@@ -47,6 +47,11 @@ public class ObrasBoImpl implements GenericBO<Obras> {
 		return obraDAO.findById(id);
 	}
 
+	@Override
+	public Collection<Obras> findByPojo(Obras obra) {
+		return obraDAO.findByPojo(obra);
+	}
+
 	
 	
 }

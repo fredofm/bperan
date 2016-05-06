@@ -2,9 +2,6 @@ package es.project.bperan.web.action;
 
 import java.util.Collection;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts2.interceptor.ServletRequestAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -13,19 +10,14 @@ import es.project.bperan.bo.GenericBO;
 import es.project.bperan.pojo.Cliente;
 import es.project.bperan.pojo.Usuario;
 
-public class ClienteAction extends ActionSupport implements ModelDriven<Cliente>, ServletRequestAware  {
+public class ClienteAction extends BperanAction implements ModelDriven<Cliente>  {
 	
 		Cliente cliente; 
 		
 		GenericBO<Cliente> clienteBo;
 		private GenericBO<Usuario> usuarioBo;
 			
-		private HttpServletRequest request;
-		
-		public void setServletRequest(HttpServletRequest request) {
-			this.request = request;			
-		}
-		
+				
 		public void setClienteBo(GenericBO<Cliente> clienteBo) {
 			this.clienteBo = clienteBo;
 		}
@@ -42,11 +34,14 @@ public class ClienteAction extends ActionSupport implements ModelDriven<Cliente>
 			this.cliente = cliente;
 		}				
 
-		public Cliente getCliente() {
-			return cliente;
-		}
-
 		public Cliente getModel() {
+			try {
+				if (getId() != null) {
+					cliente = clienteBo.findById(getId());
+				}
+			} catch (Throwable e) {
+				// TODO traza error
+			}
 			return cliente;
 		}		
 		
@@ -56,24 +51,11 @@ public class ClienteAction extends ActionSupport implements ModelDriven<Cliente>
 			return ActionSupport.SUCCESS;
 		}
 		
-		public void reset() {
-			cliente = new Cliente();
-		}
-
-		/*prepare carga el cliente de la request*/
+		/*prepare carga la lista de usuarios de la request*/
 		public String prepare() throws Exception {
 					
-			request.setAttribute("listaUsuarios", usuarioBo.findAll());		
-			
-			try {
-				Integer idcliente = Integer.parseInt(request.getParameter("idcliente"));
-			
-				cliente = clienteBo.findById(idcliente);
-			} catch (Throwable e) {
-				// TODO traza error
-			}		
-			//reset();
-			
+			getServletRequest().setAttribute("listaUsuarios", usuarioBo.findAll());		
+						
 			return ActionSupport.SUCCESS;
 		}
 		
@@ -86,7 +68,7 @@ public class ClienteAction extends ActionSupport implements ModelDriven<Cliente>
 		public String list() throws Exception{
 			Collection<Cliente> listaCliente = clienteBo.findAll();
 			
-			request.setAttribute("listaCliente", listaCliente);
+			getServletRequest().setAttribute("listaCliente", listaCliente);
 			
 			return ActionSupport.SUCCESS;		
 		}
