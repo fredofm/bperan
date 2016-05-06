@@ -2,10 +2,6 @@ package es.project.bperan.web.action;
 
 import java.util.Collection;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts2.interceptor.ServletRequestAware;
-
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -17,17 +13,11 @@ import es.project.bperan.pojo.Usuario;
  * @author Carol
  *
  */
-public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>, ServletRequestAware  {
+public class UsuarioAction extends BperanAction implements ModelDriven<Usuario>  {
 	
 		private Usuario usuario; 		
 		private GenericBO<Usuario> usuarioBo;
-		private GenericBO<Role> roleBo;
-		
-		private HttpServletRequest request;
-		
-		public void setServletRequest(HttpServletRequest request) {
-			this.request = request;			
-		}
+		private GenericBO<Role> roleBo;				
 		
 		public void setUsuarioBo(GenericBO<Usuario> usuarioBo) {
 			this.usuarioBo = usuarioBo;
@@ -43,9 +33,9 @@ public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>
 
 		public Usuario getModel() {
 			try {
-				Integer idusuario = Integer.parseInt(request.getParameter("idusuario"));
-			
-				usuario = usuarioBo.findById(idusuario);
+				if (getId() != null) {
+					usuario = usuarioBo.findById(getId());
+				}
 			} catch (Throwable e) {
 				// TODO traza error
 			}
@@ -61,7 +51,7 @@ public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>
 
 		/*prepare carga la lista de roles y carga el usuario de la request*/
 		public String prepare() throws Exception {
-			request.setAttribute("listaRoles", roleBo.findAll());																		
+			getServletRequest().setAttribute("listaRoles", roleBo.findAll());																		
 			
 			return ActionSupport.SUCCESS;
 		}
@@ -75,7 +65,7 @@ public class UsuarioAction extends ActionSupport implements ModelDriven<Usuario>
 		public String list() throws Exception{
 			Collection<Usuario> listaUsuarios = usuarioBo.findAll();
 			
-			request.setAttribute("listaUsuarios", listaUsuarios);
+			getServletRequest().setAttribute("listaUsuarios", listaUsuarios);
 			
 			return ActionSupport.SUCCESS;		
 		}
