@@ -21,9 +21,9 @@
 			
 			<td>
 			<s:url action="prepare_usuario" var="urlTag">
-				<s:param name="idusuario" value="idusuario"/>
+				<s:param name="id" value="idusuario"/>
 			</s:url>
-				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para eliminar este usuario">
+				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para editar este usuario">
           			<span class="glyphicon glyphicon-edit"></span>
         		</a>
 			</td>
