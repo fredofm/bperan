@@ -31,6 +31,10 @@
                   	<li>
 		                   <s:url action="list_obras" var="urlTag"/>
 		                  <a href="<s:property value="#urlTag"/>" >Listado Obras</a>
+              		</li>
+              		<li>
+		                   <s:url action="list_presupuesto" var="urlTag"/>
+		                  <a href="<s:property value="#urlTag"/>" >Listado Presupuestos</a>
               		</li>  
               	</ul>
               </li>  
@@ -45,7 +49,10 @@
                 </ul>
               </li>                         
             </ul>
-            <ul class="nav navbar-nav navbar-right">              
+            <ul class="nav navbar-nav navbar-right">    
+            	<li><img src="<s:url value="/images/logo_mini.jpg"/>" class="img-rounded" alt="Logo Bahia de Peran" /> </li>
+            </ul> 
+            <ul class="nav navbar-nav navbar-right">            
               <li><a href="#">Entrar</a></li>
             </ul>
           </div><!--/.nav-collapse -->

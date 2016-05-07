@@ -14,7 +14,7 @@ public class ObrasDAOImpl extends HibernateDaoSupport implements GenericDAO<Obra
 
 	public void add(Obras obra) {
 		/*Utiliza SessionFactory de Hibernate para crear la sesión y, finalmente, 
-		se utiliza el método .save () para añadir el objeto obra en base de datos */
+		se utiliza el método saveOrUpdate () para añadir/modificar el objeto obra en base de datos */
 		getHibernateTemplate().saveOrUpdate(obra);		
 	}
 

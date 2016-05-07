@@ -54,7 +54,7 @@ public class EmpleadoAction extends BperanAction implements ModelDriven<Empleado
 			return ActionSupport.SUCCESS;
 		}
 
-		/*prepare carga la lista de obras de la request*/
+		/*prepare carga la lista de obras*/
 		public String prepare() throws Exception {
 			getServletRequest().setAttribute("listaObras", obrasBo.findAll());	
 																		

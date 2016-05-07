@@ -45,4 +45,12 @@
 		<put-attribute name="body" value="/pages/tiles/addempleado.jsp"/>
 	</definition>
 	
+	<definition name="bperan.list.presupuesto" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/listpresupuesto.jsp"/>
+	</definition>
+	
+	<definition name="bperan.add.presupuesto" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/addpresupuesto.jsp"/>
+	</definition>
+	
 </tiles-definitions>

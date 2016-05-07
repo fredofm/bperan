@@ -14,7 +14,7 @@ public class EmpleadoDAOImpl extends HibernateDaoSupport implements GenericDAO<E
 
 	public void add(Empleado empleado) {
 		/*Utiliza SessionFactory de Hibernate para crear la sesión y, finalmente, 
-		se utiliza el método .save () para añadir el objeto empleado en base de datos */
+		se utiliza el método .saveOrUpdate () para añadir/modificar el objeto empleado en base de datos */
 		getHibernateTemplate().saveOrUpdate(empleado);	
 	}
 

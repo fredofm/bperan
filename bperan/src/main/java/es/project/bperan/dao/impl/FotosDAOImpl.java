@@ -13,7 +13,7 @@ public class FotosDAOImpl extends HibernateDaoSupport implements GenericDAO<Foto
 
 	public void add(Fotos fotos) {
 		/*Utiliza SessionFactory de Hibernate para crear la sesión y, finalmente, 
-		se utiliza el método .save () para añadir el objeto Fotos en base de datos */
+		se utiliza el método saveOrUpdate () para añadir/modificar el objeto Fotos en base de datos */
 		getHibernateTemplate().saveOrUpdate(fotos);	
 	}
 

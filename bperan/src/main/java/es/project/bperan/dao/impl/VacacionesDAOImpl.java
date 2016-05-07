@@ -14,7 +14,7 @@ public class VacacionesDAOImpl extends HibernateDaoSupport implements GenericDAO
 
 	public void add(Vacaciones vacaciones) {
 		/*Utiliza SessionFactory de Hibernate para crear la sesión y, finalmente, 
-		se utiliza el método .save () para añadir el objeto vacaciones en base de datos */
+		se utiliza el método .saveOrUpdate () para añadir/modificar el objeto vacaciones en base de datos */
 		getHibernateTemplate().saveOrUpdate(vacaciones);	
 	}
 

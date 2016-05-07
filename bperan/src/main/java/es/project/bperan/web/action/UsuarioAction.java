@@ -49,7 +49,7 @@ public class UsuarioAction extends BperanAction implements ModelDriven<Usuario> 
 			return ActionSupport.SUCCESS;
 		}
 
-		/*prepare carga la lista de roles y carga el usuario de la request*/
+		/*prepare carga la lista de roles*/
 		public String prepare() throws Exception {
 			getServletRequest().setAttribute("listaRoles", roleBo.findAll());																		
 			

@@ -14,7 +14,7 @@ public class PresupuestoDAOImpl extends HibernateDaoSupport implements GenericDA
 
 	public void add(Presupuesto presupuesto) {
 		/*Utiliza SessionFactory de Hibernate para crear la sesión y, finalmente, 
-		se utiliza el método .save () para añadir el objeto Presupuesto en base de datos */
+		se utiliza el método .saveOrUpdate () para añadir/modificar el objeto Presupuesto en base de datos */
 		getHibernateTemplate().saveOrUpdate(presupuesto);	
 	}
 

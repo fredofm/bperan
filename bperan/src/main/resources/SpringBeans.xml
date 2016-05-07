@@ -14,5 +14,7 @@ http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
 	<import resource="spring/ObrasBean.xml"/>
 	<import resource="spring/ClientesBean.xml"/>
 	<import resource="spring/EmpleadosBean.xml"/>
+	<import resource="spring/PresupuestosBean.xml"/>
+	
 	
 </beans>

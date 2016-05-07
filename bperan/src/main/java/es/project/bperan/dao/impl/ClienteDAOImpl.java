@@ -14,7 +14,7 @@ public class ClienteDAOImpl extends HibernateDaoSupport implements GenericDAO<Cl
 
 	public void add(Cliente cliente) {
 		/*Utiliza SessionFactory de Hibernate para crear la sesión y, finalmente, 
-		se utiliza el método .save () para añadir el objeto cliente en base de datos */
+		se utiliza el método .saveOrUpdate () para añadir/modificar el objeto cliente en base de datos */
 		getHibernateTemplate().saveOrUpdate(cliente);		
 	}
 
