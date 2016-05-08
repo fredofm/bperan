@@ -15,7 +15,6 @@
 		<th>Código Postal</th>
 		<th>Email</th>
 		<th>Estado</th>
-		<th>Usuario</th>
 		<th></th>
 	</tr>
 </thead>
@@ -32,7 +31,6 @@
 			<td><s:property value="codigopostal" /></td>
 			<td><s:property value="emial" /></td>
 			<td><s:property value="estado" /></td>
-			<td><s:property value="usuario.nombre" /></td>
 			<td>
 			
 			<td>

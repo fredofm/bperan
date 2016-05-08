@@ -52,15 +52,16 @@
                         name="emial"
                         tooltip="Introduzca el email del cliente" placeholder="Email"/>
                         
-                    <s:textfield
-                        label="Estado"
-                        name="estado"
-                        tooltip="Introduzca el estado del cliente" placeholder="Estado"/>
+                    <s:select 
+                   		tooltip="Seleccione el estado" 
+                   		label="Estado"
+						list="#{'AA':'Activo', 'NA':'NoActivo'}" 
+						name="estado"  
+						headerKey="None"
+						headerValue="Seleccione el estado"
+						placeholder="Estado"
+						/> 
                         
-                     <s:textfield
-                        label="Usuario"
-                        name="usuario.idusuario"
-                        tooltip="Introduzca el usuario del cliente" placeholder="Usuario"/>
                         
 	<button type="submit" class="btn btn-primary">Guardar</button>
 </s:form>

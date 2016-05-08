@@ -22,8 +22,10 @@
 			<td><s:property value="ubicacion" /></td>
 			<td><s:property value="descripcion" /></td>
 			<td><s:property value="costeTotal" /></td>
-			<td><s:date name="fechaInicio" format="dd/MM/yyyy hh:mm:ss"/></td>
-			<td><s:date name="fechaFin" format="dd/MM/yyyy hh:mm:ss"/></td>
+			<td><s:date name="fechaInicio" format="dd/MM/yyyy hh:mm:ss"/>
+			</td>
+			<td><s:date name="fechaFin" format="dd/MM/yyyy hh:mm:ss"/>
+			</td>
 			<td><s:property value="estado" /></td>
 			
 			<td>

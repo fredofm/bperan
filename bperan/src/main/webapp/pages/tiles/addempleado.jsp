@@ -25,7 +25,8 @@
                 <s:textfield
                         label="Fecha Nacimiento"
                         name="fechanacimiento"
-                        tooltip="Introduzca la fecha de nacimiento del empleado con formato dd/mm/aaaa" placeholder="Fecha Nacimiento con formato dd/mm/aaaa"/>
+                        tooltip="Introduzca la fecha de nacimiento del empleado con formato dd/mm/aaaa" placeholder="Pulse para seleccionar la fecha de nacimineto dd/mm/aaaa"
+                        cssClass="date-picker" />
                         
                 <s:textfield
                         label="Teléfono"
@@ -62,20 +63,31 @@
                         name="numseguridadsocial"
                         tooltip="Introduzca el numseguridadsocial del empleado" placeholder="Nª Seguridad Social"/>
                         
-                  <s:textfield
-                        label="Tipo Contrato"
-                        name="tipocontrato"
-                        tooltip="Introduzca el tipo de contrato del empleado" placeholder="Tipo Contrato"/>
+                  <s:select 
+                   		tooltip="Seleccione el tipo de contrato" 
+                   		label="Tipo de Contrado"
+						list="#{'Fin de Obra':'Fin de Obra', 'Temporal':'Temporal', 'Indefinido':'Indefinido', 'Fijo Discontínuo':'Fijo Discontínuo'}" 
+						name="tipocontrato"  
+						headerKey="None"
+						headerValue="Seleccione tipo de contrado"
+						placeholder="Tipo de Contrado"
+						/> 
                         
                   <s:textfield
                         label="Fecha Alta"
                         name="fechaalta"
-                        tooltip="Introduzca la fecha de alta del empleado con formato dd/mm/aaaa" placeholder="Fecha Alta con formato dd/mm/aaaa"/>      
+                        tooltip="Introduzca la fecha de alta del empleado con formato dd/mm/aaaa" placeholder="Pulse para seleccionar la fecha de alta dd/mm/aaaa"
+                        cssClass="date-picker" />      
                         
-                  <s:textfield
-                        label="Estado"
-                        name="estado"
-                        tooltip="Introduzca el estado del empleado" placeholder="Estado"/>  
+                  <s:select 
+                   		tooltip="Seleccione el estado" 
+                   		label="Estado"
+						list="#{'AA':'Activo', 'NA':'NoActivo'}" 
+						name="estado"  
+						headerKey="None"
+						headerValue="Seleccione el estado"
+						placeholder="Estado"
+						/> 
                         
                   <s:textfield
                         label="Categoría"
@@ -91,9 +103,19 @@
                         name="obras.idobra"
                         emptyOption="false"
                         headerKey="None"
-                        headerValue="None"
+                        headerValue="Seleccione la obra"
                         placeholder="Obra"/>
                         
                         
 	<button type="submit" class="btn btn-primary">Guardar</button>
 </s:form>
+
+<script type="text/javascript">
+	$(".date-picker").datepicker();
+	
+	$(".date-picker").on("change", function () {
+	    var id = $(this).attr("id");
+	    var val = $("label[for='" + id + "']").text();
+	    $("#msg").text(val + " changed");
+	});
+</script>

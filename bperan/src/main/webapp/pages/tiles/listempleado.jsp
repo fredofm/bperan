@@ -26,7 +26,7 @@
 			<td><s:property value="telefono" /></td>
 			<td><s:property value="numseguridadsocial" /></td>
 			<td><s:property value="categoria" /></td>
-			<td><s:date name="fechaalta" format="dd/MM/yyyy hh:mm:ss"/></td>
+			<td><s:date name="fechaalta" format="dd/MM/yyyy"/></td>
 			<td><s:property value="estado" /></td>
 			<td><s:property value="obras.nombreobra" /></td>
 			<td>

@@ -17,7 +17,7 @@
                         name="cliente.idcliente"
                         emptyOption="false"
                         headerKey="None"
-                        headerValue="None"
+                        headerValue="Seleccione el cliente"
                         placeholder="Cliente"/>
                  <s:select
                         tooltip="Elija la obra"
@@ -28,7 +28,7 @@
                         name="obras.idobra"
                         emptyOption="false"
                         headerKey="None"
-                        headerValue="None"
+                        headerValue="Seleccione la obra"
                         placeholder="Obra"/>
                   
                    <s:textfield
@@ -39,17 +39,34 @@
                   <s:textfield
                         label="Fecha Inicio"
                         name="fechaInicio"
-                        tooltip="Introduzca la fecha de inicio de la obra con formato dd/mm/aaaa" placeholder="Fecha Inicio con formato dd/mm/aaaa"/>
+                        tooltip="Introduzca la fecha de inicio de la obra con formato dd/mm/aaaa" placeholder="Pulse para seleccionar la fecha de fin dd/mm/aaaa"
+                        cssClass="date-picker" />
                         
                   <s:textfield
                         label="Fecha Fin"
                         name="fechaFin"
-                        tooltip="Introduzca la fecha de fin de la obra con formato dd/mm/aaaa" placeholder="Fecha Fin con formato dd/mm/aaaa"/>
+                        tooltip="Introduzca la fecha de fin de la obra con formato dd/mm/aaaa" placeholder="Pulse para seleccionar la fecha de inicio dd/mm/aaaa"
+                        cssClass="date-picker" />
                         
-                   <s:textfield
-                        label="Estado"
-                        name="estado"
-                        tooltip="Introduzca el estado del presupuesto" placeholder="Estado"/>
+                  <s:select 
+                   		tooltip="Seleccione el estado" 
+                   		label="Estado"
+						list="#{'AA':'Activo', 'NA':'NoActivo'}" 
+						name="estado"  
+						headerKey="None"
+						headerValue="Seleccione el estado"
+						placeholder="Estado"
+						/> 
                  
 	<button type="submit" class="btn btn-primary">Guardar</button>
 </s:form>
+
+<script type="text/javascript">
+	$(".date-picker").datepicker();
+	
+	$(".date-picker").on("change", function () {
+	    var id = $(this).attr("id");
+	    var val = $("label[for='" + id + "']").text();
+	    $("#msg").text(val + " changed");
+	});
+</script>
