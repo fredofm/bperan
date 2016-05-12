@@ -1,9 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
- 
-<script type="text/javascript" src="DataTables/datatables.min.js"></script>
-
 <s:form action="buscar_obras" cssClass="well form-search" label="Formulario de búsqueda" theme="simple">
 	<div class="form-group">
         <div class="row">
