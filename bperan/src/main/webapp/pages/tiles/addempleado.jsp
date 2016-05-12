@@ -89,10 +89,15 @@
 						placeholder="Estado"
 						/> 
                         
-                  <s:textfield
-                        label="Categoría"
-                        name="categoria"
-                        tooltip="Introduzca la categoría del empleado" placeholder="Categoría"/> 
+                  <s:select 
+                   		tooltip="Seleccione categoría" 
+                   		label="Categoría"
+						list="#{'Peón':'Peón', 'Albañil':'Albañil', 'Capataz':'Capataz'}" 
+						name="categoria"  
+						headerKey="None"
+						headerValue="Seleccione categoría"
+						placeholder="Categoría"
+						/>  
                         
                 <s:select
                         tooltip="Elija la obra"
@@ -102,7 +107,7 @@
                         listValue="nombreobra"
                         name="obras.idobra"
                         emptyOption="false"
-                        headerKey="None"
+                        headerKey=""
                         headerValue="Seleccione la obra"
                         placeholder="Obra"/>
                         
