@@ -5,7 +5,7 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form action="add_presupuesto" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de presupuestos">
+<s:form action="add_presupuesto" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creaciÃ³n de presupuestos">
 				<s:hidden name="idpresupuesto" />
                
                  <s:select
@@ -34,8 +34,7 @@
                    <s:textfield
                         label="Coste Total"
                         name="costeTotal"
-                        tooltip="Introduzca el coste total del presupuesto" placeholder="Coste Total"/>
-                 
+                        tooltip="Introduzca el coste total del presupuesto" placeholder="Coste Total"/>                 
                   <s:textfield
                         label="Fecha Inicio"
                         name="fechaInicio"

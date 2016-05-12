@@ -7,10 +7,10 @@ VALUES (2,'cliente','cliente del sistema');
 
 -- Usuario
 INSERT INTO `bperan`.`usuario`(IDUSUARIO,NOMBRE,PASSWORD,FECHACREACION,IDROLE)
-VALUES(1,'usunuevo','prueba','2016-05-04',2);
+VALUES(1,'admin','$2a$10$wqlsF/ztcKNTF4gDI8gxzuK9AcDO6YqxxmREBvjDRB3jbpWv.gAnm','2016-05-04',1);
 
 INSERT INTO `bperan`.`usuario`(IDUSUARIO,NOMBRE,PASSWORD,FECHACREACION,IDROLE)
-VALUES(2,'usuprueba','prueba','2016-05-05',2);
+VALUES(2,'cliente','$2a$10$JcylBiWiMalFJ0.ATpSG6uRXbQVEJkiTx4fpgV/fuS7NwsVQYwPni','2016-05-05',2);
 
  -- Obras
 INSERT INTO `bperan`.`obras`(IDOBRA,NOMBREOBRA,UBICACION,DESCRIPCION,COSTE_TOTAL,FECHA_INICIO,FECHA_FIN,ESTADO)

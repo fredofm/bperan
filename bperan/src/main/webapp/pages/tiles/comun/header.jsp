@@ -1,4 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!-- Static navbar -->
       <nav class="navbar navbar-default">
@@ -38,7 +39,7 @@
               		</li>  
               	</ul>
               </li>  
-              
+              <sec:authorize access="hasRole('admin')"> 
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -47,13 +48,28 @@
                   		<a href="<s:property value="#urlTag"/>" >Usuarios</a>
                   	</li>                                    
                 </ul>
-              </li>                         
+              </li>    
+              </sec:authorize>                     
             </ul>
-            <ul class="nav navbar-nav navbar-right">    
+            <%-- <ul class="nav navbar-nav navbar-right">    
             	<li><img src="<s:url value="/images/logo_mini.jpg"/>" class="img-rounded" alt="Logo Bahia de Peran" /> </li>
-            </ul> 
-            <ul class="nav navbar-nav navbar-right">            
-              <li><a href="#">Entrar</a></li>
+            </ul> --%> 
+            <ul class="nav navbar-nav navbar-right">      
+            	<sec:authorize access="isAnonymous()">      
+              	<li>              		
+              		<s:url action="login" var="urlTag"/>
+                  	<a href="<s:property value="#urlTag"/>" ><span class="glyphicon glyphicon-user"></span> Entrar</a>
+                </li>
+                </sec:authorize>
+                <sec:authorize access="isFullyAuthenticated()">
+                <li class="dropdown">                
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> <sec:authentication property="principal.username" /> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  	<li>
+                  		<a href="j_spring_security_logout" >Salir</a>
+                  	</li>                                    
+                </ul>
+                </sec:authorize>				
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

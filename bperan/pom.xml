@@ -10,6 +10,11 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>3.2.3.RELEASE</spring.version>
+		<spring.security.version>3.2.3.RELEASE</spring.security.version>
+		<struts.version>2.3.24</struts.version>
+		<struts.bootstrap.version>2.0.4</struts.bootstrap.version>
+		<hibernate.version>3.2.7.ga</hibernate.version>
 	</properties>
 
 	<repositories>
@@ -25,22 +30,22 @@
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
-			<version>2.3.24</version>
+			<version>${struts.version}</version>
 		</dependency>
 
 		<!-- Struts 2 + Spring plugins -->
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-spring-plugin</artifactId>
-			<version>2.3.24</version>
+			<version>${struts.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework</groupId>
-					<artifactId>spring-beans</artifactId>					
+					<artifactId>spring-beans</artifactId>
 				</exclusion>
 				<exclusion>
 					<groupId>org.springframework</groupId>
-					<artifactId>spring-web</artifactId>					
+					<artifactId>spring-web</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
@@ -48,50 +53,66 @@
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-tiles-plugin</artifactId>
-			<version>2.3.24</version>
+			<version>${struts.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.jgeppert.struts2.bootstrap</groupId>
 			<artifactId>struts2-bootstrap-plugin</artifactId>
-			<version>2.0.4</version>
+			<version>${struts.bootstrap.version}</version>
 		</dependency>
 
 
 		<!-- Spring framework -->
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>3.2.3.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>3.2.3.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>3.2.3.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>3.2.3.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
-		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring</artifactId> 
-			<version>2.5.6</version> </dependency> <dependency> <groupId>org.springframework</groupId> 
-			<artifactId>spring-web</artifactId> <version>2.5.6</version> </dependency> -->
+
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
+		<!-- Spring Security JSP Taglib -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
 
 		<!-- Hibernate core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate</artifactId>
-			<version>3.2.7.ga</version>
+			<version>${hibernate.version}</version>
 		</dependency>
 
 		<!-- Hibernate core library dependency start -->
@@ -177,8 +198,8 @@
 						<username>mavenuser</username>
 						<password>password</password>
 					</configuration>
-				</plugin>
-			</plugins>
+				</plugin>				
+		</plugins>
 		</pluginManagement>
 	</build>
 </project>

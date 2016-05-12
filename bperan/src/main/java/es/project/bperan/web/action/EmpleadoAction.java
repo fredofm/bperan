@@ -6,8 +6,8 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 import es.project.bperan.bo.GenericBO;
-import es.project.bperan.pojo.Obras;
 import es.project.bperan.pojo.Empleado;
+import es.project.bperan.pojo.Obras;
 
 /**
  * @author Carol
@@ -62,7 +62,11 @@ public class EmpleadoAction extends BperanAction implements ModelDriven<Empleado
   		}
 			
 		
-		public String create() throws Exception{				
+		public String create() throws Exception{
+			if (empleado != null && (empleado.getObras() == null || empleado.getObras().getIdobra() == null )) {
+				empleado.setObras(null);
+			}
+			
 			empleadoBo.add(empleado);
 			
 			return ActionSupport.SUCCESS;

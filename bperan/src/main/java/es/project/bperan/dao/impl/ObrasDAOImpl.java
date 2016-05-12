@@ -2,13 +2,14 @@ package es.project.bperan.dao.impl;
 
 import java.util.Collection;
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Example;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
+import es.project.bperan.dao.utils.DAOUtils;
 import es.project.bperan.pojo.Obras;
-import es.project.bperan.pojo.Usuario;
 
 public class ObrasDAOImpl extends HibernateDaoSupport implements GenericDAO<Obras> {
 
@@ -32,9 +33,17 @@ public class ObrasDAOImpl extends HibernateDaoSupport implements GenericDAO<Obra
 		return (Obras) getHibernateTemplate().get(Obras.class, idobra);
 	}
 	
-	public Collection<Obras> findByPojo(Obras obra) {
-		Example obraCriteria = Example.create(obra);
-		Criteria criteria = getSession().createCriteria(Obras.class).add(obraCriteria);
+	public Collection<Obras> findByPojo(Obras obra) {										
+		
+		DAOUtils.nullifyStrings(obra);
+		DAOUtils.enableWildcards(obra);
+		
+		Example obraCriteria = Example.create(obra)
+				.excludeZeroes()           //exclude zero valued properties
+			    //.excludeProperty("color")  //exclude the property named "color"
+			    .ignoreCase()              //perform case insensitive string comparisons
+			    .enableLike();             //use like for string comparisons
+		Criteria criteria = getSession().createCriteria(Obras.class).add(obraCriteria);				
 		
 		return criteria.list();				
 	}
