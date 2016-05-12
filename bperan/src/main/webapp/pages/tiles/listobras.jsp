@@ -72,8 +72,3 @@
 	</s:iterator>
 </tbody>
 </table>
-
-<s:url action="prepare_obras" var="urlTag" />
-<a role="button" class="btn btn-primary" href="<s:property value="#urlTag"/>"> 
-	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva Obra
-</a>
