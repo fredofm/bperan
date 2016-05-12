@@ -61,6 +61,11 @@
 						headerValue="Seleccione el estado"
 						placeholder="Estado"
 						/> 
+						
+					 <s:textfield
+                        label="Usuario"
+                        name="usuario.idusuario"
+                        tooltip="Introduzca el usuario del cliente" placeholder="Usuario"/>
                         
                         
 	<button type="submit" class="btn btn-primary">Guardar</button>
