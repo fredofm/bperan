@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS bperan; 
 
-CREATE DATABASE bperan;
+CREATE DATABASE bperan CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 DROP TABLE IF EXISTS  `bperan`.`role`;
 
@@ -15,7 +15,7 @@ DROP TABLE IF EXISTS `bperan`.`usuario`;
 CREATE TABLE  `bperan`.`usuario` (
   `IDUSUARIO` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
    `NOMBRE` varchar(45) NOT NULL,
-   `PASSWORD` varchar(8) NOT NULL,
+   `PASSWORD` varchar(100) NOT NULL,
   `FECHACREACION` datetime NOT NULL,
   `IDROLE` int(11) NOT NULL,
    FOREIGN KEY (IDROLE) REFERENCES `bperan`.`role`(IDROLE) 
@@ -46,7 +46,7 @@ CREATE TABLE  `bperan`.`obras` (
   `NOMBREOBRA` varchar(45) NOT NULL,
   `UBICACION` varchar(45) NOT NULL,
   `DESCRIPCION` varchar(250),
-  `COSTE_TOTAL` double NOT NULL,
+  `COSTE_TOTAL` float NOT NULL,
   `FECHA_INICIO` datetime NOT NULL,
   `FECHA_FIN` datetime NOT NULL,
   `ESTADO` varchar(2) NOT NULL
@@ -102,7 +102,7 @@ CREATE TABLE  `bperan`.`presupuesto` (
   `IDPRESUPUESTO` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `IDOBRA` int(11)  NOT NULL,
   `IDCLIENTE` int(11) NOT NULL,
-  `COSTE_TOTAL` double NOT NULL,
+  `COSTE_TOTAL` float NOT NULL,
   `FECHA_INICIO` datetime NOT NULL,
   `FECHA_FIN` datetime NOT NULL,
   `ESTADO` varchar(2) NOT NULL,

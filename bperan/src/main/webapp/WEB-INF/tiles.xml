@@ -12,6 +12,10 @@
 	<definition name="bperan.welcome" extends="company-template">
 		<put-attribute name="body" value="/pages/tiles/welcome.jsp"/>
 	</definition>
+	
+	<definition name="bperan.login" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/login.jsp"/>
+	</definition>
 	  
 	<definition name="bperan.list.usuario" extends="company-template">
 		<put-attribute name="body" value="/pages/tiles/listusuario.jsp"/>

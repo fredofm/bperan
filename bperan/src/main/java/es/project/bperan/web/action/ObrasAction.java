@@ -2,6 +2,9 @@ package es.project.bperan.web.action;
 
 import java.util.Collection;
 
+import org.apache.commons.beanutils.BeanUtils;
+import org.springframework.beans.factory.annotation.BeanFactoryAnnotationUtils;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -56,6 +59,16 @@ public class ObrasAction extends BperanAction implements ModelDriven<Obras>  {
 				
 		public String list() throws Exception{
 			Collection<Obras> listaObras = obrasBo.findAll();
+			
+			getServletRequest().setAttribute("listaObras", listaObras);
+			
+			return ActionSupport.SUCCESS;		
+		}
+		
+		public String buscar() throws Exception{
+			Obras obrasAux = (Obras) BeanUtils.cloneBean(obras);
+			
+			Collection<Obras> listaObras = obrasBo.findByPojo(obrasAux);
 			
 			getServletRequest().setAttribute("listaObras", listaObras);
 			

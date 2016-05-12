@@ -1,6 +1,33 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<h1>Listado de Obras</h1>
+<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+ 
+<script type="text/javascript" src="DataTables/datatables.min.js"></script>
+
+<s:form action="buscar_obras" cssClass="well form-search" label="Formulario de búsqueda" theme="simple">
+	<div class="form-group">
+        <div class="row">
+            <div class="col-xs-4">
+            	<label for="buscar_obras_nombreobra" class="control-label">Obra</label>
+				<s:textfield name="nombreobra" placeholder="Nombre Obra" cssClass="form-control"/>
+			</div>
+			<div class="col-xs-4">
+				<label for="buscar_obras_ubicacion" class="control-label">Ubicación</label>
+				<s:textfield name="ubicacion" placeholder="Ubicación" cssClass="form-control"/>
+			</div>
+		</div>
+	</div>	
+	<s:submit cssClass="btn btn-primary btn-sm" value="Buscar"/>
+</s:form>
+
+<div class="btn-toolbar">
+  <div class="btn-group pull-right">
+    <s:url action="prepare_obras" var="urlTag" />
+	<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"> 
+		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+	</a>
+  </div>
+</div>
 
 <table class="table table-striped table-hover">
 <thead>
@@ -22,9 +49,9 @@
 			<td><s:property value="ubicacion" /></td>
 			<td><s:property value="descripcion" /></td>
 			<td><s:property value="costeTotal" /></td>
-			<td><s:date name="fechaInicio" format="dd/MM/yyyy hh:mm:ss"/>
+			<td><s:date name="fechaInicio" format="dd/MM/yyyy"/>
 			</td>
-			<td><s:date name="fechaFin" format="dd/MM/yyyy hh:mm:ss"/>
+			<td><s:date name="fechaFin" format="dd/MM/yyyy"/>
 			</td>
 			<td><s:property value="estado" /></td>
 			
@@ -49,8 +76,3 @@
 	</s:iterator>
 </tbody>
 </table>
-
-<s:url action="prepare_obras" var="urlTag" />
-<a role="button" class="btn btn-primary" href="<s:property value="#urlTag"/>"> 
-	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva Obra
-</a>

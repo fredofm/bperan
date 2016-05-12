@@ -102,7 +102,7 @@
                         listValue="nombreobra"
                         name="obras.idobra"
                         emptyOption="false"
-                        headerKey="None"
+                        headerKey=""
                         headerValue="Seleccione la obra"
                         placeholder="Obra"/>
                         

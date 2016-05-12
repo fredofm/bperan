@@ -3,6 +3,7 @@ package es.project.bperan.bo.impl;
 import java.util.Collection;
 import java.util.Date;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 
 import es.project.bperan.bo.GenericBO;
@@ -13,21 +14,25 @@ import es.project.bperan.pojo.Usuario;
 public class UsuariosBoImpl implements GenericBO<Usuario> {
 
 	private GenericDAO<Usuario> usuarioDAO;
-	
+
 	public UsuariosBoImpl() {
 		super();
 	}
-	
+
 	public void setUsuarioDAO(GenericDAO<Usuario> usuarioDAO) {
 		this.usuarioDAO = usuarioDAO;
 	}
 
 	@Override
-	public void add(Usuario usuario) {
+	public void add(Usuario usuario) {								
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		String hashedPassword = passwordEncoder.encode(usuario.getPassword());
+		
+		usuario.setPassword(hashedPassword);
+		
 		usuario.setFechacreacion(new Date());
-		
+
 		usuarioDAO.add(usuario);
-		
 	}
 
 	@Override
@@ -38,10 +43,10 @@ public class UsuariosBoImpl implements GenericBO<Usuario> {
 
 	@Override
 	public void delete(Usuario pojo) {
-		Usuario usuario = usuarioDAO.findById(pojo.getIdusuario()); 
-		
+		Usuario usuario = usuarioDAO.findById(pojo.getIdusuario());
+
 		usuarioDAO.delete(usuario);
-		
+
 	}
 
 	@Override
@@ -53,6 +58,4 @@ public class UsuariosBoImpl implements GenericBO<Usuario> {
 	public Collection<Usuario> findByPojo(Usuario usuario) {
 		return usuarioDAO.findByPojo(usuario);
 	}
-	
-	
 }
