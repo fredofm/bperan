@@ -57,4 +57,24 @@
 		<put-attribute name="body" value="/pages/tiles/addpresupuesto.jsp"/>
 	</definition>
 	
+	<definition name="bperan.list.vacaciones" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/listvacaciones.jsp"/>
+	</definition>
+	
+	<definition name="bperan.add.vacaciones" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/addvacaciones.jsp"/>
+	</definition>
+	
+	<definition name="bperan.list.bajalaboral" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/listbajalaboral.jsp"/>
+	</definition>
+	
+	<definition name="bperan.add.bajalaboral" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/addbajalaboral.jsp"/>
+	</definition>
+	
+	<definition name="bperan.upload.fotos" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/addfotos_obra.jsp"/>
+	</definition>
+	
 </tiles-definitions>
