@@ -35,7 +35,7 @@ CREATE TABLE   `bperan`.`cliente` (
   `CODIGOPOSTAL` int(5) NOT NULL,
   `EMIAL` varchar(100),
   `CIF_NIF` varchar(9) NOT NULL,
-  `ESTADO` varchar(2) NOT NULL,
+  `ESTADO` varchar(10) NOT NULL,
    FOREIGN KEY (IDUSUARIO) REFERENCES `bperan`.`usuario`(IDUSUARIO) 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -44,12 +44,13 @@ DROP TABLE IF EXISTS `bperan`.`obras`;
 CREATE TABLE  `bperan`.`obras` (
   `IDOBRA` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `NOMBREOBRA` varchar(45) NOT NULL,
-  `UBICACION` varchar(45) NOT NULL,
+  `DIRECCION` varchar(45) NOT NULL,
+  `LATITUD` float,
+  `LONGITUD` float,
   `DESCRIPCION` varchar(250),
-  `COSTE_TOTAL` float NOT NULL,
   `FECHA_INICIO` datetime NOT NULL,
   `FECHA_FIN` datetime NOT NULL,
-  `ESTADO` varchar(2) NOT NULL
+  `ESTADO` varchar(10) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `bperan`.`empleado`;
@@ -70,7 +71,7 @@ CREATE TABLE `bperan`.`empleado` (
   `NUMSEGURIDADSOCIAL` varchar(20) NOT NULL,
   `TIPOCONTRATO` varchar(45),
   `FECHAALTA` datetime NOT NULL,  
-  `ESTADO` varchar(2) NOT NULL,
+  `ESTADO` varchar(10) NOT NULL,
   `CATEGORIA` varchar(100),
   FOREIGN KEY (IDOBRA) REFERENCES `bperan`.`obras`(IDOBRA)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -102,10 +103,10 @@ CREATE TABLE  `bperan`.`presupuesto` (
   `IDPRESUPUESTO` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `IDOBRA` int(11)  NOT NULL,
   `IDCLIENTE` int(11) NOT NULL,
-  `COSTE_TOTAL` float NOT NULL,
+  `COSTE_TOTAL` FLOAT NOT NULL,
   `FECHA_INICIO` datetime NOT NULL,
   `FECHA_FIN` datetime NOT NULL,
-  `ESTADO` varchar(2) NOT NULL,
+  `ESTADO` varchar(10) NOT NULL,
   FOREIGN KEY (IDOBRA) REFERENCES `bperan`.`obras`(IDOBRA) ,
   FOREIGN KEY (IDCLIENTE) REFERENCES `bperan`.`cliente`(IDCLIENTE) 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -117,6 +118,7 @@ CREATE TABLE  `bperan`.`fotos` (
   `IDFOTO` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `IDOBRA` int(11)  NOT NULL,
   `IMAGEN` varchar(250) NOT NULL,
+  `BINARIO` mediumblob NOT NULL, 
   FOREIGN KEY (IDOBRA) REFERENCES `bperan`.`obras`(IDOBRA) 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
