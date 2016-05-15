@@ -1,7 +1,9 @@
 package es.project.bperan.web.action;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Collection;
 
 import es.project.bperan.bo.GenericBO;
@@ -9,26 +11,27 @@ import es.project.bperan.pojo.Fotos;
 import es.project.bperan.pojo.Obras;
 
 public class FotosAction extends BperanAction {
-	private File userImage;	
+	private File userImage;
 	private Integer idobra;
 	private GenericBO<Fotos> fotosBo;
+	private InputStream fileInputStream;
 	private String userImageContentType;
 	private String userImageFileName;
 	
-	public String getUserImageContentType() {
-		return userImageContentType;
+	public File getUserImage() {
+		return userImage;
 	}
 
-	public void setUserImageContentType(String userImageContentType) {
-		this.userImageContentType = userImageContentType;
+	public void setUserImage(File userImage) {
+		this.userImage = userImage;
 	}
 
-	public String getUserImageFileName() {
-		return userImageFileName;
+	public InputStream getFileInputStream() {
+		return fileInputStream;
 	}
 
-	public void setUserImageFileName(String userImageFileName) {
-		this.userImageFileName = userImageFileName;
+	public void setFileInputStream(InputStream is) {
+		this.fileInputStream = is;
 	}
 
 	public Integer getIdobra() {
@@ -85,6 +88,9 @@ public class FotosAction extends BperanAction {
 	}
 	
 	public String displayFoto() {
+		Fotos foto = fotosBo.findById(getId());
+		fileInputStream = new ByteArrayInputStream(foto.getBinario());
+		
 		return SUCCESS;
 	}
 	
@@ -92,12 +98,20 @@ public class FotosAction extends BperanAction {
 		return SUCCESS;
 	}
 
-	public File getUserImage() {
-		return userImage;
+	public String getUserImageContentType() {
+		return userImageContentType;
 	}
 
-	public void setUserImage(File userImage) {
-		this.userImage = userImage;
+	public void setUserImageContentType(String userImageContentType) {
+		this.userImageContentType = userImageContentType;
+	}
+
+	public String getUserImageFileName() {
+		return userImageFileName;
+	}
+
+	public void setUserImageFileName(String userImageFileName) {
+		this.userImageFileName = userImageFileName;
 	}
 
 }
