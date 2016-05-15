@@ -42,6 +42,15 @@
 		<action name="login">
 			<result type="tiles">bperan.login</result>
 		</action>
+		
+		<action name="displayFotos" class="fotosAction" method="displayAll">
+			<result name="*" type="tiles">bperan.upload.fotos</result>
+		</action>
+		
+		<action name="uploadFoto" class="fotosAction" method="upload">
+			<result name="success" type="chain">displayFotos</result>
+			<result name="input" type="chain">displayFotos</result>
+		</action>
 
 	</package>
 </struts>

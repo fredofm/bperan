@@ -16,7 +16,7 @@ public class FotosBoImpl implements GenericBO<Fotos> {
 		super();
 	}
 	
-	public void setUsuarioDAO(GenericDAO<Fotos> fotosDAO) {
+	public void setFotosDAO(GenericDAO<Fotos> fotosDAO) {
 		this.fotosDAO = fotosDAO;
 	}
 

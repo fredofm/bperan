@@ -36,6 +36,8 @@
 		<th>Fecha Fin</th>
 		<th>Estado</th>
 		<th></th>
+		<th></th>
+		<th></th>
 	</tr>
 </thead>
 <tbody>
@@ -50,6 +52,15 @@
 			<td><s:date name="fechaFin" format="dd/MM/yyyy"/>
 			</td>
 			<td><s:property value="estado" /></td>
+			
+			<td>
+				<s:url action="displayFotos" var="urlTag">
+					<s:param name="idobra" value="idobra"/>
+				</s:url>
+					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para editar las fotos de esta obra">
+	          			<span class="glyphicon glyphicon-camera"></span>
+	        		</a>
+			</td>
 			
 			<td>
 				<s:url action="prepare_obras" var="urlTag">
