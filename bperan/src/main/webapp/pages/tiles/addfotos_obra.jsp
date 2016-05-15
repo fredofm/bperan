@@ -2,7 +2,10 @@
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 
 <s:iterator status="foto" value="%{#request.listaFotos}">
-	<s:property value="idfoto" />, <s:property value="imagen" /><br/>
+	<s:url action="displayFoto" var="url">
+		<s:param name="id" value="idfoto"/>
+	</s:url>
+	<img src="<s:property value="#url"/>"/>
 </s:iterator>
 
 

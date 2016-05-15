@@ -47,6 +47,15 @@
 			<result name="*" type="tiles">bperan.upload.fotos</result>
 		</action>
 		
+		<action name="displayFoto" class="fotosAction" method="displayFoto">
+			<result name="success" type="stream">
+			  <param name="contentType">image/jpeg</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="image.jpeg"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
 		<action name="uploadFoto" class="fotosAction" method="upload">
 			<result name="success" type="chain">displayFotos</result>
 			<result name="input" type="chain">displayFotos</result>
