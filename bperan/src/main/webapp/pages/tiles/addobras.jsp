@@ -14,20 +14,25 @@
                         tooltip="Introduzca el nombre de la obra" placeholder="Nombre Obra"/>
                         
                 <s:textfield
-                        label="Ubicación"
-                        name="ubicacion"
-                        tooltip="Introduzca la ubicación de la obra" placeholder="Ubicación"/>
+                        label="Dirección"
+                        name="direccion"
+                        tooltip="Introduzca la dirección de la obra" placeholder="Dirección"/>
+                        
+                  <s:textfield
+                        label="Latitud"
+                        name="latitud"
+                        tooltip="Introduzca la latitud de la obra" placeholder="Latitud"/>
+                        
+                  <s:textfield
+                        label="Longitud"
+                        name="longitud"
+                        tooltip="Introduzca la Longitud de la obra" placeholder="Longitud"/>
                       
                  <s:textfield
                         label="Descripción"
                         name="descripcion"
                         tooltip="Introduzca una descripción de la obra" placeholder="Descripción"/>
-                       
-                  <s:textfield
-                        label="Coste Total"
-                        name="costeTotal"
-                        tooltip="Introduzca el coste total de la obra" placeholder="Coste Total"/>
-                       
+                                             
                   <s:textfield
                         label="Fecha Inicio"
                         name="fechaInicio"
@@ -43,7 +48,7 @@
                   <s:select 
                    		tooltip="Seleccione el estado" 
                    		label="Estado"
-						list="#{'AA':'Activo', 'NA':'NoActivo'}" 
+						list="#{'Activo':'Activo', 'NoActivo':'NoActivo'}" 
 						name="estado"  
 						headerKey="None"
 						headerValue="Seleccione el estado"

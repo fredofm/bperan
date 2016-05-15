@@ -2,11 +2,13 @@ package es.project.bperan.web.action;
 
 import java.util.Collection;
 
+import org.apache.commons.beanutils.BeanUtils;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 import es.project.bperan.bo.GenericBO;
+import es.project.bperan.pojo.Bajalaboral;
 import es.project.bperan.pojo.Cliente;
 import es.project.bperan.pojo.Usuario;
 
@@ -72,4 +74,16 @@ public class ClienteAction extends BperanAction implements ModelDriven<Cliente> 
 			
 			return ActionSupport.SUCCESS;		
 		}
+
+		public String buscar() throws Exception{
+			Cliente clienteAux = (Cliente) BeanUtils.cloneBean(cliente);
+			
+			Collection<Cliente> listaCliente = clienteBo.findByPojo(clienteAux);
+			
+			getServletRequest().setAttribute("listaCliente", listaCliente);
+			
+			return ActionSupport.SUCCESS;		
+		}
+
+		
 }

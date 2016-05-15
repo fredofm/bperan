@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 28-abr-2016 22:22:18 by Hibernate Tools 5.1.0.Alpha1 -->
+<!-- Generated 15-may-2016 13:11:59 by Hibernate Tools 5.1.0.Alpha1 -->
 <hibernate-mapping>
     <class name="es.project.bperan.pojo.Obras" table="obras" catalog="bperan" optimistic-lock="version">
         <id name="idobra" type="java.lang.Integer">
@@ -11,14 +11,17 @@
         <property name="nombreobra" type="string">
             <column name="NOMBREOBRA" length="45" not-null="true" />
         </property>
-        <property name="ubicacion" type="string">
-            <column name="UBICACION" length="45" not-null="true" />
+        <property name="direccion" type="string">
+            <column name="DIRECCION" length="45" not-null="true" />
+        </property>
+        <property name="latitud" type="java.lang.Float">
+            <column name="LATITUD" precision="12" scale="0" />
+        </property>
+        <property name="longitud" type="java.lang.Float">
+            <column name="LONGITUD" precision="12" scale="0" />
         </property>
         <property name="descripcion" type="string">
             <column name="DESCRIPCION" length="250" />
-        </property>
-        <property name="costeTotal" type="double">
-            <column name="COSTE_TOTAL" not-null="true" />
         </property>
         <property name="fechaInicio" type="timestamp">
             <column name="FECHA_INICIO" length="19" not-null="true" />
@@ -27,7 +30,7 @@
             <column name="FECHA_FIN" length="19" not-null="true" />
         </property>
         <property name="estado" type="string">
-            <column name="ESTADO" length="2" not-null="true" />
+            <column name="ESTADO" length="10" not-null="true" />
         </property>
         <set name="empleados" table="empleado" inverse="true" lazy="true" fetch="select">
             <key>

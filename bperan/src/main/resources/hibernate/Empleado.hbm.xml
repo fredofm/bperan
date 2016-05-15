@@ -51,7 +51,7 @@
             <column name="FECHAALTA" length="19" not-null="true" />
         </property>
         <property name="estado" type="string">
-            <column name="ESTADO" length="2" not-null="true" />
+            <column name="ESTADO" length="10" not-null="true" />
         </property>
         <property name="categoria" type="string">
             <column name="CATEGORIA" length="100" />

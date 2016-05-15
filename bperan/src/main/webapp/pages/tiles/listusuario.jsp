@@ -1,6 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<h1>Lista de usuarios del sistema</h1>
+<h2>Lista de usuarios del sistema</h2>
 
 <table class="table table-striped table-hover">
 <thead>

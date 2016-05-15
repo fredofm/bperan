@@ -72,7 +72,7 @@
 	<definition name="bperan.add.bajalaboral" extends="company-template">
 		<put-attribute name="body" value="/pages/tiles/addbajalaboral.jsp"/>
 	</definition>
-	
+
 	<definition name="bperan.upload.fotos" extends="company-template">
 		<put-attribute name="body" value="/pages/tiles/addfotos_obra.jsp"/>
 	</definition>

@@ -82,7 +82,7 @@
                   <s:select 
                    		tooltip="Seleccione el estado" 
                    		label="Estado"
-						list="#{'AA':'Activo', 'NA':'NoActivo'}" 
+						list="#{'Activo':'Activo', 'NoActivo':'NoActivo'}" 
 						name="estado"  
 						headerKey="None"
 						headerValue="Seleccione el estado"

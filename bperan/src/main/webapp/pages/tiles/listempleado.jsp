@@ -1,6 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<h1>Listado de Empleados</h1>
+<h2>Listado de Empleados</h2>
 
 <table class="table table-striped table-hover">
 <thead>

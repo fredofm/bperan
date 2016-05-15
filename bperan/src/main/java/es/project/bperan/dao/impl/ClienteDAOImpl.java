@@ -7,8 +7,10 @@ import org.hibernate.criterion.Example;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
+import es.project.bperan.dao.utils.DAOUtils;
 import es.project.bperan.pojo.Cliente;
 import es.project.bperan.pojo.Empleado;
+import es.project.bperan.pojo.Obras;
 
 public class ClienteDAOImpl extends HibernateDaoSupport implements GenericDAO<Cliente> {
 
@@ -31,13 +33,20 @@ public class ClienteDAOImpl extends HibernateDaoSupport implements GenericDAO<Cl
 	public Cliente findById(int idcliente) {
 		return (Cliente) getHibernateTemplate().get(Cliente.class, idcliente);
 	}
-
-	@Override
-	public Collection<Cliente> findByPojo(Cliente cliente) {
-		Example clienteCriteria = Example.create(cliente);
-		Criteria criteria = getSession().createCriteria(Cliente.class).add(clienteCriteria);
 		
-		return criteria.list();	
+	public Collection<Cliente> findByPojo(Cliente cliente) {										
+		
+		DAOUtils.nullifyStrings(cliente);
+		DAOUtils.enableWildcards(cliente);
+		
+		Example clienteCriteria = Example.create(cliente)
+				.excludeZeroes()           //exclude zero valued properties
+			    //.excludeProperty("color")  //exclude the property named "color"
+			    .ignoreCase()              //perform case insensitive string comparisons
+			    .enableLike();             //use like for string comparisons
+		Criteria criteria = getSession().createCriteria(Cliente.class).add(clienteCriteria);				
+		
+		return criteria.list();				
 	}
 	
 }

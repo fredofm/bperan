@@ -1,5 +1,5 @@
 package es.project.bperan.pojo;
-// Generated 28-abr-2016 22:22:17 by Hibernate Tools 5.1.0.Alpha1
+// Generated 15-may-2016 13:11:59 by Hibernate Tools 5.1.0.Alpha1
 
 import java.util.Date;
 
@@ -11,7 +11,7 @@ public class Presupuesto implements java.io.Serializable {
 	private Integer idpresupuesto;
 	private Cliente cliente;
 	private Obras obras;
-	private double costeTotal;
+	private Float costeTotal;
 	private Date fechaInicio;
 	private Date fechaFin;
 	private String estado;
@@ -19,7 +19,7 @@ public class Presupuesto implements java.io.Serializable {
 	public Presupuesto() {
 	}
 
-	public Presupuesto(Cliente cliente, Obras obras, double costeTotal, Date fechaInicio, Date fechaFin, String estado) {
+	public Presupuesto(Cliente cliente, Obras obras, Float costeTotal, Date fechaInicio, Date fechaFin, String estado) {
 		this.cliente = cliente;
 		this.obras = obras;
 		this.costeTotal = costeTotal;
@@ -52,11 +52,11 @@ public class Presupuesto implements java.io.Serializable {
 		this.obras = obras;
 	}
 
-	public double getCosteTotal() {
+	public Float getCosteTotal() {
 		return this.costeTotal;
 	}
 
-	public void setCosteTotal(double costeTotal) {
+	public void setCosteTotal(Float costeTotal) {
 		this.costeTotal = costeTotal;
 	}
 

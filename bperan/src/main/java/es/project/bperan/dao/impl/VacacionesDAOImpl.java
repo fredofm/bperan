@@ -2,13 +2,15 @@ package es.project.bperan.dao.impl;
 
 import java.util.Collection;
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Example;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
+import es.project.bperan.dao.utils.DAOUtils;
 import es.project.bperan.pojo.Vacaciones;
-import es.project.bperan.pojo.Empleado;
+
 
 public class VacacionesDAOImpl extends HibernateDaoSupport implements GenericDAO<Vacaciones> {
 
@@ -30,14 +32,22 @@ public class VacacionesDAOImpl extends HibernateDaoSupport implements GenericDAO
 	
 	public Vacaciones findById(int idvacaciones) {
 		return (Vacaciones) getHibernateTemplate().get(Vacaciones.class, idvacaciones);
-	}
-
-	@Override
-	public Collection<Vacaciones> findByPojo(Vacaciones vacaciones) {
-		Example vacacionesCriteria = Example.create(vacaciones);
-		Criteria criteria = getSession().createCriteria(Vacaciones.class).add(vacacionesCriteria);
 		
-		return criteria.list();		
+	}
+	
+	public Collection<Vacaciones> findByPojo(Vacaciones vacaciones) {										
+		
+		DAOUtils.nullifyStrings(vacaciones);
+		DAOUtils.enableWildcards(vacaciones);
+		
+		Example vacacionesCriteria = Example.create(vacaciones)
+				.excludeZeroes()           //exclude zero valued properties
+			    //.excludeProperty("color")  //exclude the property named "color"
+			    .ignoreCase()              //perform case insensitive string comparisons
+			    .enableLike();             //use like for string comparisons
+		Criteria criteria = getSession().createCriteria(Vacaciones.class).add(vacacionesCriteria);				
+		
+		return criteria.list();				
 	}
 	
 }

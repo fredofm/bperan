@@ -7,7 +7,9 @@ import org.hibernate.criterion.Example;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
+import es.project.bperan.dao.utils.DAOUtils;
 import es.project.bperan.pojo.Bajalaboral;
+import es.project.bperan.pojo.Obras;
 
 public class BajalaboralDAOImpl extends HibernateDaoSupport implements GenericDAO<Bajalaboral> {
 
@@ -31,12 +33,19 @@ public class BajalaboralDAOImpl extends HibernateDaoSupport implements GenericDA
 		return (Bajalaboral) getHibernateTemplate().get(Bajalaboral.class, idbajalaboral);
 	}
 
-	@Override
-	public Collection<Bajalaboral> findByPojo(Bajalaboral bajalaboral) {
-		Example bajalaboralCriteria = Example.create(bajalaboral);
-		Criteria criteria = getSession().createCriteria(Bajalaboral.class).add(bajalaboralCriteria);
+public Collection<Bajalaboral> findByPojo(Bajalaboral bajalaboral) {										
 		
-		return criteria.list();		
+		DAOUtils.nullifyStrings(bajalaboral);
+		DAOUtils.enableWildcards(bajalaboral);
+		
+		Example bajalaboralCriteria = Example.create(bajalaboral)
+				.excludeZeroes()           //exclude zero valued properties
+			    //.excludeProperty("color")  //exclude the property named "color"
+			    .ignoreCase()              //perform case insensitive string comparisons
+			    .enableLike();             //use like for string comparisons
+		Criteria criteria = getSession().createCriteria(Bajalaboral.class).add(bajalaboralCriteria);				
+		
+		return criteria.list();				
 	}
 	
 }

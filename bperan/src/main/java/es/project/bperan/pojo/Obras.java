@@ -1,5 +1,5 @@
 package es.project.bperan.pojo;
-// Generated 28-abr-2016 22:22:17 by Hibernate Tools 5.1.0.Alpha1
+// Generated 15-may-2016 13:11:59 by Hibernate Tools 5.1.0.Alpha1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -12,9 +12,10 @@ public class Obras implements java.io.Serializable {
 
 	private Integer idobra;
 	private String nombreobra;
-	private String ubicacion;
+	private String direccion;
+	private Float latitud;
+	private Float longitud;
 	private String descripcion;
-	private Double costeTotal;
 	private Date fechaInicio;
 	private Date fechaFin;
 	private String estado;
@@ -25,21 +26,21 @@ public class Obras implements java.io.Serializable {
 	public Obras() {
 	}
 
-	public Obras(String nombreobra, String ubicacion, Double costeTotal, Date fechaInicio, Date fechaFin, String estado) {
+	public Obras(String nombreobra, String direccion, Date fechaInicio, Date fechaFin, String estado) {
 		this.nombreobra = nombreobra;
-		this.ubicacion = ubicacion;
-		this.costeTotal = costeTotal;
+		this.direccion = direccion;
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
 		this.estado = estado;
 	}
 
-	public Obras(String nombreobra, String ubicacion, String descripcion, Double costeTotal, Date fechaInicio, Date fechaFin, String estado,
-			Set empleados, Set presupuestos, Set fotoses) {
+	public Obras(String nombreobra, String direccion, Float latitud, Float longitud, String descripcion,
+			Date fechaInicio, Date fechaFin, String estado, Set empleados, Set presupuestos, Set fotoses) {
 		this.nombreobra = nombreobra;
-		this.ubicacion = ubicacion;
+		this.direccion = direccion;
+		this.latitud = latitud;
+		this.longitud = longitud;
 		this.descripcion = descripcion;
-		this.costeTotal = costeTotal;
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
 		this.estado = estado;
@@ -57,19 +58,35 @@ public class Obras implements java.io.Serializable {
 	}
 
 	public String getNombreobra() {
-		return nombreobra;
+		return this.nombreobra;
 	}
 
 	public void setNombreobra(String nombreobra) {
 		this.nombreobra = nombreobra;
 	}
 
-	public String getUbicacion() {
-		return this.ubicacion;
+	public String getDireccion() {
+		return this.direccion;
 	}
 
-	public void setUbicacion(String ubicacion) {
-		this.ubicacion = ubicacion;
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public Float getLatitud() {
+		return this.latitud;
+	}
+
+	public void setLatitud(Float latitud) {
+		this.latitud = latitud;
+	}
+
+	public Float getLongitud() {
+		return this.longitud;
+	}
+
+	public void setLongitud(Float longitud) {
+		this.longitud = longitud;
 	}
 
 	public String getDescripcion() {
@@ -78,14 +95,6 @@ public class Obras implements java.io.Serializable {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
-
-	public Double getCosteTotal() {
-		return this.costeTotal;
-	}
-
-	public void setCosteTotal(Double costeTotal) {
-		this.costeTotal = costeTotal;
 	}
 
 	public Date getFechaInicio() {

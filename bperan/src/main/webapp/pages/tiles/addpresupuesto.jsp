@@ -5,7 +5,7 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form action="add_presupuesto" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creaciÃ³n de presupuestos">
+<s:form action="add_presupuesto" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de presupuestos">
 				<s:hidden name="idpresupuesto" />
                
                  <s:select
@@ -34,23 +34,24 @@
                    <s:textfield
                         label="Coste Total"
                         name="costeTotal"
-                        tooltip="Introduzca el coste total del presupuesto" placeholder="Coste Total"/>                 
+                        tooltip="Introduzca el coste total del presupuesto" placeholder="Coste Total"/>   
+                                      
                   <s:textfield
                         label="Fecha Inicio"
                         name="fechaInicio"
-                        tooltip="Introduzca la fecha de inicio de la obra con formato dd/mm/aaaa" placeholder="Pulse para seleccionar la fecha de fin dd/mm/aaaa"
+                        tooltip="Introduzca la fecha de inicio de la obra con formato dd/mm/aaaa" placeholder="Pulse para seleccionar la fecha de inicio dd/mm/aaaa"
                         cssClass="date-picker" />
                         
                   <s:textfield
                         label="Fecha Fin"
                         name="fechaFin"
-                        tooltip="Introduzca la fecha de fin de la obra con formato dd/mm/aaaa" placeholder="Pulse para seleccionar la fecha de inicio dd/mm/aaaa"
+                        tooltip="Introduzca la fecha de fin de la obra con formato dd/mm/aaaa" placeholder="Pulse para seleccionar la fecha de fin dd/mm/aaaa"
                         cssClass="date-picker" />
                         
                   <s:select 
                    		tooltip="Seleccione el estado" 
                    		label="Estado"
-						list="#{'AA':'Activo', 'NA':'NoActivo'}" 
+						list="#{'Activo':'Activo', 'NoActivo':'NoActivo'}" 
 						name="estado"  
 						headerKey="None"
 						headerValue="Seleccione el estado"

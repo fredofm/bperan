@@ -55,17 +55,25 @@
                     <s:select 
                    		tooltip="Seleccione el estado" 
                    		label="Estado"
-						list="#{'AA':'Activo', 'NA':'NoActivo'}" 
+						list="#{'Activo':'Activo', 'NoActivo':'NoActivo'}" 
 						name="estado"  
 						headerKey="None"
 						headerValue="Seleccione el estado"
 						placeholder="Estado"
 						/> 
-						
-					 <s:textfield
+					
+					 <s:select
+                        tooltip="Elija el tipo de usuario del cliente"
                         label="Usuario"
+                        list="%{#request.listaUsuarios}"
+                        listKey="idusuario"
+                        listValue="nombre"
                         name="usuario.idusuario"
-                        tooltip="Introduzca el usuario del cliente" placeholder="Usuario"/>
+                        emptyOption="false"
+                        headerKey="None"
+                        headerValue="Seleccione el usuario"
+                        placeholder="Usuario"/>
+					
                         
                         
 	<button type="submit" class="btn btn-primary">Guardar</button>

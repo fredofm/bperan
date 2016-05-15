@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 28-abr-2016 22:22:18 by Hibernate Tools 5.1.0.Alpha1 -->
+<!-- Generated 15-may-2016 13:11:59 by Hibernate Tools 5.1.0.Alpha1 -->
 <hibernate-mapping>
     <class name="es.project.bperan.pojo.Presupuesto" table="presupuesto" catalog="bperan" optimistic-lock="version">
         <id name="idpresupuesto" type="java.lang.Integer">
@@ -14,8 +14,8 @@
         <many-to-one name="obras" class="es.project.bperan.pojo.Obras" fetch="select">
             <column name="IDOBRA" not-null="true" />
         </many-to-one>
-        <property name="costeTotal" type="double">
-            <column name="COSTE_TOTAL" not-null="true" />
+        <property name="costeTotal" type="java.lang.Float">
+            <column name="COSTE_TOTAL" precision="12" scale="0" not-null="true" />
         </property>
         <property name="fechaInicio" type="timestamp">
             <column name="FECHA_INICIO" length="19" not-null="true" />
@@ -24,7 +24,7 @@
             <column name="FECHA_FIN" length="19" not-null="true" />
         </property>
         <property name="estado" type="string">
-            <column name="ESTADO" length="2" not-null="true" />
+            <column name="ESTADO" length="10" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>
