@@ -7,7 +7,7 @@ import org.hibernate.criterion.Example;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
-import es.project.bperan.pojo.Obras;
+import es.project.bperan.dao.utils.DAOUtils;
 import es.project.bperan.pojo.Presupuesto;
 
 public class PresupuestoDAOImpl extends HibernateDaoSupport implements GenericDAO<Presupuesto> {
@@ -32,12 +32,19 @@ public class PresupuestoDAOImpl extends HibernateDaoSupport implements GenericDA
 		return (Presupuesto) getHibernateTemplate().get(Presupuesto.class, idpresupuesto);
 	}
 
-	@Override
-	public Collection<Presupuesto> findByPojo(Presupuesto presupuesto) {
-		Example presupuestoCriteria = Example.create(presupuesto);
-		Criteria criteria = getSession().createCriteria(Presupuesto.class).add(presupuestoCriteria);
+	public Collection<Presupuesto> findByPojo(Presupuesto presupuesto) {										
 		
-		return criteria.list();		
+		DAOUtils.nullifyStrings(presupuesto);
+		DAOUtils.enableWildcards(presupuesto);
+		
+		Example presupuestoCriteria = Example.create(presupuesto)
+				.excludeZeroes()           //exclude zero valued properties
+			    //.excludeProperty("color")  //exclude the property named "color"
+			    .ignoreCase()              //perform case insensitive string comparisons
+			    .enableLike();             //use like for string comparisons
+		Criteria criteria = getSession().createCriteria(Presupuesto.class).add(presupuestoCriteria);				
+		
+		return criteria.list();				
 	}
 	
 }

@@ -28,5 +28,15 @@
                         headerKey="None"
                         headerValue="None"
                         placeholder="Rol"/>
-	<button type="submit" class="btn btn-primary">Guardar</button>
+                        
+	<button type="submit" class="btn btn-primary btn-sm">Guardar</button>
 </s:form>
+
+<div class="btn-toolbar">
+	  <div class="btn-group pull-left">
+	    <s:url action="list_usuario" var="urlTag" />
+		<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
+		   title="Haga clic aquí para volver al listado"> Volver
+		</a>
+	  </div>
+</div>

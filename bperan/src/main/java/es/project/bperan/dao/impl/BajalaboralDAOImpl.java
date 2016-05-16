@@ -33,7 +33,7 @@ public class BajalaboralDAOImpl extends HibernateDaoSupport implements GenericDA
 		return (Bajalaboral) getHibernateTemplate().get(Bajalaboral.class, idbajalaboral);
 	}
 
-public Collection<Bajalaboral> findByPojo(Bajalaboral bajalaboral) {										
+	public Collection<Bajalaboral> findByPojo(Bajalaboral bajalaboral) {										
 		
 		DAOUtils.nullifyStrings(bajalaboral);
 		DAOUtils.enableWildcards(bajalaboral);

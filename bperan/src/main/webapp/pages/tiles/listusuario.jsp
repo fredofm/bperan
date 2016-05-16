@@ -1,5 +1,14 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
+<div class="btn-toolbar">
+  <div class="btn-group pull-right">
+    <s:url action="prepare_usuario" var="urlTag" />
+	<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  title="Haga clic aquí para añadir un nuevo usuario"> 
+		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo Usuario
+	</a>
+  </div>
+</div>
+
 <h2>Lista de usuarios del sistema</h2>
 
 <table class="table table-striped table-hover">
@@ -41,7 +50,11 @@
 </tbody>
 </table>
 
-<s:url action="prepare_usuario" var="urlTag" />
-<a role="button" class="btn btn-primary" href="<s:property value="#urlTag"/>"> 
-	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo Usuario
-</a>
+<div class="btn-toolbar">
+	  <div class="btn-group pull-left">
+	    <s:url action="list_usuario" var="urlTag" />
+		<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
+		   title="Haga clic aquí para volver al listado"> Listado
+		</a>
+	  </div>
+</div>

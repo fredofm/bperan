@@ -2,6 +2,8 @@ package es.project.bperan.web.action;
 
 import java.util.Collection;
 
+import org.apache.commons.beanutils.BeanUtils;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -71,6 +73,16 @@ public class PresupuestoAction extends BperanAction implements ModelDriven<Presu
 				
 		public String list() throws Exception{
 			Collection<Presupuesto> listaPresupuestos = presupuestoBo.findAll();
+			
+			getServletRequest().setAttribute("listaPresupuestos", listaPresupuestos);
+			
+			return ActionSupport.SUCCESS;		
+		}
+		
+		public String buscar() throws Exception{
+			Presupuesto presupuestoAux = (Presupuesto) BeanUtils.cloneBean(presupuesto);
+			
+			Collection<Presupuesto> listaPresupuestos = presupuestoBo.findByPojo(presupuestoAux);
 			
 			getServletRequest().setAttribute("listaPresupuestos", listaPresupuestos);
 			

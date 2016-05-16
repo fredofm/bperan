@@ -85,3 +85,12 @@
 	</s:iterator>
 </tbody>
 </table>
+
+<div class="btn-toolbar">
+	  <div class="btn-group pull-left">
+	    <s:url action="list_cliente" var="urlTag" />
+		<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
+		   title="Haga clic aquí para volver al listado"> Listado
+		</a>
+	  </div>
+</div>

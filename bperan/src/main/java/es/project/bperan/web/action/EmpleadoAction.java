@@ -2,6 +2,8 @@ package es.project.bperan.web.action;
 
 import java.util.Collection;
 
+import org.apache.commons.beanutils.BeanUtils;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -74,6 +76,16 @@ public class EmpleadoAction extends BperanAction implements ModelDriven<Empleado
 				
 		public String list() throws Exception{
 			Collection<Empleado> listaEmpleados = empleadoBo.findAll();
+			
+			getServletRequest().setAttribute("listaEmpleados", listaEmpleados);
+			
+			return ActionSupport.SUCCESS;		
+		}
+		
+		public String buscar() throws Exception{
+			Empleado empleadoAux = (Empleado) BeanUtils.cloneBean(empleado);
+			
+			Collection<Empleado> listaEmpleados = empleadoBo.findByPojo(empleadoAux);
 			
 			getServletRequest().setAttribute("listaEmpleados", listaEmpleados);
 			

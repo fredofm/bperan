@@ -25,7 +25,7 @@
   <div class="btn-group pull-right">
     <s:url action="prepare_bajalaboral" var="urlTag" />
 	<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  title="Haga clic aquí para añadir una nueva baja laboral"> 
-		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Nueva Baja Laboral
+		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva Baja Laboral
 	</a>
   </div>
 </div>
@@ -72,4 +72,14 @@
 	</s:iterator>
 </tbody>
 </table>
+
+<div class="btn-toolbar">
+	  <div class="btn-group pull-left">
+	    <s:url action="list_bajalaboral" var="urlTag" />
+		<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
+		   title="Haga clic aquí para volver al listado"> Listado
+		</a>
+	  </div>
+</div>
+
 

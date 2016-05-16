@@ -1,5 +1,73 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
+<h2>Búsqueda de Empleado</h2>
+<s:form action="buscar_empleado" cssClass="well form-search" label="Formulario de búsqueda" theme="simple">
+	<div class="form-group">
+        <div class="row">
+            <div class="col-xs-4">
+            	<label for="buscar_empleado_nombre" class="control-label">Nombre</label>
+				<s:textfield name="nombre" placeholder="Nombre Empleado" cssClass="form-control"/>
+			</div>
+			<div class="col-xs-4">
+            	<label for="buscar_empleado_nif" class="control-label">NIF</label>
+				<s:textfield name="nif" placeholder="NIF" cssClass="form-control"/>
+			</div>
+		    <div class="col-xs-4">
+				<label for="buscar_empleado_estado" class="control-label">Estado</label>
+				<s:select 
+                   		tooltip="Seleccione el estado" 
+                   		label="Estado"
+						list="#{'Activo':'Activo', 'NoActivo':'NoActivo'}" 
+						name="estado"  
+						headerKey=""
+						headerValue="Seleccione el estado"
+						placeholder="Estado"
+						cssClass="form-control"/>
+			</div>
+			<div class="col-xs-4">
+				<label for="buscar_empleado_categoria" class="control-label">Categoría</label>
+				<s:select 
+                   		tooltip="Seleccione categoría" 
+                   		label="Categoría"
+						list="#{'Peón':'Peón', 'Albañil':'Albañil', 'Capataz':'Capataz'}" 
+						name="categoria"  
+						headerKey=""
+						headerValue="Seleccione categoría"
+						placeholder="Categoría"
+						cssClass="form-control"/>  
+			</div>
+			<%--
+			<div class="col-xs-4">
+				<label for="buscar_empleado_obras" class="control-label">Obra</label>
+				<s:select
+                        tooltip="Elija la obra"
+                        label="Obra"
+                        list="%{#request.listaObras}"
+                        listKey="idobra"
+                        listValue="nombreobra"
+                        name="obras.idobra"
+                        emptyOption="false"
+                        headerKey=""
+                        headerValue="Seleccione la obra"
+                        placeholder="Obra"
+						cssClass="form-control"/>
+            </div>
+             --%>
+              
+		</div>
+	</div>	
+	<s:submit cssClass="btn btn-primary btn-sm" value="Buscar"/>
+</s:form>
+
+<div class="btn-toolbar">
+  <div class="btn-group pull-right">
+    <s:url action="prepare_empleado" var="urlTag" />
+	<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  title="Haga clic aquí para añadir un nuevo empleado"> 
+		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo Empleado
+	</a>
+  </div>
+</div>
+
 <h2>Listado de Empleados</h2>
 
 <table class="table table-striped table-hover">
@@ -52,7 +120,11 @@
 </tbody>
 </table>
 
-<s:url action="prepare_empleado" var="urlTag" />
-<a role="button" class="btn btn-primary" href="<s:property value="#urlTag"/>"> 
-	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo Empleado
-</a>
+<div class="btn-toolbar">
+	  <div class="btn-group pull-left">
+	    <s:url action="list_empleado" var="urlTag" />
+		<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
+		   title="Haga clic aquí para volver al listado"> Listado
+		</a>
+	  </div>
+</div>

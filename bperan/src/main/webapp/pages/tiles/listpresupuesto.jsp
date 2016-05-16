@@ -1,5 +1,36 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
+<h2>Búsqueda de Presupuestos</h2>
+<s:form action="buscar_presupuesto" cssClass="well form-search" label="Formulario de búsqueda" theme="simple">
+	<div class="form-group">
+        <div class="row">
+            	 
+			<div class="col-xs-4">
+				<label for="buscar_presupuesto_estado" class="control-label">Estado</label>
+				<s:select 
+                   		tooltip="Seleccione el estado" 
+                   		label="Estado"
+						list="#{'Activo':'Activo', 'NoActivo':'NoActivo'}" 
+						name="estado"  
+						headerKey=""
+						headerValue="Seleccione el estado"
+						placeholder="Estado"
+						cssClass="form-control"/>
+			</div>
+		</div>
+	</div>	
+	<s:submit cssClass="btn btn-primary btn-sm" value="Buscar"/>
+</s:form>
+
+<div class="btn-toolbar">
+  <div class="btn-group pull-right">
+    <s:url action="prepare_presupuesto" var="urlTag" />
+	<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  title="Haga clic aquí para añadir un nuevo presupuesto"> 
+		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo Presupuesto
+	</a>
+  </div>
+</div>
+
 <h2>Listado de Presupuestos</h2>
 
 <table class="table table-striped table-hover">
@@ -46,7 +77,11 @@
 </tbody>
 </table>
 
-<s:url action="prepare_presupuesto" var="urlTag" />
-<a role="button" class="btn btn-primary" href="<s:property value="#urlTag"/>"> 
-	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo Presupuesto
-</a>
+<div class="btn-toolbar">
+	  <div class="btn-group pull-left">
+	    <s:url action="list_presupuesto" var="urlTag" />
+		<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
+		   title="Haga clic aquí para volver al listado"> Listado
+		</a>
+	  </div>
+</div>
