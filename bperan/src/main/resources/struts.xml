@@ -31,6 +31,10 @@
 			<result name="*" type="tiles">bperan.list.{1}</result>
 		</action>
 		
+		<action name="view_*" class="{1}Action" method="detalle">
+			<result name="*" type="tiles">bperan.view.{1}</result>
+		</action>
+				
 		<action name="delete_*" class="{1}Action" method="delete">
 			<result name="success" type="chain">list_{1}</result>
 		</action>

@@ -57,7 +57,14 @@
 <tbody>
 	<s:iterator status="obra" value="%{#request.listaObras}">
 		<tr>
-			<td><s:property value="nombreobra" /></td>
+			<td>
+				<s:url action="view_obras" var="urlTag">
+					<s:param name="id" value="idobra"/>
+				</s:url>
+				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver esta obra">
+				         <s:property value="nombreobra" />
+				</a>
+			</td>
 			<td><s:property value="direccion" /></td>
 			<td><s:property value="descripcion" /></td>
 			<td><s:date name="fechaInicio" format="dd/MM/yyyy"/>

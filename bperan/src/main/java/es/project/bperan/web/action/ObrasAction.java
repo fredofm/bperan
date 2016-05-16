@@ -9,6 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 import es.project.bperan.bo.GenericBO;
+import es.project.bperan.pojo.Fotos;
 import es.project.bperan.pojo.Obras;
 
 /**
@@ -73,5 +74,12 @@ public class ObrasAction extends BperanAction implements ModelDriven<Obras>  {
 			getServletRequest().setAttribute("listaObras", listaObras);
 			
 			return ActionSupport.SUCCESS;		
+		}
+		
+		public String detalle() throws Exception{
+			Collection<Obras> listaObras = obrasBo.findByPojo(obras);			
+			getServletRequest().setAttribute("listaObras", listaObras);
+			
+			return ActionSupport.SUCCESS;
 		}
 }
