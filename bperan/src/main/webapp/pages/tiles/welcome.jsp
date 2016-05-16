@@ -83,37 +83,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 				<li>Interiorismo y decoración</li>
 				<li>Control de calidad</li>
 			</ul>
-		</div>
-		<div class="col-md-4" class="nav navbar-nav navbar-right">
-			<h4>
-				<strong>Contacto</strong>
-			</h4>
-			<address>
-				CONSTRUCCIONES BAHIA DE PERÁN, S.L.U.<br> Barreres, nº7,
-				Oficina 2<br> 33438 - Carreño<br> <abbr title="Phone">Teléfono:</abbr>
-				619 25 74 18
-			</address>
-			<address>
-				<strong>Mail</strong><br> <a href="mailto:#">info@construccionesbahiadeperan.es</a>
-			</address>
-			<address>
-				<strong>Horario</strong><br> <abbr title="Phone">L-V</abbr>
-				8.30h - 20:00h
-			</address>
-			<img src="<s:url value="/images/logo_BPeran.jpg"/>"
-				class="img-rounded" alt="Logo Bahia de Peran" />
-			
-			<h4>
-				<strong>Localización</strong>
-			</h4>
-			<div id="googleMap" style="width:350px;height:350px;"></div>
-
-		</div>
-
-	</div>
-
-	<div class="row">
-		<div class="col-md-6">
 			<h3>
 				<strong>Equipo</strong>
 			</h3>
@@ -128,8 +97,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 					Nuestro método es la estandarización de todos los procesos, lo que
 					nos permite que no quede ni un solo detalle al azar.</small>
 			</p>
-		</div>
-		<div class="col-md-6">
+		
 			<h3>
 				<strong>Información de la empresa</strong>
 			</h3>
@@ -154,6 +122,30 @@ google.maps.event.addDomListener(window, 'load', initialize);
 					sector. CONSTRUCCIONES BAHIA DE PERÁN, S.L.U. participa cada año como
 					expositor en la Feria.</small>
 			</p>
+		</div>
+		<div class="col-md-4" class="nav navbar-nav navbar-right">
+			<h4>
+				<strong>Contacto</strong>
+			</h4>
+			<address>
+				CONSTRUCCIONES BAHIA DE PERÁN, S.L.U.<br> Barreres, nº7,
+				Oficina 2<br> 33438 - Carreño<br> <abbr title="Phone">Teléfono:</abbr>
+				619 25 74 18
+			</address>
+			<address>
+				<strong>Mail</strong><br> <a href="mailto:#">info@construccionesbahiadeperan.es</a>
+			</address>
+			<address>
+				<strong>Horario</strong><br> <abbr title="Phone">L-V</abbr>
+				8.30h - 20:00h
+			</address>
+			<img src="<s:url value="/images/logo_BPeran.jpg"/>"
+				class="img-rounded" alt="Logo Bahia de Peran" />
+			
+			<h4>
+				<strong>Localización</strong>
+			</h4>
+			<div id="googleMap" style="width:350px;height:350px;"></div>
 
 		</div>
 
