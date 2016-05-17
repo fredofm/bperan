@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Example;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
@@ -35,6 +36,11 @@ public class FotosDAOImpl extends HibernateDaoSupport implements GenericDAO<Foto
 	public Collection<Fotos> findByPojo(Fotos fotos) {
 		Example fotosCriteria = Example.create(fotos);
 		Criteria criteria = getSession().createCriteria(Fotos.class).add(fotosCriteria);
+		
+		if (fotos.getObras() != null && fotos.getObras().getIdobra() != null) {
+
+			criteria.createCriteria("obras").add(Restrictions.eq("idobra", fotos.getObras().getIdobra()));
+		}
 		
 		return criteria.list();		
 	}
