@@ -5,28 +5,6 @@
 <script src="http://maps.googleapis.com/maps/api/js">	
 </script>
 
-<script>
-//var myCenter=new google.maps.LatLng(43.5575848,-5.7461577);
-var myCenter=new google.maps.LatLng(document.getElementById(latitud).value,document.getElementById(longitud).value);
-
-function initialize() {
-  var mapProp = {
-    center:myCenter,
-    zoom:15,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
-
-var marker=new google.maps.Marker({
-  position:myCenter,
-  });
-
-marker.setMap(map);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-
-
 <s:actionerror theme="bootstrap" />
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
@@ -45,13 +23,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			<div>
 				<label>Dirección </label><s:property value="direccion" />
 			</div>
-			<div id="latitud">
+			<div>
 				<label>Latitud </label><s:property value="latitud" />
-				<input type="hidden" value="<s:property value='latitud' />" id="latitud" />
+				<input type="hidden" value="<s:property value="latitud" />" id="latitud" />
 			</div>
-			<div id="longitud">
+			<div>
 				<label>Longitud </label><s:property value="longitud" />
-				<input type="hidden" value="<s:property value='longitud' />" id="longitud" />
+				<input type="hidden" value="<s:property value="longitud" />" id="longitud" />
 			</div>
 			<div>
 				<label>Descripción </label><s:property value="descripcion" />
@@ -94,3 +72,23 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	</div>
 </div>
 
+<script>
+//var myCenter=new google.maps.LatLng(43.5575848,-5.7461577);
+var myCenter=new google.maps.LatLng(document.getElementById("latitud").value, document.getElementById("longitud").value);
+
+function initialize() {
+  var mapProp = {
+    center:myCenter,
+    zoom:15,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+var marker=new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
