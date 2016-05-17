@@ -4,7 +4,11 @@
 <s:form action="buscar_bajalaboral" cssClass="well form-search" label="Formulario de búsqueda" theme="simple">
 	<div class="form-group">
         <div class="row">
-            <div class="col-xs-4">
+           <div class="col-xs-4">
+            	<label for="buscar_bajalaboral_empleado.nombre" class="control-label">Nombre Empleado</label>
+				<s:textfield name="empleado.nombre" placeholder="Nombre Empleado" cssClass="form-control"/>
+			</div>        
+            <div class="col-xs-4">          
             	<label for="buscar_bajalaboral_tipo" class="control-label">Tipo</label>
 				<s:select 
                    		tooltip="Seleccione el tipo" 
@@ -46,7 +50,14 @@
 <tbody>
 	<s:iterator status="bajalaboral" value="%{#request.listaBajalaboral}">
 		<tr>
-			<td><s:property value="empleado.nombre" /></td>
+			<td>
+				<s:url action="view_bajalaboral" var="urlTag">
+					<s:param name="id" value="idbajalaboral"/>
+				</s:url>
+				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle de la baja laboral">
+				         <s:property value="empleado.nombre" />
+				</a>
+			</td>
 			<td><s:date name="fechaInicio" format="dd/MM/yyyy"/></td>
 			<td><s:date name="fechaFin" format="dd/MM/yyyy"/></td>
 			<td><s:property value="tipo" /></td>

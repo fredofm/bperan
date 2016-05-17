@@ -25,6 +25,10 @@
 		<put-attribute name="body" value="/pages/tiles/addusuario.jsp"/>
 	</definition>
 	
+	<definition name="bperan.view.usuario" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/viewusuario.jsp"/>
+	</definition>
+	
 	<definition name="bperan.list.obras" extends="company-template">
 		<put-attribute name="body" value="/pages/tiles/listobras.jsp"/>
 	</definition>
@@ -45,12 +49,20 @@
 		<put-attribute name="body" value="/pages/tiles/addcliente.jsp"/>
 	</definition>
 	
+	<definition name="bperan.view.cliente" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/viewcliente.jsp"/>
+	</definition>
+	
 	<definition name="bperan.list.empleado" extends="company-template">
 		<put-attribute name="body" value="/pages/tiles/listempleado.jsp"/>
 	</definition>
 	
 	<definition name="bperan.add.empleado" extends="company-template">
 		<put-attribute name="body" value="/pages/tiles/addempleado.jsp"/>
+	</definition>
+	
+	<definition name="bperan.view.empleado" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/viewempleado.jsp"/>
 	</definition>
 	
 	<definition name="bperan.list.presupuesto" extends="company-template">
@@ -61,6 +73,10 @@
 		<put-attribute name="body" value="/pages/tiles/addpresupuesto.jsp"/>
 	</definition>
 	
+	<definition name="bperan.view.presupuesto" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/viewpresupuesto.jsp"/>
+	</definition>
+	
 	<definition name="bperan.list.vacaciones" extends="company-template">
 		<put-attribute name="body" value="/pages/tiles/listvacaciones.jsp"/>
 	</definition>
@@ -69,12 +85,20 @@
 		<put-attribute name="body" value="/pages/tiles/addvacaciones.jsp"/>
 	</definition>
 	
+	<definition name="bperan.view.vacaciones" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/viewvacaciones.jsp"/>
+	</definition>
+	
 	<definition name="bperan.list.bajalaboral" extends="company-template">
 		<put-attribute name="body" value="/pages/tiles/listbajalaboral.jsp"/>
 	</definition>
 	
 	<definition name="bperan.add.bajalaboral" extends="company-template">
 		<put-attribute name="body" value="/pages/tiles/addbajalaboral.jsp"/>
+	</definition>
+	
+	<definition name="bperan.view.bajalaboral" extends="company-template">
+		<put-attribute name="body" value="/pages/tiles/viewbajalaboral.jsp"/>
 	</definition>
 
 	<definition name="bperan.upload.fotos" extends="company-template">

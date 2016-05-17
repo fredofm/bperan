@@ -85,5 +85,8 @@ public class ClienteAction extends BperanAction implements ModelDriven<Cliente> 
 			return ActionSupport.SUCCESS;		
 		}
 
-		
+		public String detalle() throws Exception{
+			
+			return ActionSupport.SUCCESS;
+		}
 }

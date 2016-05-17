@@ -6,7 +6,13 @@
 
 	<bean id="obrasAction" class="es.project.bperan.web.action.ObrasAction" scope="prototype">
 		<property name="obrasBo" ref="obrasBo" />
+		<property name="presupuestoBo" ref="presupuestoBo" />
+		<property name="clienteBo" ref="clienteBo" />
+		<property name="empleadoBo" ref="empleadoBo" />
 		<property name="obras" ref="obras"/>
+		<property name="presupuesto" ref="presupuesto"/>
+		<property name="cliente" ref="cliente"/>
+		<property name="empleado" ref="empleado"/>
 	</bean>
 
 	<bean id="obraDAO" class="es.project.bperan.dao.impl.ObrasDAOImpl">

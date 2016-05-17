@@ -1,5 +1,5 @@
 package es.project.bperan.pojo;
-// Generated 15-may-2016 13:11:59 by Hibernate Tools 5.1.0.Alpha1
+// Generated 17-may-2016 15:32:48 by Hibernate Tools 5.1.0.Alpha1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -13,8 +13,8 @@ public class Obras implements java.io.Serializable {
 	private Integer idobra;
 	private String nombreobra;
 	private String direccion;
-	private Float latitud;
-	private Float longitud;
+	private String latitud;
+	private String longitud;
 	private String descripcion;
 	private Date fechaInicio;
 	private Date fechaFin;
@@ -34,7 +34,7 @@ public class Obras implements java.io.Serializable {
 		this.estado = estado;
 	}
 
-	public Obras(String nombreobra, String direccion, Float latitud, Float longitud, String descripcion,
+	public Obras(String nombreobra, String direccion, String latitud, String longitud, String descripcion,
 			Date fechaInicio, Date fechaFin, String estado, Set empleados, Set presupuestos, Set fotoses) {
 		this.nombreobra = nombreobra;
 		this.direccion = direccion;
@@ -73,19 +73,19 @@ public class Obras implements java.io.Serializable {
 		this.direccion = direccion;
 	}
 
-	public Float getLatitud() {
+	public String getLatitud() {
 		return this.latitud;
 	}
 
-	public void setLatitud(Float latitud) {
+	public void setLatitud(String latitud) {
 		this.latitud = latitud;
 	}
 
-	public Float getLongitud() {
+	public String getLongitud() {
 		return this.longitud;
 	}
 
-	public void setLongitud(Float longitud) {
+	public void setLongitud(String longitud) {
 		this.longitud = longitud;
 	}
 

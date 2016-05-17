@@ -61,7 +61,7 @@
 				<s:url action="view_obras" var="urlTag">
 					<s:param name="id" value="idobra"/>
 				</s:url>
-				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver esta obra">
+				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle de esta obra">
 				         <s:property value="nombreobra" />
 				</a>
 			</td>

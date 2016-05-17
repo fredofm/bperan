@@ -81,4 +81,9 @@ public class VacacionesAction extends BperanAction implements ModelDriven<Vacaci
 			
 			return ActionSupport.SUCCESS;		
 		}
+		
+		public String detalle() throws Exception{
+			
+			return ActionSupport.SUCCESS;
+		}
 }

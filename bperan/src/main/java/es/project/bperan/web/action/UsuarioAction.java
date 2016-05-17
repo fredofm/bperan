@@ -2,10 +2,13 @@ package es.project.bperan.web.action;
 
 import java.util.Collection;
 
+import org.apache.commons.beanutils.BeanUtils;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 import es.project.bperan.bo.GenericBO;
+import es.project.bperan.pojo.Presupuesto;
 import es.project.bperan.pojo.Role;
 import es.project.bperan.pojo.Usuario;
 
@@ -68,5 +71,20 @@ public class UsuarioAction extends BperanAction implements ModelDriven<Usuario> 
 			getServletRequest().setAttribute("listaUsuarios", listaUsuarios);
 			
 			return ActionSupport.SUCCESS;		
+		}
+		
+		public String buscar() throws Exception{
+			Usuario usuarioAux = (Usuario) BeanUtils.cloneBean(usuario);
+			
+			Collection<Usuario> listaUsuarios = usuarioBo.findByPojo(usuarioAux);
+			
+			getServletRequest().setAttribute("listaUsuarios", listaUsuarios);
+			
+			return ActionSupport.SUCCESS;		
+		}
+		
+		public String detalle() throws Exception{
+			
+			return ActionSupport.SUCCESS;
 		}
 }

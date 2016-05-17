@@ -91,4 +91,9 @@ public class EmpleadoAction extends BperanAction implements ModelDriven<Empleado
 			
 			return ActionSupport.SUCCESS;		
 		}
+		
+		public String detalle() throws Exception{
+			
+			return ActionSupport.SUCCESS;
+		}
 }

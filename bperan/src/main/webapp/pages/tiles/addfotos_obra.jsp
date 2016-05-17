@@ -16,5 +16,14 @@
 <s:form action="uploadFoto" theme="bootstrap" cssClass="well form-horizontal" label="Formulario fotos" enctype="multipart/form-data" method="POST">
 	<s:hidden name="idobra"/>
 	<s:file name="userImage"/>
-	<s:submit class="btn btn-primary btn-md" value="Enviar"/>
+	<s:submit class="btn btn-primary btn-sm" value="Enviar"/>
 </s:form>
+
+<div class="btn-toolbar">
+	<div class="btn-group pull-left">
+		<s:url action="list_obras" var="urlTag" />
+		<a role="button" class="btn btn-primary btn-sm"
+			href="<s:property value="#urlTag"/>"
+			title="Haga clic aquí para volver al listado"> Volver </a>
+	</div>
+</div>

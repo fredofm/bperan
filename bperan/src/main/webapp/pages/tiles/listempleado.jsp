@@ -88,7 +88,14 @@
 <tbody>
 	<s:iterator status="empleado" value="%{#request.listaEmpleados}">
 		<tr>
-			<td><s:property value="nombre" /></td>
+			<td>
+				<s:url action="view_empleado" var="urlTag">
+						<s:param name="id" value="idempleado"/>
+				</s:url>
+					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle de este empleado">
+					         <s:property value="nombre" />
+					</a>
+			</td>
 			<td><s:property value="apellidos" /></td>
 			<td><s:property value="nif" /></td>
 			<td><s:property value="telefono" /></td>

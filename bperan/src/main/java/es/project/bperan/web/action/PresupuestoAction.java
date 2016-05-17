@@ -88,4 +88,9 @@ public class PresupuestoAction extends BperanAction implements ModelDriven<Presu
 			
 			return ActionSupport.SUCCESS;		
 		}
+		
+		public String detalle() throws Exception{
+					
+			return ActionSupport.SUCCESS;
+		}
 }

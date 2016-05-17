@@ -1,6 +1,18 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <h2>Búsqueda de Vacaciones</h2>
+<s:form action="buscar_vacaciones" cssClass="well form-search" label="Formulario de búsqueda" theme="simple">
+	<div class="form-group">
+        <div class="row">
+            <div class="col-xs-4">
+            	<label for="buscar_vacaciones_empleado.nombre" class="control-label">Nombre Empleado</label>
+				<s:textfield name="empleado.nombre" placeholder="Nombre Empleado" cssClass="form-control"/>
+			</div>
+		</div>
+	</div>	
+	<s:submit cssClass="btn btn-primary btn-sm" value="Buscar"/>
+</s:form>
+
 
 <div class="btn-toolbar">
   <div class="btn-group pull-right">
@@ -27,7 +39,14 @@
 <tbody>
 	<s:iterator status="vacaciones" value="%{#request.listaVacaciones}">
 		<tr>
-			<td><s:property value="empleado.nombre" /></td>
+			<td>
+				<s:url action="view_vacaciones" var="urlTag">
+					<s:param name="id" value="idvacaciones"/>
+				</s:url>
+				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle de las vacaciones">
+				         <s:property value="empleado.nombre" />
+				</a>
+			</td>
 			<td><s:property value="empleado.apellidos" /></td>
 			<td><s:property value="empleado.nif" /></td>
 			<td><s:date name="fechaInicio" format="dd/MM/yyyy"/>

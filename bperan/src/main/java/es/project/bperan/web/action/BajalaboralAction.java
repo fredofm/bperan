@@ -81,7 +81,14 @@ public class BajalaboralAction extends BperanAction implements ModelDriven<Bajal
 			
 			getServletRequest().setAttribute("listaBajalaboral", listaBajalaboral);
 			
+			getServletRequest().setAttribute("listaEmpleados", empleadoBo.findAll());	
+			
 			return ActionSupport.SUCCESS;		
+		}
+		
+		public String detalle() throws Exception{
+			
+			return ActionSupport.SUCCESS;
 		}
 
 }

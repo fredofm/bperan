@@ -44,9 +44,9 @@ DROP TABLE IF EXISTS `bperan`.`obras`;
 CREATE TABLE  `bperan`.`obras` (
   `IDOBRA` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `NOMBREOBRA` varchar(45) NOT NULL,
-  `DIRECCION` varchar(45) NOT NULL,
-  `LATITUD` float,
-  `LONGITUD` float,
+  `DIRECCION` varchar(100) NOT NULL,
+  `LATITUD` varchar(15),
+  `LONGITUD` varchar(15),
   `DESCRIPCION` varchar(250),
   `FECHA_INICIO` datetime NOT NULL,
   `FECHA_FIN` datetime NOT NULL,

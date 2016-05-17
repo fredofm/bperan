@@ -4,10 +4,12 @@ import java.util.Collection;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Example;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.dao.utils.DAOUtils;
+import es.project.bperan.pojo.Fotos;
 import es.project.bperan.pojo.Presupuesto;
 
 public class PresupuestoDAOImpl extends HibernateDaoSupport implements GenericDAO<Presupuesto> {
@@ -33,16 +35,12 @@ public class PresupuestoDAOImpl extends HibernateDaoSupport implements GenericDA
 	}
 
 	public Collection<Presupuesto> findByPojo(Presupuesto presupuesto) {										
-		
-		DAOUtils.nullifyStrings(presupuesto);
-		DAOUtils.enableWildcards(presupuesto);
-		
-		Example presupuestoCriteria = Example.create(presupuesto)
-				.excludeZeroes()           //exclude zero valued properties
-			    //.excludeProperty("color")  //exclude the property named "color"
-			    .ignoreCase()              //perform case insensitive string comparisons
-			    .enableLike();             //use like for string comparisons
-		Criteria criteria = getSession().createCriteria(Presupuesto.class).add(presupuestoCriteria);				
+			
+		Example presupuestoCriteria = Example.create(presupuesto);
+		Criteria criteria = getSession().createCriteria(Presupuesto.class).add(presupuestoCriteria);
+		if(presupuesto.getObras() != null && presupuesto.getObras().getIdobra() != null){
+			criteria.createCriteria("obras").add(Restrictions.eq("idobra", presupuesto.getObras().getIdobra()));
+		}						
 		
 		return criteria.list();				
 	}
