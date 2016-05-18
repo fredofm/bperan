@@ -1,8 +1,10 @@
 package es.project.bperan.web.action;
 
+import java.security.Principal;
 import java.util.Collection;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.collections.CollectionUtils;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -12,6 +14,7 @@ import es.project.bperan.pojo.Cliente;
 import es.project.bperan.pojo.Empleado;
 import es.project.bperan.pojo.Obras;
 import es.project.bperan.pojo.Presupuesto;
+import es.project.bperan.pojo.Usuario;
 
 /**
  * @author Carol
@@ -24,40 +27,18 @@ public class ObrasAction extends BperanAction implements ModelDriven<Obras>  {
 		private GenericBO<Presupuesto> presupuestoBo;
 		private GenericBO<Cliente> clienteBo;
 		private GenericBO<Empleado> empleadoBo;
-		Presupuesto presupuesto; 		
-		Cliente cliente; 	
-		Empleado empleado; 
+		private GenericBO<Usuario> usuarioBo;
 		
+		public void setUsuarioBo(GenericBO<Usuario> usuarioBo) {
+			this.usuarioBo = usuarioBo;
+		}
+
 		public void setObrasBo(GenericBO<Obras> obrasBo) {
 			this.obrasBo = obrasBo;
 		}
 			
 		public void setObras(Obras obras) {
 			this.obras = obras;
-		}
-			
-		public Presupuesto getPresupuesto() {
-			return presupuesto;
-		}
-
-		public void setPresupuesto(Presupuesto presupuesto) {
-			this.presupuesto = presupuesto;
-		}
-
-		public Cliente getCliente() {
-			return cliente;
-		}
-
-		public void setCliente(Cliente cliente) {
-			this.cliente = cliente;
-		}
-
-		public Empleado getEmpleado() {
-			return empleado;
-		}
-
-		public void setEmpleado(Empleado empleado) {
-			this.empleado = empleado;
 		}
 
 		public GenericBO<Presupuesto> getPresupuestoBo() {
@@ -140,23 +121,42 @@ public class ObrasAction extends BperanAction implements ModelDriven<Obras>  {
 			en el resto de pojos hacer un findbypojo			
 			request obras, presupuesto, cliente, empleado...
 			*/
-			/*
-			Presupuesto presupuesto = new Presupuesto(); 		
-			Cliente cliente = new Cliente(); 	
+			 	
 			Empleado empleado = new Empleado(); 
-			*/	
-			Obras obrasId = obrasBo.findById(getId());
-			Obras obrasprueba = obrasBo.findById(obras.getIdobra());
-			getServletRequest().setAttribute("obras", obrasprueba);
+				
+			Obras obra = obrasBo.findById(getId());
+			getServletRequest().setAttribute("obras", obra);
+						
+			empleado.setObras(obra);
 			
+			Collection<Empleado> empleadosObra = empleadoBo.findByPojo(empleado);
+			getServletRequest().setAttribute("empleado", empleadosObra);
+			
+			Presupuesto presupuesto = new Presupuesto();
+			
+			if (getServletRequest().isUserInRole("cliente")) {
+				Principal userPrincipal = getServletRequest().getUserPrincipal();
+				
+				String nombreUsuario = userPrincipal.getName();
+				
+				Usuario usuario = new Usuario();
+				usuario.setNombre(nombreUsuario);
+				usuario = (Usuario) CollectionUtils.get(usuarioBo.findByPojo(usuario), 0);
+				
+				Cliente cliente = new Cliente();
+				cliente.setUsuario(usuario);
+				
+				Collection<Cliente> listaClientes = clienteBo.findByPojo(cliente);
+				
+				if (CollectionUtils.isNotEmpty(listaClientes)) {
+					cliente = (Cliente) CollectionUtils.get(listaClientes, 0);
+					presupuesto.setCliente(cliente);
+				}
+			}
+			
+			presupuesto.setObras(obra);
 			Collection<Presupuesto> presupuestoObra = presupuestoBo.findByPojo(presupuesto);
 			getServletRequest().setAttribute("presupuesto", presupuestoObra);
-			
-			Collection<Cliente> clienteObra = clienteBo.findByPojo(cliente);
-			getServletRequest().setAttribute("cliente", clienteObra);
-						
-			Collection<Empleado> empleadoObra = empleadoBo.findByPojo(empleado);
-			getServletRequest().setAttribute("empleado", empleadoObra);
 			
 			
 			return ActionSupport.SUCCESS;

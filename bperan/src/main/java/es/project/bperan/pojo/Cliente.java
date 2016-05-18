@@ -12,12 +12,12 @@ public class Cliente implements java.io.Serializable {
 	private Integer idcliente;
 	private Usuario usuario;
 	private String nombreempresa;
-	private int telefono;
+	private Integer telefono;
 	private Integer fax;
 	private String direccion;
 	private String poblacion;
 	private String provincia;
-	private int codigopostal;
+	private Integer codigopostal;
 	private String emial;
 	private String cifNif;
 	private String estado;
@@ -26,8 +26,8 @@ public class Cliente implements java.io.Serializable {
 	public Cliente() {
 	}
 
-	public Cliente(Usuario usuario, String nombreempresa, int telefono, String direccion, String poblacion,
-			String provincia, int codigopostal, String cifNif, String estado) {
+	public Cliente(Usuario usuario, String nombreempresa, Integer telefono, String direccion, String poblacion,
+			String provincia, Integer codigopostal, String cifNif, String estado) {
 		this.usuario = usuario;
 		this.nombreempresa = nombreempresa;
 		this.telefono = telefono;
@@ -39,8 +39,8 @@ public class Cliente implements java.io.Serializable {
 		this.estado = estado;
 	}
 
-	public Cliente(Usuario usuario, String nombreempresa, int telefono, Integer fax, String direccion, String poblacion,
-			String provincia, int codigopostal, String emial, String cifNif, String estado, Set presupuestos) {
+	public Cliente(Usuario usuario, String nombreempresa, Integer telefono, Integer fax, String direccion, String poblacion,
+			String provincia, Integer codigopostal, String emial, String cifNif, String estado, Set presupuestos) {
 		this.usuario = usuario;
 		this.nombreempresa = nombreempresa;
 		this.telefono = telefono;
@@ -79,11 +79,11 @@ public class Cliente implements java.io.Serializable {
 		this.nombreempresa = nombreempresa;
 	}
 
-	public int getTelefono() {
+	public Integer getTelefono() {
 		return this.telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(Integer telefono) {
 		this.telefono = telefono;
 	}
 
@@ -119,11 +119,11 @@ public class Cliente implements java.io.Serializable {
 		this.provincia = provincia;
 	}
 
-	public int getCodigopostal() {
+	public Integer getCodigopostal() {
 		return this.codigopostal;
 	}
 
-	public void setCodigopostal(int codigopostal) {
+	public void setCodigopostal(Integer codigopostal) {
 		this.codigopostal = codigopostal;
 	}
 
