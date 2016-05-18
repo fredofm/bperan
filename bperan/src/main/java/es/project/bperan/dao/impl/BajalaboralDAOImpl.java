@@ -37,10 +37,16 @@ public class BajalaboralDAOImpl extends HibernateDaoSupport implements GenericDA
 
 	public Collection<Bajalaboral> findByPojo(Bajalaboral bajalaboral) {										
 		
-		Example bajalaboralCriteria = Example.create(bajalaboral);
+		DAOUtils.nullifyStrings(bajalaboral);
+		DAOUtils.enableWildcards(bajalaboral);
+		
+		Example bajalaboralCriteria = Example.create(bajalaboral).excludeZeroes()           //exclude zero valued properties
+			    //.excludeProperty("color")  //exclude the property named "color"
+			    .ignoreCase()              //perform case insensitive string comparisons
+			    .enableLike();             //use like for string comparisons
 		Criteria criteria = getSession().createCriteria(Bajalaboral.class).add(bajalaboralCriteria);
 		if(bajalaboral.getEmpleado() != null && bajalaboral.getEmpleado().getIdempleado() != null){
-			criteria.createCriteria("bajalaboral").add(Restrictions.eq("idempleado", bajalaboral.getEmpleado().getIdempleado()));
+			criteria.createCriteria("empleado").add(Restrictions.eq("idempleado", bajalaboral.getEmpleado().getIdempleado()));
 		}						
 		
 		return criteria.list();				

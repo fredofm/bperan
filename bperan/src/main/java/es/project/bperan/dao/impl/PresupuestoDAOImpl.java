@@ -34,9 +34,16 @@ public class PresupuestoDAOImpl extends HibernateDaoSupport implements GenericDA
 		return (Presupuesto) getHibernateTemplate().get(Presupuesto.class, idpresupuesto);
 	}
 
-	public Collection<Presupuesto> findByPojo(Presupuesto presupuesto) {										
-			
-		Example presupuestoCriteria = Example.create(presupuesto);
+	public Collection<Presupuesto> findByPojo(Presupuesto presupuesto) {
+		
+		DAOUtils.nullifyStrings(presupuesto);
+		DAOUtils.enableWildcards(presupuesto);
+		
+		Example presupuestoCriteria = Example.create(presupuesto)
+				.excludeZeroes()           //exclude zero valued properties
+			    //.excludeProperty("color")  //exclude the property named "color"
+			    .ignoreCase()              //perform case insensitive string comparisons
+			    .enableLike();             //use like for string comparisons
 		Criteria criteria = getSession().createCriteria(Presupuesto.class).add(presupuestoCriteria);
 		if(presupuesto.getObras() != null && presupuesto.getObras().getIdobra() != null){
 			criteria.createCriteria("obras").add(Restrictions.eq("idobra", presupuesto.getObras().getIdobra()));

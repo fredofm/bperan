@@ -4,11 +4,13 @@ import java.util.Collection;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Example;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.dao.utils.DAOUtils;
 import es.project.bperan.pojo.Empleado;
+import es.project.bperan.pojo.Presupuesto;
 
 public class EmpleadoDAOImpl extends HibernateDaoSupport implements GenericDAO<Empleado> {
 
@@ -42,8 +44,11 @@ public class EmpleadoDAOImpl extends HibernateDaoSupport implements GenericDAO<E
 			    //.excludeProperty("color")  //exclude the property named "color"
 			    .ignoreCase()              //perform case insensitive string comparisons
 			    .enableLike();             //use like for string comparisons
-		Criteria criteria = getSession().createCriteria(Empleado.class).add(empleadoCriteria);				
-		
+		Criteria criteria = getSession().createCriteria(Empleado.class).add(empleadoCriteria);	
+		if(empleado.getObras() != null && empleado.getObras().getIdobra() != null){
+			criteria.createCriteria("obras").add(Restrictions.eq("idobra", empleado.getObras().getIdobra()));
+		}
+				
 		return criteria.list();				
 	}
 }

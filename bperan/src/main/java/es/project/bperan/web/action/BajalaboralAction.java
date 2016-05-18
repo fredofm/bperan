@@ -80,9 +80,7 @@ public class BajalaboralAction extends BperanAction implements ModelDriven<Bajal
 			Collection<Bajalaboral> listaBajalaboral = bajalaboralBo.findByPojo(bajalaboralAux);
 			
 			getServletRequest().setAttribute("listaBajalaboral", listaBajalaboral);
-			
-			getServletRequest().setAttribute("listaEmpleados", empleadoBo.findAll());	
-			
+						
 			return ActionSupport.SUCCESS;		
 		}
 		
