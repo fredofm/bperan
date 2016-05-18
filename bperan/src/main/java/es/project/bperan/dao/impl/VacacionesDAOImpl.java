@@ -10,6 +10,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.dao.utils.DAOUtils;
+import es.project.bperan.pojo.Bajalaboral;
 import es.project.bperan.pojo.Fotos;
 import es.project.bperan.pojo.Vacaciones;
 
@@ -39,14 +40,30 @@ public class VacacionesDAOImpl extends HibernateDaoSupport implements GenericDAO
 	
 	public Collection<Vacaciones> findByPojo(Vacaciones vacaciones) {										
 		
-				
-		Example vacacionesCriteria = Example.create(vacaciones);
+		DAOUtils.nullifyStrings(vacaciones);
+		DAOUtils.enableWildcards(vacaciones);
+		
+		Example vacacionesCriteria = Example.create(vacaciones).excludeZeroes()           //exclude zero valued properties
+			    //.excludeProperty("color")  //exclude the property named "color"
+			    .ignoreCase()              //perform case insensitive string comparisons
+			    .enableLike();             //use like for string comparisons
 		Criteria criteria = getSession().createCriteria(Vacaciones.class).add(vacacionesCriteria);
 		
-		if (vacaciones.getEmpleado() != null && vacaciones.getEmpleado().getIdempleado() != null) {
-
-			criteria.createCriteria("empleado").add(Restrictions.eq("idempleado", vacaciones.getEmpleado().getIdempleado()));
-		}
+		if(vacaciones.getEmpleado() != null) {
+			DAOUtils.nullifyStrings(vacaciones.getEmpleado());
+			DAOUtils.enableWildcards(vacaciones.getEmpleado());
+			
+			criteria = criteria.createCriteria("empleado");
+			
+			if (vacaciones.getEmpleado().getIdempleado() != null){
+		
+			   criteria = criteria.add(Restrictions.eq("idempleado", vacaciones.getEmpleado().getIdempleado()));
+			}
+			
+			if (vacaciones.getEmpleado().getNombre() != null) {
+			   criteria.add(Restrictions.like("nombre", vacaciones.getEmpleado().getNombre()));
+			}
+		}						
 		
 		return criteria.list();				
 	}

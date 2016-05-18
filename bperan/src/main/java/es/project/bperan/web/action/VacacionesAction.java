@@ -26,7 +26,7 @@ public class VacacionesAction extends BperanAction implements ModelDriven<Vacaci
 			this.vacacionesBo = vacacionesBo;
 		}
 			
-		public void setVacaciones(Vacaciones obras) {
+		public void setVacaciones(Vacaciones vacaciones) {
 			this.vacaciones = vacaciones;
 		}
 
@@ -74,6 +74,7 @@ public class VacacionesAction extends BperanAction implements ModelDriven<Vacaci
 		
 		public String buscar() throws Exception{
 			Vacaciones vacacionesAux = (Vacaciones) BeanUtils.cloneBean(vacaciones);
+			vacacionesAux.setEmpleado((Empleado) BeanUtils.cloneBean(vacaciones.getEmpleado()));
 			
 			Collection<Vacaciones> listaVacaciones = vacacionesBo.findByPojo(vacacionesAux);
 			
