@@ -76,6 +76,7 @@ public class BajalaboralAction extends BperanAction implements ModelDriven<Bajal
 
 		public String buscar() throws Exception{
 			Bajalaboral bajalaboralAux = (Bajalaboral) BeanUtils.cloneBean(bajalaboral);
+			bajalaboralAux.setEmpleado((Empleado) BeanUtils.cloneBean(bajalaboral.getEmpleado()));
 			
 			Collection<Bajalaboral> listaBajalaboral = bajalaboralBo.findByPojo(bajalaboralAux);
 			

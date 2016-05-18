@@ -45,8 +45,21 @@ public class BajalaboralDAOImpl extends HibernateDaoSupport implements GenericDA
 			    .ignoreCase()              //perform case insensitive string comparisons
 			    .enableLike();             //use like for string comparisons
 		Criteria criteria = getSession().createCriteria(Bajalaboral.class).add(bajalaboralCriteria);
-		if(bajalaboral.getEmpleado() != null && bajalaboral.getEmpleado().getIdempleado() != null){
-			criteria.createCriteria("empleado").add(Restrictions.eq("idempleado", bajalaboral.getEmpleado().getIdempleado()));
+		
+		if(bajalaboral.getEmpleado() != null) {
+			DAOUtils.nullifyStrings(bajalaboral.getEmpleado());
+			DAOUtils.enableWildcards(bajalaboral.getEmpleado());
+			
+			criteria = criteria.createCriteria("empleado");
+			
+			if (bajalaboral.getEmpleado().getIdempleado() != null){
+		
+			   criteria = criteria.add(Restrictions.eq("idempleado", bajalaboral.getEmpleado().getIdempleado()));
+			}
+			
+			if (bajalaboral.getEmpleado().getNombre() != null) {
+			   criteria.add(Restrictions.like("nombre", bajalaboral.getEmpleado().getNombre()));
+			}
 		}						
 		
 		return criteria.list();				
