@@ -12,6 +12,10 @@
             	<label for="buscar_empleado_nif" class="control-label">NIF</label>
 				<s:textfield name="nif" placeholder="NIF" cssClass="form-control"/>
 			</div>
+			<div class="col-xs-4">
+            	<label for="buscar_empleado_obras.nombreobra" class="control-label">Nombre Obra</label>
+				<s:textfield name="nombreobra" placeholder="Nombre Obra" cssClass="form-control"/>
+			</div>
 		    <div class="col-xs-4">
 				<label for="buscar_empleado_estado" class="control-label">Estado</label>
 				<s:select 
@@ -36,24 +40,7 @@
 						placeholder="Categoría"
 						cssClass="form-control"/>  
 			</div>
-			<%--
-			<div class="col-xs-4">
-				<label for="buscar_empleado_obras" class="control-label">Obra</label>
-				<s:select
-                        tooltip="Elija la obra"
-                        label="Obra"
-                        list="%{#request.listaObras}"
-                        listKey="idobra"
-                        listValue="nombreobra"
-                        name="obras.idobra"
-                        emptyOption="false"
-                        headerKey=""
-                        headerValue="Seleccione la obra"
-                        placeholder="Obra"
-						cssClass="form-control"/>
-            </div>
-             --%>
-              
+			              
 		</div>
 	</div>	
 	<s:submit cssClass="btn btn-primary btn-sm" value="Buscar"/>

@@ -29,14 +29,16 @@
 			
 		</div>	
 	</div>
-</div>
-
-<div class="btn-toolbar">
-	<div class="btn-group pull-left">
-		<s:url action="list_bajalaboral" var="urlTag" />
-		<a role="button" class="btn btn-primary btn-sm"
-			href="<s:property value="#urlTag"/>"
-			title="Haga clic aquí para volver al listado"> Volver </a>
+	
+	<div class="btn-toolbar">
+		<div class="btn-group pull-left">
+			<s:url action="list_bajalaboral" var="urlTag" />
+			<a role="button" class="btn btn-primary btn-sm"
+				href="<s:property value="#urlTag"/>"
+				title="Haga clic aquí para volver al listado"> Volver </a>
+		</div>
 	</div>
 </div>
+
+
 

@@ -16,11 +16,11 @@ public class Empleado implements java.io.Serializable {
 	private String apellidos;
 	private String nif;
 	private Date fechanacimiento;
-	private int telefono;
+	private Integer telefono;
 	private String direccion;
 	private String poblacion;
 	private String provincia;
-	private int codigopostal;
+	private Integer codigopostal;
 	private String nacionalidad;
 	private String numseguridadsocial;
 	private String tipocontrato;
@@ -33,8 +33,8 @@ public class Empleado implements java.io.Serializable {
 	public Empleado() {
 	}
 
-	public Empleado(String nombre, String apellidos, String nif, Date fechanacimiento, int telefono, String direccion,
-			String poblacion, String provincia, int codigopostal, String nacionalidad, String numseguridadsocial,
+	public Empleado(String nombre, String apellidos, String nif, Date fechanacimiento, Integer telefono, String direccion,
+			String poblacion, String provincia, Integer codigopostal, String nacionalidad, String numseguridadsocial,
 			Date fechaalta, String estado) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -51,8 +51,8 @@ public class Empleado implements java.io.Serializable {
 		this.estado = estado;
 	}
 
-	public Empleado(Obras obras, String nombre, String apellidos, String nif, Date fechanacimiento, int telefono,
-			String direccion, String poblacion, String provincia, int codigopostal, String nacionalidad,
+	public Empleado(Obras obras, String nombre, String apellidos, String nif, Date fechanacimiento, Integer telefono,
+			String direccion, String poblacion, String provincia, Integer codigopostal, String nacionalidad,
 			String numseguridadsocial, String tipocontrato, Date fechaalta, String estado, String categoria,
 			Set bajalaborals, Set vacacioneses) {
 		this.obras = obras;
@@ -123,11 +123,11 @@ public class Empleado implements java.io.Serializable {
 		this.fechanacimiento = fechanacimiento;
 	}
 
-	public int getTelefono() {
+	public Integer getTelefono() {
 		return this.telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(Integer telefono) {
 		this.telefono = telefono;
 	}
 
@@ -155,11 +155,11 @@ public class Empleado implements java.io.Serializable {
 		this.provincia = provincia;
 	}
 
-	public int getCodigopostal() {
+	public Integer getCodigopostal() {
 		return this.codigopostal;
 	}
 
-	public void setCodigopostal(int codigopostal) {
+	public void setCodigopostal(Integer codigopostal) {
 		this.codigopostal = codigopostal;
 	}
 

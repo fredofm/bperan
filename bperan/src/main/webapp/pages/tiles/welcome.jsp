@@ -31,7 +31,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		<img src="<s:url value="/images/logo.jpg"/>" class="img-rounded"
 			alt="Logo Bahia de Peran" /> <strong>Bahía de Perán</strong>
 	</h1>
-	<h3>CONSTRUCCCIONES BAHIA DE PERÁN, S.L.U.</h3>
+	<h3>CONSTRUCCIONES BAHIA DE PERÁN, S.L.U.</h3>
 	<p>
 		<small>Es una empresa dedicada a la construcción, obras y
 			reformas de todo tipo. Construimos viviendas, oficinas y locales

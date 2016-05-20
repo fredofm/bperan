@@ -23,7 +23,7 @@
         <property name="fechanacimiento" type="timestamp">
             <column name="FECHANACIMIENTO" length="19" not-null="true" />
         </property>
-        <property name="telefono" type="int">
+        <property name="telefono" type="java.lang.Integer">
             <column name="TELEFONO" not-null="true" />
         </property>
         <property name="direccion" type="string">
@@ -35,7 +35,7 @@
         <property name="provincia" type="string">
             <column name="PROVINCIA" length="45" not-null="true" />
         </property>
-        <property name="codigopostal" type="int">
+        <property name="codigopostal" type="java.lang.Integer">
             <column name="CODIGOPOSTAL" not-null="true" />
         </property>
         <property name="nacionalidad" type="string">

@@ -35,13 +35,14 @@
 			
 		</div>	
 	</div>
+	<div class="btn-toolbar">
+		<div class="btn-group pull-left">
+			<s:url action="list_presupuesto" var="urlTag" />
+			<a role="button" class="btn btn-primary btn-sm"
+				href="<s:property value="#urlTag"/>"
+				title="Haga clic aquí para volver al listado"> Volver </a>
+		</div>
+	</div>
 </s:form>
 
-<div class="btn-toolbar">
-	<div class="btn-group pull-left">
-		<s:url action="list_presupuesto" var="urlTag" />
-		<a role="button" class="btn btn-primary btn-sm"
-			href="<s:property value="#urlTag"/>"
-			title="Haga clic aquí para volver al listado"> Volver </a>
-	</div>
-</div>
+
