@@ -36,7 +36,7 @@
 	  <div class="btn-group pull-left">
 	  	   <button type="submit" class="btn btn-primary btn-sm">Guardar</button> 
 	       <s:url action="list_vacaciones" var="urlTag" />
-		   <a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
+		   <a role="button" class="btn btn-danger btn-sm" href="<s:property value="#urlTag"/>"  
 		   		title="Haga clic aquí para volver al listado"> Cancelar
 		   </a>
 	  </div>
