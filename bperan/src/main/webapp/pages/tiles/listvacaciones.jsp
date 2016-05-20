@@ -39,19 +39,21 @@
 <tbody>
 	<s:iterator status="vacaciones" value="%{#request.listaVacaciones}">
 		<tr>
-			<td>
-				<s:url action="view_vacaciones" var="urlTag">
-					<s:param name="id" value="idvacaciones"/>
-				</s:url>
-				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle de las vacaciones">
-				         <s:property value="empleado.nombre" />
-				</a>
-			</td>
+			<td><s:property value="empleado.nombre" /></td>
 			<td><s:property value="empleado.apellidos" /></td>
 			<td><s:property value="empleado.nif" /></td>
 			<td><s:date name="fechaInicio" format="dd/MM/yyyy"/>
 			</td>
 			<td><s:date name="fechaFin" format="dd/MM/yyyy"/>
+			</td>
+			
+			<td>
+				<s:url action="view_vacaciones" var="urlTag">
+					<s:param name="id" value="idvacaciones"/>
+				</s:url>
+					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle de las vacaciones">
+	          			<span class="glyphicon glyphicon-list-alt"></span>
+	        		</a>
 			</td>
 			
 			<td>

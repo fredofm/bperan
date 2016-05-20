@@ -51,19 +51,21 @@
 <tbody>
 	<s:iterator status="presupuesto" value="%{#request.listaPresupuestos}">
 		<tr>
-			<td>
-				<s:url action="view_presupuesto" var="urlTag">
-					<s:param name="id" value="idpresupuesto"/>
-				</s:url>
-				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle de este presupuesto">
-				         <s:property value="cliente.nombreempresa" />
-				</a>
-			</td>
+			<td><s:property value="cliente.nombreempresa" /></td>
 			<td><s:property value="obras.nombreobra" /></td>
 			<td><s:property value="costeTotal" /></td>
 			<td><s:date name="fechaInicio" format="dd/MM/yyyy"/></td>
 			<td><s:date name="fechaFin" format="dd/MM/yyyy"/></td>
 			<td><s:property value="estado" /></td>
+			
+			<td>
+				<s:url action="view_presupuesto" var="urlTag">
+					<s:param name="id" value="idpresupuesto"/>
+				</s:url>
+					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle de este presupuesto">
+					    <span class="glyphicon glyphicon-list-alt"></span>     
+					</a>
+			</td>
 			
 			<td>
 				<s:url action="prepare_presupuesto" var="urlTag">

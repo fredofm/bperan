@@ -37,16 +37,18 @@
 <tbody>
 	<s:iterator status="usuario" value="%{#request.listaUsuarios}">
 		<tr>
+			<td><s:property value="nombre" /></td>			
+			<td><s:date name="fechacreacion" format="dd/MM/yyyy hh:mm:ss"/></td>
+			<td><s:property value="role.nombre" /></td>
+			
 			<td>
-				<s:url action="view_usuario" var="urlTag">
+			<s:url action="view_usuario" var="urlTag">
 					<s:param name="id" value="idusuario"/>
 				</s:url>
 				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle del usuario">
-				         <s:property value="nombre" />
+				    <span class="glyphicon glyphicon-list-alt"></span>
 				</a>
 			</td>
-			<td><s:date name="fechacreacion" format="dd/MM/yyyy hh:mm:ss"/></td>
-			<td><s:property value="role.nombre" /></td>
 			
 			<td>
 			<s:url action="prepare_usuario" var="urlTag">

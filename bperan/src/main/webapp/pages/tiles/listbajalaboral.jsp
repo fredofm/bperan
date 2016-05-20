@@ -50,17 +50,19 @@
 <tbody>
 	<s:iterator status="bajalaboral" value="%{#request.listaBajalaboral}">
 		<tr>
+			<td><s:property value="empleado.nombre" /></td>
+			<td><s:date name="fechaInicio" format="dd/MM/yyyy"/></td>
+			<td><s:date name="fechaFin" format="dd/MM/yyyy"/></td>
+			<td><s:property value="tipo" /></td>
+			
 			<td>
 				<s:url action="view_bajalaboral" var="urlTag">
 					<s:param name="id" value="idbajalaboral"/>
 				</s:url>
 				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle de la baja laboral">
-				         <s:property value="empleado.nombre" />
+				    <span class="glyphicon glyphicon-list-alt"></span>  
 				</a>
 			</td>
-			<td><s:date name="fechaInicio" format="dd/MM/yyyy"/></td>
-			<td><s:date name="fechaFin" format="dd/MM/yyyy"/></td>
-			<td><s:property value="tipo" /></td>
 			
 			<td>
 				<s:url action="prepare_bajalaboral" var="urlTag">

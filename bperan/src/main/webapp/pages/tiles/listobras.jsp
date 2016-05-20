@@ -57,14 +57,7 @@
 <tbody>
 	<s:iterator status="obra" value="%{#request.listaObras}">
 		<tr>
-			<td>
-				<s:url action="view_obras" var="urlTag">
-					<s:param name="id" value="idobra"/>
-				</s:url>
-				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle de esta obra">
-				         <s:property value="nombreobra" />
-				</a>
-			</td>
+			<td><s:property value="nombreobra" /></td>
 			<td><s:property value="direccion" /></td>
 			<td><s:property value="descripcion" /></td>
 			<td><s:date name="fechaInicio" format="dd/MM/yyyy"/>
@@ -80,6 +73,15 @@
 					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para editar las fotos de esta obra">
 	          			<span class="glyphicon glyphicon-camera"></span>
 	        		</a>
+			</td>
+			
+			<td>
+				<s:url action="view_obras" var="urlTag">
+					<s:param name="id" value="idobra"/>
+				</s:url>
+					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle de esta obra">
+					    <span class="glyphicon glyphicon-list-alt"></span>     
+					</a>
 			</td>
 			
 			<td>

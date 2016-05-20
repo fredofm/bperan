@@ -56,14 +56,7 @@
 <tbody>
 	<s:iterator status="cliente" value="%{#request.listaCliente}">
 		<tr>
-			<td>
-				<s:url action="view_cliente" var="urlTag">
-						<s:param name="id" value="idcliente"/>
-				</s:url>
-					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle de este cliente">
-					         <s:property value="nombreempresa" />
-					</a>
-			</td>
+			<td><s:property value="nombreempresa" /></td>
 			<td><s:property value="cifNif" /></td>
 			<td><s:property value="telefono" /></td>
 			<td><s:property value="direccion" /></td>
@@ -71,6 +64,15 @@
 			<td><s:property value="emial" /></td>
 			<td><s:property value="estado" /></td>
 			<td>
+			
+			<td>
+				<s:url action="view_cliente" var="urlTag">
+						<s:param name="id" value="idcliente"/>
+				</s:url>
+					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el detalle de este cliente">
+					    <span class="glyphicon glyphicon-list-alt"></span>    
+					</a>
+			</td>
 			
 			<td>
 				<s:url action="prepare_cliente" var="urlTag">
