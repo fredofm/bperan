@@ -1,4 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <h2>Búsqueda de Obras</h2>
 <s:form action="buscar_obras" cssClass="well form-search" label="Formulario de búsqueda" theme="simple">
@@ -32,10 +34,12 @@
 
 <div class="btn-toolbar">
   <div class="btn-group pull-right">
-    <s:url action="prepare_obras" var="urlTag" />
-	<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  title="Haga clic aquí para añadir una nueva obra"> 
-		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva Obra
-	</a>
+	<sec:authorize access="hasRole('admin')">
+	    <s:url action="prepare_obras" var="urlTag" />
+		<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  title="Haga clic aquí para añadir una nueva obra"> 
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva Obra
+		</a>
+	</sec:authorize>
   </div>
 </div>
 
@@ -85,21 +89,25 @@
 			</td>
 			
 			<td>
-				<s:url action="prepare_obras" var="urlTag">
-					<s:param name="id" value="idobra"/>
-				</s:url>
-					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para editar esta obra">
-	          			<span class="glyphicon glyphicon-edit"></span>
-	        		</a>
+				<sec:authorize access="hasRole('admin')">
+					<s:url action="prepare_obras" var="urlTag">
+						<s:param name="id" value="idobra"/>
+					</s:url>
+						<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para editar esta obra">
+		          			<span class="glyphicon glyphicon-edit"></span>
+		        		</a>
+		        </sec:authorize>
 			</td>
         	
 			<td>
-				<s:url action="delete_obras" var="urlTag">
-					<s:param name="idobra" value="idobra"/>
-				</s:url>
-					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para eliminar esta obra">
-	          			<span class="glyphicon glyphicon-trash"></span>
-	        		</a>
+				<sec:authorize access="hasRole('admin')">
+					<s:url action="delete_obras" var="urlTag">
+						<s:param name="idobra" value="idobra"/>
+					</s:url>
+						<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para eliminar esta obra">
+		          			<span class="glyphicon glyphicon-trash"></span>
+		        		</a>
+		        </sec:authorize>
 			</td>
 		</tr>
 	</s:iterator>

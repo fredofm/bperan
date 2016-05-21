@@ -43,7 +43,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	</p>
 	<p>
 		<small><u>Eche un vistazo a nuestros proyectos más recientes</u></small> 
-		 <s:url action="list_obras" var="urlTag" />
+		 <s:url action="displayFotos" var="urlTag" />
 			<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
 		  		 title="Haga clic aquí para ver listado de obras"> Proyectos &raquo;
 			</a>

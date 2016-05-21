@@ -19,29 +19,36 @@
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li><s:url action="list_cliente" var="urlTag" /> <a
-					href="<s:property value="#urlTag"/>">Clientes</a></li>
-
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false">Empleados <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><s:url action="list_empleado" var="urlTag" /> <a
-							href="<s:property value="#urlTag"/>">Listado Empleados</a></li>
-						<li><s:url action="list_vacaciones" var="urlTag" /> <a
-							href="<s:property value="#urlTag"/>">Listado Vacaciones</a></li>
-							<li><s:url action="list_bajalaboral" var="urlTag" /> <a
-							href="<s:property value="#urlTag"/>">Listado Bajas Laborales</a></li>
+			
+				<sec:authorize access="hasRole('admin')">
+					<li><s:url action="list_cliente" var="urlTag" /> <a
+						href="<s:property value="#urlTag"/>">Clientes</a></li>
+				</sec:authorize>
+					
+				<sec:authorize access="hasRole('admin')">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Empleados <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><s:url action="list_empleado" var="urlTag" /> <a
+								href="<s:property value="#urlTag"/>">Listado Empleados</a></li>
+							<li><s:url action="list_vacaciones" var="urlTag" /> <a
+								href="<s:property value="#urlTag"/>">Listado Vacaciones</a></li>
+								<li><s:url action="list_bajalaboral" var="urlTag" /> <a
+								href="<s:property value="#urlTag"/>">Listado Bajas Laborales</a></li>
 					</ul></li>
-
+				</sec:authorize>
+			
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">Obras <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><s:url action="list_obras" var="urlTag" /> <a
 							href="<s:property value="#urlTag"/>">Listado Obras</a></li>
-						<li><s:url action="list_presupuesto" var="urlTag" /> <a
-							href="<s:property value="#urlTag"/>">Listado Presupuestos</a></li>
+						<sec:authorize access="hasRole('admin')">
+							<li><s:url action="list_presupuesto" var="urlTag" /> <a
+								href="<s:property value="#urlTag"/>">Listado Presupuestos</a></li>
+						</sec:authorize>
 					</ul></li>
 				<sec:authorize access="hasRole('admin')">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
