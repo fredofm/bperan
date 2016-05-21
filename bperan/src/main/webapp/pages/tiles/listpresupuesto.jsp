@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-xs-4">
             	<label for="buscar_presupuesto_obras.nombreobra" class="control-label">Nombre Obra</label>
-				<s:textfield name="nombreobra" placeholder="Nombre Obra" cssClass="form-control"/>
+				<s:textfield name="obras.nombreobra" placeholder="Nombre Obra" cssClass="form-control"/>
 			</div>
 			<div class="col-xs-4">
 				<label for="buscar_presupuesto_estado" class="control-label">Estado</label>

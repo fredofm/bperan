@@ -10,8 +10,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.dao.utils.DAOUtils;
 import es.project.bperan.pojo.Cliente;
-import es.project.bperan.pojo.Empleado;
-import es.project.bperan.pojo.Obras;
+import es.project.bperan.pojo.Usuario;
 
 public class ClienteDAOImpl extends HibernateDaoSupport implements GenericDAO<Cliente> {
 
@@ -54,10 +53,17 @@ public class ClienteDAOImpl extends HibernateDaoSupport implements GenericDAO<Cl
 
 			DAOUtils.nullifyStrings(cliente.getUsuario());
 			DAOUtils.enableWildcards(cliente.getUsuario());
+			
+			Example usuarioCriteria = Example.create(cliente.getUsuario()).excludeZeroes();
+			criteria = criteria.createCriteria("usuario").add(usuarioCriteria);
 
 			if (cliente.getUsuario().getIdusuario() != null) {
-				criteria = criteria.createCriteria("usuario").add(Restrictions.eq("idusuario", cliente.getUsuario().getIdusuario()));
+				criteria.add(Restrictions.eq("idusuario", cliente.getUsuario().getIdusuario()));
 			}
+			
+//			if (cliente.getUsuario().getNombre() != null) {
+//				criteria.add(Restrictions.like("nombre", cliente.getUsuario().getNombre()));
+//			}
 		}
 
 		return criteria.list();

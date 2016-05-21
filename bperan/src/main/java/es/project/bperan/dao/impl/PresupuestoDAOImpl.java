@@ -55,8 +55,12 @@ public class PresupuestoDAOImpl extends HibernateDaoSupport implements GenericDA
 			Criteria criteria = criteriaBase.createCriteria("obras");
 
 			if (presupuesto.getObras().getIdobra() != null) {
-				criteria.add(Restrictions.eq("idobra", presupuesto.getObras().getIdobra()));
+				criteria = criteria.add(Restrictions.eq("idobra", presupuesto.getObras().getIdobra()));
 			}
+			
+			if (presupuesto.getObras().getNombreobra() != null) {
+				   criteria.add(Restrictions.like("nombreobra", presupuesto.getObras().getNombreobra()));
+				}
 		}
 		
 		if (presupuesto.getCliente() != null) {
