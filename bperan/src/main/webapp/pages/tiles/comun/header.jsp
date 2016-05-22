@@ -38,18 +38,21 @@
 								href="<s:property value="#urlTag"/>">Listado Bajas Laborales</a></li>
 					</ul></li>
 				</sec:authorize>
-			
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false">Obras <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><s:url action="list_obras" var="urlTag" /> <a
-							href="<s:property value="#urlTag"/>">Listado Obras</a></li>
-						<sec:authorize access="hasRole('admin')">
-							<li><s:url action="list_presupuesto" var="urlTag" /> <a
-								href="<s:property value="#urlTag"/>">Listado Presupuestos</a></li>
-						</sec:authorize>
-					</ul></li>
+				
+				<sec:authorize access="isFullyAuthenticated()">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Obras <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><s:url action="list_obras" var="urlTag" /> <a
+								href="<s:property value="#urlTag"/>">Listado Obras</a></li>
+							<sec:authorize access="hasRole('admin')">
+								<li><s:url action="list_presupuesto" var="urlTag" /> <a
+									href="<s:property value="#urlTag"/>">Listado Presupuestos</a></li>
+							</sec:authorize>
+						</ul></li>
+				</sec:authorize>
+				
 				<sec:authorize access="hasRole('admin')">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"

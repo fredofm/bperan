@@ -43,15 +43,39 @@
 			<div>
 				<label>Estado </label><s:property value="estado" />
 			</div>
-			<h4>
-				<strong>Fotos</strong>
-				<s:url action="displayFotos" var="urlTag">
-					<s:param name="idobra" value="idobra"/>
+						
+			<h4><strong>Datos Presupuesto</strong></h4>
+			<s:url action="view_presupuesto" var="urlTag">
+				<s:param name="idpresupuesto" value="idpresupuesto"/>
+			</s:url>
+				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el presupuesto de la obra">
+			         <label>Ver Presupuesto </label>
+				</a>
+			<div>
+				<label>Coste Total </label><s:property value="presupuesto.costeTotal" />
+			</div>
+			
+			<h4><strong>Datos Cliente</strong></h4>
+			<s:url action="view_cliente" var="urlTag">
+				<s:param name="idcliente" value="idcliente"/>
+			</s:url>
+				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el cliente de la obra">
+			         <label>Ver Cliente </label>
+				</a>
+			<div>
+				<label>Nombre cliente </label><s:property value="cliente.nombreempresa" />
+			</div>
+			
+			<h4><strong>Fotos</strong></h4>
+			<s:iterator status="foto" value="%{#request.listaFotos}">
+				<s:url action="displayFoto" var="url">
+					<s:param name="id" value="idfoto"/>
 				</s:url>
-					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver las fotos de la obra">
-				         <label>Ver Fotos </label>
-					</a>
-			</h4>
+				<img src="<s:property value="#url"/>"/>
+			</s:iterator>
+				
+				
+			
 			
 		</div>
 		<div class="col-md-4" class="nav navbar-nav navbar-right">

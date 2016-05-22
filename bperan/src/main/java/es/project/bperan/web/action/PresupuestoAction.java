@@ -9,6 +9,7 @@ import com.opensymphony.xwork2.ModelDriven;
 
 import es.project.bperan.bo.GenericBO;
 import es.project.bperan.pojo.Cliente;
+import es.project.bperan.pojo.Empleado;
 import es.project.bperan.pojo.Obras;
 import es.project.bperan.pojo.Presupuesto;
 
@@ -80,10 +81,14 @@ public class PresupuestoAction extends BperanAction implements ModelDriven<Presu
 	}
 
 	public String buscar() throws Exception {
-		Presupuesto presupuestoAux = (Presupuesto) BeanUtils.cloneBean(presupuesto);
+		Presupuesto presupuestoAux = (Presupuesto) BeanUtils.cloneBean(presupuesto);		
 
 		if (presupuesto.getObras() != null) {
 			presupuestoAux.setObras((Obras) BeanUtils.cloneBean(presupuesto.getObras()));
+		}
+		//lo mismo para cliente
+		if (presupuesto.getCliente() != null) {
+			presupuestoAux.setCliente((Cliente)BeanUtils.cloneBean(presupuesto.getCliente()));
 		}
 
 		Collection<Presupuesto> listaPresupuestos = presupuestoBo.findByPojo(presupuestoAux);

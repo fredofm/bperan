@@ -54,16 +54,18 @@ public class ClienteDAOImpl extends HibernateDaoSupport implements GenericDAO<Cl
 			DAOUtils.nullifyStrings(cliente.getUsuario());
 			DAOUtils.enableWildcards(cliente.getUsuario());
 			
-			Example usuarioCriteria = Example.create(cliente.getUsuario()).excludeZeroes();
+			/*Example usuarioCriteria = Example.create(cliente.getUsuario()).excludeZeroes();
 			criteria = criteria.createCriteria("usuario").add(usuarioCriteria);
-
+			*/
+			criteria = criteria.createCriteria("usuario");
+			
 			if (cliente.getUsuario().getIdusuario() != null) {
-				criteria.add(Restrictions.eq("idusuario", cliente.getUsuario().getIdusuario()));
+				criteria = criteria.add(Restrictions.eq("idusuario", cliente.getUsuario().getIdusuario()));
 			}
 			
-//			if (cliente.getUsuario().getNombre() != null) {
-//				criteria.add(Restrictions.like("nombre", cliente.getUsuario().getNombre()));
-//			}
+			if (cliente.getUsuario().getNombre() != null) {
+				criteria.add(Restrictions.like("nombre", cliente.getUsuario().getNombre()));
+			}
 		}
 
 		return criteria.list();

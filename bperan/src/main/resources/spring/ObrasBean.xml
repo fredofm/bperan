@@ -10,6 +10,7 @@
 		<property name="clienteBo" ref="clienteBo" />
 		<property name="empleadoBo" ref="empleadoBo" />
 		<property name="usuarioBo" ref="usuarioBo" />
+		<property name="fotosBo" ref="fotosBo" />
 		<property name="obras" ref="obras"/>
 	</bean>
 
