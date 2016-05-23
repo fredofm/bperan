@@ -70,14 +70,6 @@ public class ObrasAction extends BperanAction implements ModelDriven<Obras>  {
 		public void setEmpleadoBo(GenericBO<Empleado> empleadoBo) {
 			this.empleadoBo = empleadoBo;
 		}
-		
-		public GenericBO<Fotos> getFotosBo() {
-			return fotosBo;
-		}
-
-		public void setFotosBo(GenericBO<Fotos> fotosBo) {
-			this.fotosBo = fotosBo;
-		}
 
 		public Obras getModel() {
 			try {
@@ -176,14 +168,6 @@ public class ObrasAction extends BperanAction implements ModelDriven<Obras>  {
 			presupuesto.setObras(obra);
 			Collection<Presupuesto> presupuestoObra = presupuestoBo.findByPojo(presupuesto);
 			getServletRequest().setAttribute("presupuesto", presupuestoObra);
-			
-			//Fotos
-			Fotos fotos = new Fotos();
-			fotos.setObras(obra);
-			
-			Collection<Fotos> listaFotos = fotosBo.findByPojo(fotos);
-			
-			getServletRequest().setAttribute("listaFotos", listaFotos);
 			
 			return ActionSupport.SUCCESS;
 		}
