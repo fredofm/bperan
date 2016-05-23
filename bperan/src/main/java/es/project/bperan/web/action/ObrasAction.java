@@ -12,6 +12,7 @@ import com.opensymphony.xwork2.ModelDriven;
 import es.project.bperan.bo.GenericBO;
 import es.project.bperan.pojo.Cliente;
 import es.project.bperan.pojo.Empleado;
+import es.project.bperan.pojo.Fotos;
 import es.project.bperan.pojo.Obras;
 import es.project.bperan.pojo.Presupuesto;
 import es.project.bperan.pojo.Usuario;
@@ -28,7 +29,12 @@ public class ObrasAction extends BperanAction implements ModelDriven<Obras>  {
 		private GenericBO<Cliente> clienteBo;
 		private GenericBO<Empleado> empleadoBo;
 		private GenericBO<Usuario> usuarioBo;
+		private GenericBO<Fotos> fotosBo;
 		
+		public void setFotosBo(GenericBO<Fotos> fotosBo) {
+			this.fotosBo = fotosBo;
+		}
+
 		public void setUsuarioBo(GenericBO<Usuario> usuarioBo) {
 			this.usuarioBo = usuarioBo;
 		}
@@ -126,6 +132,11 @@ public class ObrasAction extends BperanAction implements ModelDriven<Obras>  {
 				
 			Obras obra = obrasBo.findById(getId());
 			getServletRequest().setAttribute("obras", obra);
+			
+			Fotos fotos = new Fotos();
+			fotos.setObras(obra);
+			Collection<Fotos> listaFotos = fotosBo.findByPojo(fotos);
+			getServletRequest().setAttribute("listaFotos", listaFotos);
 						
 			empleado.setObras(obra);
 			
