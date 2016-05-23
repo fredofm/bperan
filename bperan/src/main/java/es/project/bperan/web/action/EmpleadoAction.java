@@ -24,11 +24,7 @@ public class EmpleadoAction extends BperanAction implements ModelDriven<Empleado
 		public void setEmpleadoBo(GenericBO<Empleado> empleadoBo) {
 			this.empleadoBo = empleadoBo;
 		}
-		
-		public GenericBO<Obras> getObrasBo() {
-			return obrasBo;
-		}
-
+	
 		public void setObrasBo(GenericBO<Obras> obrasBo) {
 			this.obrasBo = obrasBo;
 		}
@@ -84,12 +80,14 @@ public class EmpleadoAction extends BperanAction implements ModelDriven<Empleado
 		
 		public String buscar() throws Exception{
 			Empleado empleadoAux = (Empleado) BeanUtils.cloneBean(empleado);
+			empleadoAux.setObras((Obras) BeanUtils.cloneBean(empleado.getObras()));
 			
 			Collection<Empleado> listaEmpleados = empleadoBo.findByPojo(empleadoAux);
 			
 			getServletRequest().setAttribute("listaEmpleados", listaEmpleados);
 			
 			return ActionSupport.SUCCESS;		
+			
 		}
 		
 		public String detalle() throws Exception{
