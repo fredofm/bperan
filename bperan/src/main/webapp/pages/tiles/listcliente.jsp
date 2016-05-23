@@ -24,9 +24,17 @@
 						placeholder="Estado"
 						cssClass="form-control"/>
 			</div>
+			 <div class="col-xs-4">
+            	<label for="buscar_cliente_usuario.nombre" class="control-label">Nombre Usuario</label>
+				<s:textfield name="usuario.nombre" placeholder="Nombre Usuario" cssClass="form-control"/>
+			</div>    
 		</div>
 	</div>	
 	<s:submit cssClass="btn btn-primary btn-sm" value="Buscar"/>
+	<s:url action="list_cliente" var="urlTag" />
+		<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
+		   title="Haga clic aquí para volver al listado"> Limpiar
+		</a>
 </s:form>
 
 <div class="btn-toolbar">
@@ -95,11 +103,3 @@
 </tbody>
 </table>
 
-<div class="btn-toolbar">
-	  <div class="btn-group pull-left">
-	    <s:url action="list_cliente" var="urlTag" />
-		<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
-		   title="Haga clic aquí para volver al listado"> Listado
-		</a>
-	  </div>
-</div>

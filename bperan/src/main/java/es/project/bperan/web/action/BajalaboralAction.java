@@ -10,7 +10,6 @@ import com.opensymphony.xwork2.ModelDriven;
 import es.project.bperan.bo.GenericBO;
 import es.project.bperan.pojo.Bajalaboral;
 import es.project.bperan.pojo.Empleado;
-import es.project.bperan.pojo.Obras;
 
 /**
  * @author Carol

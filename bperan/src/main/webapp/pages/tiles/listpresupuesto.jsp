@@ -8,6 +8,10 @@
             	<label for="buscar_presupuesto_obras.nombreobra" class="control-label">Nombre Obra</label>
 				<s:textfield name="obras.nombreobra" placeholder="Nombre Obra" cssClass="form-control"/>
 			</div>
+			 <div class="col-xs-4">
+            	<label for="buscar_presupuesto_cliente.nombreempresa" class="control-label">Nombre Cliente</label>
+				<s:textfield name="cliente.nombreempresa" placeholder="Nombre Cliente" cssClass="form-control"/>
+			</div>
 			<div class="col-xs-4">
 				<label for="buscar_presupuesto_estado" class="control-label">Estado</label>
 				<s:select 
@@ -23,6 +27,10 @@
 		</div>
 	</div>	
 	<s:submit cssClass="btn btn-primary btn-sm" value="Buscar"/>
+	<s:url action="list_presupuesto" var="urlTag" />
+		<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
+		   title="Haga clic aquí para volver al listado"> Limpiar
+		</a>
 </s:form>
 
 <div class="btn-toolbar">
@@ -89,11 +97,3 @@
 </tbody>
 </table>
 
-<div class="btn-toolbar">
-	  <div class="btn-group pull-left">
-	    <s:url action="list_presupuesto" var="urlTag" />
-		<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
-		   title="Haga clic aquí para volver al listado"> Listado
-		</a>
-	  </div>
-</div>

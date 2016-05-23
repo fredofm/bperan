@@ -11,6 +11,10 @@
 		</div>
 	</div>	
 	<s:submit cssClass="btn btn-primary btn-sm" value="Buscar"/>
+	<s:url action="list_usuario" var="urlTag" />
+		<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
+		   title="Haga clic aquí para volver al listado"> Limpiar
+		</a>
 </s:form>
 
 <div class="btn-toolbar">
@@ -71,12 +75,3 @@
 	</s:iterator>
 </tbody>
 </table>
-
-<div class="btn-toolbar">
-	  <div class="btn-group pull-left">
-	    <s:url action="list_usuario" var="urlTag" />
-		<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
-		   title="Haga clic aquí para volver al listado"> Listado
-		</a>
-	  </div>
-</div>
