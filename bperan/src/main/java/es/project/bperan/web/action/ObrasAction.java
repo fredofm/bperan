@@ -141,7 +141,7 @@ public class ObrasAction extends BperanAction implements ModelDriven<Obras>  {
 			empleado.setObras(obra);
 			
 			Collection<Empleado> empleadosObra = empleadoBo.findByPojo(empleado);
-			getServletRequest().setAttribute("empleado", empleadosObra);
+			getServletRequest().setAttribute("listaEmpleadosObra", empleadosObra);
 			
 			Presupuesto presupuesto = new Presupuesto();
 			
@@ -167,7 +167,7 @@ public class ObrasAction extends BperanAction implements ModelDriven<Obras>  {
 			
 			presupuesto.setObras(obra);
 			Collection<Presupuesto> presupuestoObra = presupuestoBo.findByPojo(presupuesto);
-			getServletRequest().setAttribute("presupuesto", presupuestoObra);
+			getServletRequest().setAttribute("listaPresupuestosObras", presupuestoObra);
 			
 			return ActionSupport.SUCCESS;
 		}

@@ -11,141 +11,144 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-8">
-<<<<<<< HEAD
-			<div class="row">
-	            <div class="col-md-4">Nombre Obra</div>
-	            <div class="col-md-8"><s:property value="nombreobra" /></div>
-	        </div>
-	        <div class="row">
-	            <div class="col-md-4">Dirección</div>
-	            <div class="col-md-8"><s:property value="direccion" /></div>
-	        </div>
-	        <div class="row">
-	            <div class="col-md-4">Descripción</div>
-	            <div class="col-md-8"><s:property value="descripcion" /></div>
-	        </div>
-	        <div class="row">
-	            <div class="col-md-4">Fecha Inicio</div>
-	            <div class="col-md-8"><s:date name="fechaInicio" format="dd/MM/yyyy"/></div>
-	        </div>
-	         <div class="row">
-	            <div class="col-md-4">Fecha Fin</div>
-	            <div class="col-md-8"><s:date name="fechaFin" format="dd/MM/yyyy"/></div>
-	        </div>
-=======
-			<h4>
-				<strong>Datos Obra</strong>
-			</h4>
-			<div>
-				<label>Nombre Obra </label><s:property value="nombreobra" />
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading clearfix">
+			    	<h3 class="panel-title">Datos Obra</h3>
+			    </div>
+			    <div class="panel-body">
+				    <div class="row">
+					    <div class="col-md-8">
+							<div class="row">
+					            <div class="col-md-4">Nombre Obra</div>
+					            <div class="col-md-8"><s:property value="nombreobra" /></div>
+					        </div>
+					        <div class="row">
+					            <div class="col-md-4">Dirección</div>
+					            <div class="col-md-8"><s:property value="direccion" /></div>
+					        </div>
+					        <div class="row">
+					            <div class="col-md-4">Descripción</div>
+					            <div class="col-md-8"><s:property value="descripcion" /></div>
+					        </div>
+					        <div class="row">
+					            <div class="col-md-4">Fecha Inicio</div>
+					            <div class="col-md-8"><s:date name="fechaInicio" format="dd/MM/yyyy"/></div>
+					        </div>
+					         <div class="row">
+					            <div class="col-md-4">Fecha Fin</div>
+					            <div class="col-md-8"><s:date name="fechaFin" format="dd/MM/yyyy"/></div>
+					        </div>
+				        </div>
+				        <div class="col-md-4">
+							<div id="googleMap" style="width: 200px; height: 200px;"></div>
+						</div>
+			        </div>
+	       		</div>
 			</div>
-			<div>
-				<label>Dirección </label><s:property value="direccion" />
-			</div>
-			<div>
-				<label>Latitud </label><s:property value="latitud" />
-				<input type="hidden" value="<s:property value="latitud" />" id="latitud" />
-			</div>
-			<div>
-				<label>Longitud </label><s:property value="longitud" />
-				<input type="hidden" value="<s:property value="longitud" />" id="longitud" />
-			</div>
-			<div>
-				<label>Descripción </label><s:property value="descripcion" />
-			</div>
-			<div>
-				<label>Fecha Inicio </label><s:property value="fechaInicio" />
-			</div>
-			<div>
-				<label>Fecha Fin </label><s:property value="fechaFin" />
-			</div>
-			<div>
-				<label>Estado </label><s:property value="estado" />
-			</div>
-						
-			<h4><strong>Datos Presupuesto</strong></h4>
-			<s:url action="view_presupuesto" var="urlTag">
-				<s:param name="idpresupuesto" value="idpresupuesto"/>
-			</s:url>
-				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el presupuesto de la obra">
-			         <label>Ver Presupuesto </label>
-				</a>
-			<div>
-				<label>Coste Total </label><s:property value="presupuesto.costeTotal" />
-			</div>
-			
-			<h4><strong>Datos Cliente</strong></h4>
-			<s:url action="view_cliente" var="urlTag">
-				<s:param name="idcliente" value="idcliente"/>
-			</s:url>
-				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para ver el cliente de la obra">
-			         <label>Ver Cliente </label>
-				</a>
-			<div>
-				<label>Nombre cliente </label><s:property value="cliente.nombreempresa" />
-			</div>
-			
-			<h4><strong>Fotos</strong></h4>
+		</div>
+		
+	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+		
+		<div class="panel panel-default">
+			<div class="panel-heading clearfix">
+		    	<h3 class="panel-title">Fotos Obra</h3>
+		    </div>
+		    <div class="panel-body">
+		    <div class="row">
 			<s:iterator status="foto" value="%{#request.listaFotos}">
+				<div class="col-md-4 thumb">
 				<s:url action="displayFoto" var="url">
 					<s:param name="id" value="idfoto"/>
 				</s:url>
-				<img src="<s:property value="#url"/>"/>
+					<a class="thumbnail" href="#">
+                    	<img class="img-responsive" src="<s:property value="#url"/>"/>
+                    </a>
+				</div>
 			</s:iterator>
-				
-				
-			
-			
->>>>>>> branch 'master' of https://github.com/fredofm/bperan.git
+			</div>
+			</div>
 		</div>
-		<div class="col-md-4">
-			<div id="googleMap" style="width: 350px; height: 350px;"></div>
-		</div>
-	</div>
-	
-	<div class="row">
-		<div class="col-md-12">
-		
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-		  <!-- Indicators -->
-		  <ol class="carousel-indicators">
-		  	
-		  	<s:iterator status="foto" value="%{#request.listaFotos}">
-		  		<li data-target="#myCarousel" data-slide-to="<s:property value="#foto.index" />" <s:if test="#foto.first">class="active"</s:if>></li>
-			</s:iterator>		
-		  </ol>
-		
-		  <!-- Wrapper for slides -->
-		  <div class="carousel-inner" role="listbox">
-		  	<s:iterator status="foto" value="%{#request.listaFotos}">
-		    <div class="carousel-item <s:if test="#foto.first">active</s:if>">
-			     <s:url action="displayFoto" var="url" >
-					<s:param name="id" value="idfoto"/>
-				</s:url>
-				<img src="<s:property value="#url"/>" alt="foto"/>
-		    </div>
-		    </s:iterator>
-		  </div>
-		
-		  <!-- Left and right controls -->
-		  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-		    <span class="icon-prev" aria-hidden="true"></span>
-		    <span class="sr-only">Anterior</span>
-		  </a>
-		  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-		    <span class="icon-next" aria-hidden="true"></span>
-		    <span class="sr-only">Siguiente</span>
-		  </a>
-		</div>
-		
-		
 		</div>
 	</div>
 	
 	
 	<div class="row">
 		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading clearfix">
+			    	<h3 class="panel-title">Presupuestos</h3>
+			    </div>
+			    <div class="panel-body">
+					<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Cliente</th>
+							<th>Obra</th>
+							<th>Coste Total</th>
+							<th>Fecha Inicio</th>
+							<th>Fecha Fin</th>
+							<th>Estado</th>
+						</tr>
+					</thead>
+					<tbody>
+					<s:iterator status="presupuesto" value="%{#request.listaPresupuestosObras}">
+						<tr>
+						<td><s:property value="cliente.nombreempresa" /></td>
+						<td><s:property value="obras.nombreobra" /></td>
+						<td><s:property value="costeTotal" /></td>
+						<td><s:date name="fechaInicio" format="dd/MM/yyyy"/></td>
+						<td><s:date name="fechaFin" format="dd/MM/yyyy"/></td>
+						<td><s:property value="estado" /></td>
+						</tr>
+					</s:iterator>
+					</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading clearfix">
+			    	<h3 class="panel-title">Lista Empleados</h3>
+			    </div>
+			    <div class="panel-body">
+				    <table class="table table-striped table-hover">
+						<thead>
+							<tr>
+								<th>Nombre</th>
+								<th>Apellidos</th>
+								<th>NIF</th>
+								<th>Teléfono</th>
+								<th>Número Seguridad Social</th>
+								<th>Categoría</th>
+								<th>Fecha Alta</th>
+								<th>Estado</th>
+							</tr>
+						</thead>
+						<tbody>
+							<s:iterator status="empleado" value="%{#request.listaEmpleadosObra}">
+								<tr>
+									<td> <s:property value="nombre" /></td>
+									<td><s:property value="apellidos" /></td>
+									<td><s:property value="nif" /></td>
+									<td><s:property value="telefono" /></td>
+									<td><s:property value="numseguridadsocial" /></td>
+									<td><s:property value="categoria" /></td>
+									<td><s:date name="fechaalta" format="dd/MM/yyyy"/></td>
+									<td><s:property value="estado" /></td>
+								</tr>
+							</s:iterator>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
 	</div>
 

@@ -88,7 +88,7 @@
 			<td><s:date name="fechaalta" format="dd/MM/yyyy"/></td>
 			<td><s:property value="estado" /></td>
 			<td><s:property value="obras.nombreobra" /></td>
-			<td>
+			<td></td>
 			
 			<td>
 				<s:url action="view_empleado" var="urlTag">
