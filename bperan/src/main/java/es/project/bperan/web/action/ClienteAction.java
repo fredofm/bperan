@@ -10,6 +10,7 @@ import com.opensymphony.xwork2.ModelDriven;
 import es.project.bperan.bo.GenericBO;
 import es.project.bperan.pojo.Bajalaboral;
 import es.project.bperan.pojo.Cliente;
+import es.project.bperan.pojo.Empleado;
 import es.project.bperan.pojo.Usuario;
 
 public class ClienteAction extends BperanAction implements ModelDriven<Cliente>  {
@@ -77,6 +78,8 @@ public class ClienteAction extends BperanAction implements ModelDriven<Cliente> 
 
 		public String buscar() throws Exception{
 			Cliente clienteAux = (Cliente) BeanUtils.cloneBean(cliente);
+			//Se hace un clone para que entienda el '*' y no lo transforme en un '%' en el buscador
+			clienteAux.setUsuario((Usuario) BeanUtils.cloneBean(cliente.getUsuario()));
 			
 			Collection<Cliente> listaCliente = clienteBo.findByPojo(clienteAux);
 			

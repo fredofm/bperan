@@ -39,6 +39,7 @@ public class PresupuestoDAOImpl extends HibernateDaoSupport implements GenericDA
 
 	public Collection<Presupuesto> findByPojo(Presupuesto presupuesto) {
 
+		//Para que el buscador realice búsquedas con '*'
 		DAOUtils.nullifyStrings(presupuesto);
 		DAOUtils.enableWildcards(presupuesto);
 
@@ -52,6 +53,11 @@ public class PresupuestoDAOImpl extends HibernateDaoSupport implements GenericDA
 				.enableLike(); // use like for string comparisons
 		Criteria criteriaBase = getSession().createCriteria(Presupuesto.class).add(presupuestoCriteria);
 		if (presupuesto.getObras() != null) {
+			
+			DAOUtils.nullifyStrings(presupuesto.getObras());
+			DAOUtils.enableWildcards(presupuesto.getObras());
+			
+			
 			Criteria criteria = criteriaBase.createCriteria("obras");
 
 			if (presupuesto.getObras().getIdobra() != null) {
@@ -64,6 +70,10 @@ public class PresupuestoDAOImpl extends HibernateDaoSupport implements GenericDA
 		}
 		
 		if (presupuesto.getCliente() != null) {
+			
+			DAOUtils.nullifyStrings(presupuesto.getCliente());
+			DAOUtils.enableWildcards(presupuesto.getCliente());
+			
 			Criteria criteria = criteriaBase.createCriteria("cliente");
 
 			if (presupuesto.getCliente().getIdcliente() != null) {
