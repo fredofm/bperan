@@ -5,7 +5,7 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form action="add_presupuesto" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de presupuestos">
+<s:form id="presupuestoForm" action="add_presupuesto" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de presupuestos">
 				<s:hidden name="idpresupuesto" />
                
                  <s:select
@@ -66,13 +66,53 @@
 
 </s:form>
 
-
 <script type="text/javascript">
-	$(".date-picker").datepicker();
-	
-	$(".date-picker").on("change", function () {
-	    var id = $(this).attr("id");
-	    var val = $("label[for='" + id + "']").text();
-	    $("#msg").text(val + " changed");
-	});
+<!--
+	$(document).ready(
+			function() {
+
+				$('#presupuestoForm').validate(
+						{
+							lang: 'es',
+							rules : {
+								fechaInicio : {
+									required : true
+								},
+								fechaFin : {
+									required : true,
+									date: true
+								},
+								'obras.idobra' : {
+									required : true
+								},
+								costeTotal: {
+									number: true
+								}
+							},
+							highlight: function(element) {
+						        $(element).closest('.form-group').addClass('has-error');
+						    },
+						    unhighlight: function(element) {
+						        $(element).closest('.form-group').removeClass('has-error');
+						    },
+						    errorElement: 'span',
+						    errorClass: 'help-block',
+						    errorPlacement: function(error, element) {
+						        if(element.parent('.input-group').length) {
+						            error.insertAfter(element.parent());
+						        } else {
+						            error.insertAfter(element);
+						        }
+						    }
+						});
+
+				$(".date-picker").datepicker();
+
+				$(".date-picker").on("change", function() {
+					var id = $(this).attr("id");
+					var val = $("label[for='" + id + "']").text();
+					$("#msg").text(val + " changed");
+				});
+			});
+//-->
 </script>

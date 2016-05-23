@@ -25,6 +25,8 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery/jquery-2.2.3.js"></script>
     <script src="js/bootstrap-3.3.6/date-picker.js"></script>
+    <script src="js/validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/validation/localization/messages_es.js"> </script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- <script src="js/bootstrap-3.3.6/bootstrap.min.js"></script> -->
     
