@@ -6,7 +6,9 @@
 
 	<bean id="empleadoAction" class="es.project.bperan.web.action.EmpleadoAction"  scope="prototype">
 		<property name="empleadoBo" ref="empleadoBo" />
-		<property name="obrasBo" ref="obrasBo" />	
+		<property name="obrasBo" ref="obrasBo" />
+		<property name="vacacionesBo" ref="vacacionesBo" />
+		<property name="bajalaboralBo" ref="bajalaboralBo" />			
 		<property name="empleado" ref="empleado"/>
 	</bean>
 

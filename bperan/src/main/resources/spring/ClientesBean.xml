@@ -7,6 +7,7 @@
 	<bean id="clienteAction" class="es.project.bperan.web.action.ClienteAction"  scope="prototype">
 		<property name="clienteBo" ref="clienteBo" />
 		<property name="usuarioBo" ref="usuarioBo" />
+		<property name="presupuestoBo" ref="presupuestoBo" />
 		<property name="cliente" ref="cliente"/>
 	</bean>
 

@@ -79,12 +79,12 @@
 									required : true
 								},
 								fechaFin : {
-									required : true,
-									date: true
-								},
-								'obras.idobra' : {
 									required : true
 								},
+								"obras.idobra": {
+									required: true
+									}
+								,
 								costeTotal: {
 									number: true
 								}

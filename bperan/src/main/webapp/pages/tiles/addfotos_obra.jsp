@@ -2,12 +2,29 @@
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
-<s:iterator status="foto" value="%{#request.listaFotos}">
-	<s:url action="displayFoto" var="url">
-		<s:param name="id" value="idfoto"/>
-	</s:url>
-	<img src="<s:property value="#url"/>"/>
-</s:iterator>
+
+<div class="panel panel-default">
+	<div class="panel-heading clearfix">
+		    	<h3 class="panel-title">Fotos Obra</h3>
+	</div>
+		 <div class="panel-body">
+			<div class="row">
+				<s:iterator status="foto" value="%{#request.listaFotos}">
+					<div class="col-md-4 thumb">
+					<s:url action="displayFoto" var="url">
+						<s:param name="id" value="idfoto"/>
+					</s:url>
+						<div class="thumbnail" >
+							<a class="close" href="#">
+		                    	x 
+		                    </a>
+		                    <img class="img-responsive" src="<s:property value="#url"/>"/>
+	                    </div>
+					</div>
+				</s:iterator>
+			</div>
+		</div>
+</div>
 
 
 <s:actionerror theme="bootstrap" />

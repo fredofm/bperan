@@ -11,7 +11,9 @@ import es.project.bperan.bo.GenericBO;
 import es.project.bperan.pojo.Bajalaboral;
 import es.project.bperan.pojo.Cliente;
 import es.project.bperan.pojo.Empleado;
+import es.project.bperan.pojo.Presupuesto;
 import es.project.bperan.pojo.Usuario;
+import es.project.bperan.pojo.Vacaciones;
 
 public class ClienteAction extends BperanAction implements ModelDriven<Cliente>  {
 	
@@ -19,6 +21,7 @@ public class ClienteAction extends BperanAction implements ModelDriven<Cliente> 
 		
 		GenericBO<Cliente> clienteBo;
 		private GenericBO<Usuario> usuarioBo;
+		private GenericBO<Presupuesto> presupuestoBo;
 			
 				
 		public void setClienteBo(GenericBO<Cliente> clienteBo) {
@@ -35,7 +38,11 @@ public class ClienteAction extends BperanAction implements ModelDriven<Cliente> 
 
 		public void setCliente(Cliente cliente) {
 			this.cliente = cliente;
-		}				
+		}	
+		
+		public void setPresupuestoBo(GenericBO<Presupuesto> presupuestoBo) {
+			this.presupuestoBo = presupuestoBo;
+		}
 
 		public Cliente getModel() {
 			try {
@@ -89,6 +96,15 @@ public class ClienteAction extends BperanAction implements ModelDriven<Cliente> 
 		}
 
 		public String detalle() throws Exception{
+			
+			Cliente cliente = clienteBo.findById(getId());
+			getServletRequest().setAttribute("cliente", cliente);
+			
+			Presupuesto presupuesto = new Presupuesto(); 			
+			presupuesto.setCliente(cliente);
+			
+			Collection<Presupuesto> listapresupuestoCliente = presupuestoBo.findByPojo(presupuesto);
+			getServletRequest().setAttribute("listapresupuestoCliente", listapresupuestoCliente);
 			
 			return ActionSupport.SUCCESS;
 		}

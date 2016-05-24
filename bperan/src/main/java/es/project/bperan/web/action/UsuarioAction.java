@@ -8,6 +8,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 import es.project.bperan.bo.GenericBO;
+import es.project.bperan.pojo.Empleado;
 import es.project.bperan.pojo.Presupuesto;
 import es.project.bperan.pojo.Role;
 import es.project.bperan.pojo.Usuario;
@@ -75,6 +76,7 @@ public class UsuarioAction extends BperanAction implements ModelDriven<Usuario> 
 		
 		public String buscar() throws Exception{
 			Usuario usuarioAux = (Usuario) BeanUtils.cloneBean(usuario);
+			//usuarioAux.setRole((Role) BeanUtils.cloneBean(usuario.getRole()));
 			
 			Collection<Usuario> listaUsuarios = usuarioBo.findByPojo(usuarioAux);
 			

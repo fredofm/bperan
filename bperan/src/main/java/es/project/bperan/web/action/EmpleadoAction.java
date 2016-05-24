@@ -1,15 +1,23 @@
 package es.project.bperan.web.action;
 
+import java.security.Principal;
 import java.util.Collection;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.collections.CollectionUtils;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 import es.project.bperan.bo.GenericBO;
+import es.project.bperan.pojo.Bajalaboral;
+import es.project.bperan.pojo.Cliente;
 import es.project.bperan.pojo.Empleado;
+import es.project.bperan.pojo.Fotos;
 import es.project.bperan.pojo.Obras;
+import es.project.bperan.pojo.Presupuesto;
+import es.project.bperan.pojo.Usuario;
+import es.project.bperan.pojo.Vacaciones;
 
 /**
  * @author Carol
@@ -20,6 +28,8 @@ public class EmpleadoAction extends BperanAction implements ModelDriven<Empleado
 		private Empleado empleado; 		
 		private GenericBO<Empleado> empleadoBo;
 		private GenericBO<Obras> obrasBo;
+		private GenericBO<Vacaciones> vacacionesBo;
+		private GenericBO<Bajalaboral> bajalaboralBo;
 			
 		public void setEmpleadoBo(GenericBO<Empleado> empleadoBo) {
 			this.empleadoBo = empleadoBo;
@@ -33,6 +43,14 @@ public class EmpleadoAction extends BperanAction implements ModelDriven<Empleado
 			this.empleado = empleado;
 		}
 		
+		public void setVacacionesBo(GenericBO<Vacaciones> vacacionesBo) {
+			this.vacacionesBo = vacacionesBo;
+		}
+
+		public void setBajalaboralBo(GenericBO<Bajalaboral> bajalaboralBo) {
+			this.bajalaboralBo = bajalaboralBo;
+		}
+
 		@Override
 		public Empleado getModel() {
 			try {
@@ -91,6 +109,22 @@ public class EmpleadoAction extends BperanAction implements ModelDriven<Empleado
 		}
 		
 		public String detalle() throws Exception{
+			
+			Empleado empleado = empleadoBo.findById(getId());
+			getServletRequest().setAttribute("empleado", empleado);
+			
+			Vacaciones vacaciones = new Vacaciones(); 			
+			vacaciones.setEmpleado(empleado);
+			
+			Collection<Vacaciones> listavacacionesEmpleado = vacacionesBo.findByPojo(vacaciones);
+			getServletRequest().setAttribute("listavacacionesEmpleado", listavacacionesEmpleado);
+			
+			Bajalaboral bajalaboral = new Bajalaboral();			
+			bajalaboral.setEmpleado(empleado);
+			
+			Collection<Bajalaboral> listaBajalaboralEmpleado = bajalaboralBo.findByPojo(bajalaboral);
+			getServletRequest().setAttribute("listaBajalaboralEmpleado", listaBajalaboralEmpleado);
+
 			
 			return ActionSupport.SUCCESS;
 		}
