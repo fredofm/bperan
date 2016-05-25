@@ -74,7 +74,7 @@
 				<s:url action="delete_vacaciones" var="urlTag">
 					<s:param name="idvacaciones" value="idvacaciones"/>
 				</s:url>
-					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para eliminar">
+					<a href="<s:property value="#urlTag"/>" class="delete" title="Haga clic aquí para eliminar">
 	          			<span class="glyphicon glyphicon-trash"></span>
 	        		</a>
 			</td>

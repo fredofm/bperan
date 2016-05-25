@@ -111,7 +111,7 @@
 			<s:url action="delete_empleado" var="urlTag">
 				<s:param name="idempleado" value="idempleado"/>
 			</s:url>
-				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para eliminar este empleado">
+				<a href="<s:property value="#urlTag"/>" class="delete" title="Haga clic aquí para eliminar este empleado">
           			<span class="glyphicon glyphicon-trash"></span>
         		</a>
 			</td>

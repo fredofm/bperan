@@ -108,7 +108,7 @@
 					<s:url action="delete_obras" var="urlTag">
 						<s:param name="idobra" value="idobra"/>
 					</s:url>
-						<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para eliminar esta obra">
+						<a href="<s:property value="#urlTag"/>" class="delete" title="Haga clic aquí para eliminar esta obra">
 		          			<span class="glyphicon glyphicon-trash"></span>
 		        		</a>
 		        </sec:authorize>

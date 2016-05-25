@@ -5,7 +5,7 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form action="add_empleado" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de empleados">
+<s:form id="empleadoForm" action="add_empleado" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de empleados">
 				<s:hidden name="idempleado" />
                 <s:textfield
                         label="Nombre"
@@ -68,7 +68,7 @@
                    		label="Tipo de Contrado"
 						list="#{'Fin de Obra':'Fin de Obra', 'Temporal':'Temporal', 'Indefinido':'Indefinido', 'Fijo Discontínuo':'Fijo Discontínuo'}" 
 						name="tipocontrato"  
-						headerKey="None"
+						headerKey=""
 						headerValue="Seleccione tipo de contrado"
 						placeholder="Tipo de Contrado"
 						/> 
@@ -84,7 +84,7 @@
                    		label="Estado"
 						list="#{'Activo':'Activo', 'NoActivo':'NoActivo'}" 
 						name="estado"  
-						headerKey="None"
+						headerKey=""
 						headerValue="Seleccione el estado"
 						placeholder="Estado"
 						/> 
@@ -94,7 +94,7 @@
                    		label="Categoría"
 						list="#{'Peón':'Peón', 'Albañil':'Albañil', 'Capataz':'Capataz'}" 
 						name="categoria"  
-						headerKey="None"
+						headerKey=""
 						headerValue="Seleccione categoría"
 						placeholder="Categoría"
 						/>  
@@ -120,11 +120,83 @@
 </s:form>
 
 <script type="text/javascript">
-	$(".date-picker").datepicker();
-	
-	$(".date-picker").on("change", function () {
-	    var id = $(this).attr("id");
-	    var val = $("label[for='" + id + "']").text();
-	    $("#msg").text(val + " changed");
-	});
+<!--
+	$(document).ready(
+			function() {
+
+				$('#empleadoForm').validate(
+						{
+							lang: 'es',
+							rules : {
+								nombre : {
+									required : true
+								},
+								apellidos : {
+									required : true
+								},
+								nif: {
+									required: true
+								},
+								fechanacimiento: {
+									required: true
+								},
+								telefono: {
+									required: true,
+									number : true
+								},
+								direccion: {
+									required: true
+								},
+								poblacion: {
+									required: true
+								},
+								provincia: {
+									required: true
+								},
+								codigopostal: {
+									required: true
+								},
+								nacionalidad: {
+									required: true
+								},
+								numseguridadsocial: {
+									required: true
+								},
+								fechaalta: {
+									required: true
+								},
+								estado: {
+									required: true
+								}
+								,
+								"obras.idobra": {
+									required: true
+								}
+							},
+							highlight: function(element) {
+						        $(element).closest('.form-group').addClass('has-error');
+						    },
+						    unhighlight: function(element) {
+						        $(element).closest('.form-group').removeClass('has-error');
+						    },
+						    errorElement: 'span',
+						    errorClass: 'help-block',
+						    errorPlacement: function(error, element) {
+						        if(element.parent('.input-group').length) {
+						            error.insertAfter(element.parent());
+						        } else {
+						            error.insertAfter(element);
+						        }
+						    }
+						});
+
+				$(".date-picker").datepicker();
+
+				$(".date-picker").on("change", function() {
+					var id = $(this).attr("id");
+					var val = $("label[for='" + id + "']").text();
+					$("#msg").text(val + " changed");
+				});
+			});
+//-->
 </script>

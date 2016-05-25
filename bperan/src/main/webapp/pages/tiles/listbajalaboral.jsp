@@ -81,7 +81,7 @@
 				<s:url action="delete_bajalaboral" var="urlTag">
 					<s:param name="idbajalaboral" value="idbajalaboral"/>
 				</s:url>
-					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para eliminar esta baja laboral">
+					<a href="<s:property value="#urlTag"/>" class="delete" title="Haga clic aquí para eliminar esta baja laboral">
 	          			<span class="glyphicon glyphicon-trash"></span>
 	        		</a>
 			</td>

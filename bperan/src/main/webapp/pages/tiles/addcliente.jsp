@@ -5,7 +5,7 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form action="add_cliente" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de clientes">
+<s:form id="clienteForm" action="add_cliente" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de clientes">
                 <s:hidden name="idcliente" />
                 <s:textfield
                         label="Nombre Cliente"
@@ -57,7 +57,7 @@
                    		label="Estado"
 						list="#{'Activo':'Activo', 'NoActivo':'NoActivo'}" 
 						name="estado"  
-						headerKey="None"
+						headerKey=""
 						headerValue="Seleccione el estado"
 						placeholder="Estado"
 						/> 
@@ -70,7 +70,7 @@
                         listValue="nombre"
                         name="usuario.idusuario"
                         emptyOption="false"
-                        headerKey="None"
+                        headerKey=""
                         headerValue="Seleccione el usuario"
                         placeholder="Usuario"/>
 	          
@@ -81,4 +81,70 @@
 		</a>
 	  
 </s:form>
+
+<script type="text/javascript">
+<!--
+	$(document).ready(
+			function() {
+
+				$('#clienteForm').validate(
+						{
+							lang: 'es',
+							rules : {
+								nombreempresa : {
+									required : true
+								},
+								 cifNif: {
+									required : true
+								},
+								telefono: {
+									required: true,
+									number : true
+								},
+								direccion: {
+									required: true
+								},
+								poblacion: {
+									required: true
+								},
+								provincia: {
+									required: true
+								},
+								codigopostal: {
+									required: true
+								},
+								estado: {
+									required: true
+								},
+								"usuario.idusuario": {
+									required: true
+									}
+							},
+							highlight: function(element) {
+						        $(element).closest('.form-group').addClass('has-error');
+						    },
+						    unhighlight: function(element) {
+						        $(element).closest('.form-group').removeClass('has-error');
+						    },
+						    errorElement: 'span',
+						    errorClass: 'help-block',
+						    errorPlacement: function(error, element) {
+						        if(element.parent('.input-group').length) {
+						            error.insertAfter(element.parent());
+						        } else {
+						            error.insertAfter(element);
+						        }
+						    }
+						});
+
+				$(".date-picker").datepicker();
+
+				$(".date-picker").on("change", function() {
+					var id = $(this).attr("id");
+					var val = $("label[for='" + id + "']").text();
+					$("#msg").text(val + " changed");
+				});
+			});
+//-->
+</script>
 

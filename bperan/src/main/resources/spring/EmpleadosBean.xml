@@ -18,6 +18,8 @@
 
 	<bean id="empleadoBo" class="es.project.bperan.bo.impl.EmpleadoBoImpl">
 		<property name="empleadoDAO" ref="empleadoDAO" />
+		<property name="vacacionesDAO" ref="vacacionesDAO" />
+		<property name="bajalaboralDAO" ref="bajalaboralDAO" />	
 	</bean>
 	
 	<bean id="empleado" class="es.project.bperan.pojo.Empleado" scope="prototype">		

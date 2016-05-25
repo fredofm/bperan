@@ -5,7 +5,7 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form action="add_usuario" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de usuarios">
+<s:form id ="usuarioForm" action="add_usuario" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de usuarios">
 				<s:hidden name="idusuario" />
                 <s:textfield
                         label="Nombre"
@@ -25,8 +25,8 @@
                         listValue="nombre"
                         name="role.idrole"
                         emptyOption="false"
-                        headerKey="None"
-                        headerValue="None"
+                        headerKey=""
+                        headerValue="Seleccione el rol del usuario"
                         placeholder="Rol"/>
     
 	  	<button type="submit" class="btn btn-primary btn-sm">Guardar</button>
@@ -36,4 +36,44 @@
 		</a>           
 	
 </s:form>
+<script type="text/javascript">
+<!--
+	$(document).ready(
+			function() {
+
+				$('#usuarioForm').validate(
+						{
+							lang: 'es',
+							rules : {
+								nombre : {
+									required : true
+								},
+								password : {
+									required : true
+								},
+								"role.idrole": {
+									required: true
+									}
+							},
+							highlight: function(element) {
+						        $(element).closest('.form-group').addClass('has-error');
+						    },
+						    unhighlight: function(element) {
+						        $(element).closest('.form-group').removeClass('has-error');
+						    },
+						    errorElement: 'span',
+						    errorClass: 'help-block',
+						    errorPlacement: function(error, element) {
+						        if(element.parent('.input-group').length) {
+						            error.insertAfter(element.parent());
+						        } else {
+						            error.insertAfter(element);
+						        }
+						    }
+						});
+
+			});
+//-->
+</script>
+
 

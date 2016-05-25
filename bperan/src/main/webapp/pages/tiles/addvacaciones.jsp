@@ -5,7 +5,7 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form action="add_vacaciones" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de vacaciones">
+<s:form id="vacacionesForm"  action="add_vacaciones" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de vacaciones">
 				<s:hidden name="idvacaciones" />
                              
                   <s:select
@@ -16,7 +16,7 @@
                         listValue="nombre"
                         name="empleado.idempleado"
                         emptyOption="false"
-                        headerKey="None"
+                        headerKey=""
                         headerValue="Seleccione el empleado"
                         placeholder="Empleado"/>
                                            
@@ -40,14 +40,49 @@
 	
 </s:form>
 
-
-
 <script type="text/javascript">
-	$(".date-picker").datepicker();
-	
-	$(".date-picker").on("change", function () {
-	    var id = $(this).attr("id");
-	    var val = $("label[for='" + id + "']").text();
-	    $("#msg").text(val + " changed");
-	});
+<!--
+	$(document).ready(
+			function() {
+
+				$('#vacacionesForm').validate(
+						{
+							lang: 'es',
+							rules : {
+								fechaInicio : {
+									required : true
+								},
+								fechaFin : {
+									required : true
+								},
+								"empleado.idempleado": {
+									required: true
+									}
+							},
+							highlight: function(element) {
+						        $(element).closest('.form-group').addClass('has-error');
+						    },
+						    unhighlight: function(element) {
+						        $(element).closest('.form-group').removeClass('has-error');
+						    },
+						    errorElement: 'span',
+						    errorClass: 'help-block',
+						    errorPlacement: function(error, element) {
+						        if(element.parent('.input-group').length) {
+						            error.insertAfter(element.parent());
+						        } else {
+						            error.insertAfter(element);
+						        }
+						    }
+						});
+
+				$(".date-picker").datepicker();
+
+				$(".date-picker").on("change", function() {
+					var id = $(this).attr("id");
+					var val = $("label[for='" + id + "']").text();
+					$("#msg").text(val + " changed");
+				});
+			});
+//-->
 </script>

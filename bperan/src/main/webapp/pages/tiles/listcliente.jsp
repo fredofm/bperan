@@ -94,7 +94,7 @@
 			<s:url action="delete_cliente" var="urlTag">
 				<s:param name="idcliente" value="idcliente"/>
 			</s:url>
-				<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para eliminar este cliente">
+				<a href="<s:property value="#urlTag"/>" class="delete" title="Haga clic aquí para eliminar este cliente">
           			<span class="glyphicon glyphicon-trash"></span>
         		</a>
 			</td>

@@ -5,7 +5,7 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form action="add_bajalaboral" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de baja laboral">
+<s:form id="bajalaboralForm" action="add_bajalaboral" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de baja laboral">
 				<s:hidden name="idbajalaboral" />
                              
                   <s:select
@@ -16,7 +16,7 @@
                         listValue="nombre"
                         name="empleado.idempleado"
                         emptyOption="false"
-                        headerKey="None"
+                        headerKey=""
                         headerValue="Seleccione el empleado"
                         placeholder="Empleado"/>
                                            
@@ -37,7 +37,7 @@
                    		label="Tipo"
 						list="#{'Enfermedad Común':'Enfermedad común', 'Enfermedad Laboral':'Enfermedad laboral', 'Accidente no laboral':'Accidente no laboral', 'Accidente laboral':'Accidente laboral'}" 
 						name="tipo"  
-						headerKey="None"
+						headerKey=""
 						headerValue="Seleccione el tipo"
 						placeholder="Tipo"
 						/> 
@@ -50,13 +50,52 @@
 	
 </s:form>
 
-
 <script type="text/javascript">
-	$(".date-picker").datepicker();
-	
-	$(".date-picker").on("change", function () {
-	    var id = $(this).attr("id");
-	    var val = $("label[for='" + id + "']").text();
-	    $("#msg").text(val + " changed");
-	});
+<!--
+	$(document).ready(
+			function() {
+
+				$('#bajalaboralForm').validate(
+						{
+							lang: 'es',
+							rules : {
+								fechaInicio : {
+									required : true
+								},
+								fechaFin : {
+									required : true
+								},
+								"empleado.idempleado": {
+									required: true
+								},
+								tipo : {
+									required : true
+								}
+							},
+							highlight: function(element) {
+						        $(element).closest('.form-group').addClass('has-error');
+						    },
+						    unhighlight: function(element) {
+						        $(element).closest('.form-group').removeClass('has-error');
+						    },
+						    errorElement: 'span',
+						    errorClass: 'help-block',
+						    errorPlacement: function(error, element) {
+						        if(element.parent('.input-group').length) {
+						            error.insertAfter(element.parent());
+						        } else {
+						            error.insertAfter(element);
+						        }
+						    }
+						});
+
+				$(".date-picker").datepicker();
+
+				$(".date-picker").on("change", function() {
+					var id = $(this).attr("id");
+					var val = $("label[for='" + id + "']").text();
+					$("#msg").text(val + " changed");
+				});
+			});
+//-->
 </script>

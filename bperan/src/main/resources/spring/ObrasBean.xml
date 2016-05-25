@@ -20,6 +20,9 @@
 
 	<bean id="obrasBo" class="es.project.bperan.bo.impl.ObrasBoImpl">
 		<property name="obraDAO" ref="obraDAO" />
+		<property name="presupuestoDAO" ref="presupuestoDAO" />
+		<property name="fotosDAO" ref="fotosDAO" />
+		<property name="empleadoBo" ref="empleadoBo" />
 	</bean>
 	
 	<bean id="obras" class="es.project.bperan.pojo.Obras" scope="prototype">		

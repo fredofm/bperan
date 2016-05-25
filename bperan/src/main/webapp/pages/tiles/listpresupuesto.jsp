@@ -88,7 +88,7 @@
 				<s:url action="delete_presupuesto" var="urlTag">
 					<s:param name="idpresupuesto" value="idpresupuesto"/>
 				</s:url>
-					<a href="<s:property value="#urlTag"/>" title="Haga clic aquí para eliminar este presupuesto">
+					<a href="<s:property value="#urlTag"/>" class="delete" title="Haga clic aquí para eliminar este presupuesto">
 	          			<span class="glyphicon glyphicon-trash"></span>
 	        		</a>
 			</td>

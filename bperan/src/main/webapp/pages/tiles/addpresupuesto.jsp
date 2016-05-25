@@ -16,7 +16,7 @@
                         listValue="nombreempresa"
                         name="cliente.idcliente"
                         emptyOption="false"
-                        headerKey="None"
+                        headerKey=""
                         headerValue="Seleccione el cliente"
                         placeholder="Cliente"/>
                  <s:select
@@ -27,7 +27,7 @@
                         listValue="nombreobra"
                         name="obras.idobra"
                         emptyOption="false"
-                        headerKey="None"
+                        headerKey=""
                         headerValue="Seleccione la obra"
                         placeholder="Obra"/>
                   
@@ -53,7 +53,7 @@
                    		label="Estado"
 						list="#{'Activo':'Activo', 'NoActivo':'NoActivo'}" 
 						name="estado"  
-						headerKey="None"
+						headerKey=""
 						headerValue="Seleccione el estado"
 						placeholder="Estado"
 						/> 
@@ -85,8 +85,17 @@
 									required: true
 									}
 								,
+								"cliente.idcliente": {
+									required: true
+									}
+								,
 								costeTotal: {
-									number: true
+									number: true,
+									required: true
+								}
+								,
+								estado: {
+									required: true
 								}
 							},
 							highlight: function(element) {
