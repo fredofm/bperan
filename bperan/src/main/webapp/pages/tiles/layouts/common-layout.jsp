@@ -25,6 +25,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery/jquery-2.2.3.js"></script>
     <script src="js/bootstrap-3.3.6/date-picker.js"></script>
+    <script src="js/bootstrap-3.3.6/bootstrap-confirm-delete.js"></script>
     <script src="js/validation/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/validation/localization/messages_es.js"> </script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -38,5 +39,17 @@
 	<tiles:insertAttribute name="body"/>
 	<tiles:insertAttribute name="footer"/>	
 </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$( '.delete' ).bootstrap_confirm_delete(
+			{
+	            debug:              false,
+	            heading:            'Eliminación de registro',
+	            message:            '¿Seguro que desea eliminar este elemento?'	       
+	        }
+	);
+});
+</script>
 </body>
 </html>

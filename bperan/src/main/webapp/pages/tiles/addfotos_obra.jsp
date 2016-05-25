@@ -16,7 +16,7 @@
 								<s:param name="id" value="idfoto"/>
 								<s:param name="idobra" value="idobra"/>
 							</s:url>					
-							<a class="close" href="<s:property value="#url"/>">
+							<a class="close delete" href="<s:property value="#url"/>">
 		                    	x 
 		                    </a>
 		                    <s:url action="displayFoto" var="url">
