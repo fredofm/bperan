@@ -11,13 +11,17 @@
 			<div class="row">
 				<s:iterator status="foto" value="%{#request.listaFotos}">
 					<div class="col-md-4 thumb">
-					<s:url action="displayFoto" var="url">
-						<s:param name="id" value="idfoto"/>
-					</s:url>
 						<div class="thumbnail" >
-							<a class="close" href="#">
+							<s:url action="deleteFoto" var="url" escapeAmp="false">
+								<s:param name="id" value="idfoto"/>
+								<s:param name="idobra" value="idobra"/>
+							</s:url>					
+							<a class="close" href="<s:property value="#url"/>">
 		                    	x 
 		                    </a>
+		                    <s:url action="displayFoto" var="url">
+								<s:param name="id" value="idfoto"/>
+							</s:url>
 		                    <img class="img-responsive" src="<s:property value="#url"/>"/>
 	                    </div>
 					</div>

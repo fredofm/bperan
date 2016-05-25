@@ -64,6 +64,15 @@
 			<result name="success" type="chain">displayFotos</result>
 			<result name="input" type="chain">displayFotos</result>
 		</action>
+		
+		<action name="deleteFoto" class="fotosAction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">displayFotos</param>
+				<param name="parse">true</param>
+				<param name="idobra">${idobra}</param>
+			</result>
+			<result name="input" type="chain">displayFotos</result>
+		</action>
 
 	</package>
 </struts>

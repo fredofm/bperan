@@ -95,6 +95,12 @@ public class FotosAction extends BperanAction {
 	}
 	
 	public String delete() {
+		if (getId() != null) {
+			
+			Fotos foto = fotosBo.findById(getId());			
+			fotosBo.delete(foto);
+		}
+		
 		return SUCCESS;
 	}
 
