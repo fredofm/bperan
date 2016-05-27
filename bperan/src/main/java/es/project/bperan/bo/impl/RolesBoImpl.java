@@ -1,17 +1,20 @@
 package es.project.bperan.bo.impl;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 import org.springframework.transaction.annotation.Transactional;
 
 import es.project.bperan.bo.GenericBO;
 import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.pojo.Role;
+import es.project.bperan.pojo.Usuario;
 
 @Transactional
 public class RolesBoImpl implements GenericBO<Role> {
 	
 	private GenericDAO<Role> roleDAO;
+	private GenericDAO<Usuario> usuarioDAO;
 	
 	public RolesBoImpl() {
 		super();
@@ -21,6 +24,10 @@ public class RolesBoImpl implements GenericBO<Role> {
 		this.roleDAO = roleDAO;
 	}
 	
+	public void setUsuarioDAO(GenericDAO<Usuario> usuarioDAO) {
+		this.usuarioDAO = usuarioDAO;
+	}
+
 	public void add(Role pojo) {
 		roleDAO.add(pojo);		
 	}
@@ -33,6 +40,14 @@ public class RolesBoImpl implements GenericBO<Role> {
 	@Override
 	public void delete(Role pojo) {
 		Role role = roleDAO.findById(pojo.getIdrole()); 
+		
+		Usuario usuario = new Usuario();
+		usuario.setRole(role);
+		Collection<Usuario> listaUsuarioRole = usuarioDAO.findByPojo(usuario); 	
+		Iterator<Usuario> itUsuario = listaUsuarioRole.iterator();		 
+		while (itUsuario.hasNext()) {		 
+			usuarioDAO.delete(itUsuario.next());			
+		}	
 		
 		roleDAO.delete(role);
 		

@@ -48,6 +48,8 @@
 		<th>Fecha Fin</th>
 		<th>Tipo</th>
 		<th></th>
+		<th></th>
+		<th></th>
 			
 	</tr>
 </thead>

@@ -39,6 +39,8 @@
 		<th>Fecha Inicio</th>
 		<th>Fecha Fin</th>
 		<th></th>
+		<th></th>
+		<th></th>
 	</tr>
 </thead>
 <tbody>

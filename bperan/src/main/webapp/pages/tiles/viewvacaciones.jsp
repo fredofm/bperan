@@ -43,7 +43,7 @@
 								<th>Apellidos</th>
 								<th>NIF</th>
 								<th>Estado</th>
-								<th></th>
+								
 							</tr>
 						</thead>
 						<tbody>

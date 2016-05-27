@@ -41,14 +41,49 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			Llevamos muchos años establecidos en Asturias, donde contamos con un
 			gran número de clientes satisfechos.</small>
 	</p>
-	<p>
-		<small><u>Eche un vistazo a nuestros proyectos más recientes</u></small> 
-		 <s:url action="displayFotos" var="urlTag" />
-			<a role="button" class="btn btn-primary btn-sm" href="<s:property value="#urlTag"/>"  
-		  		 title="Haga clic aquí para ver listado de obras"> Proyectos &raquo;
-			</a>
+	<div class="row"> 				
+		<div class="col-xs-6 col-md-3">
+		   <div class="thumbnail">
+		      <img src="<s:url value="/images/candas4.jpg"/>" class="img-responsive img-rounded">
+		      <div class="caption">
+		          <h2><small>Edificio Candás</small></h2>
+		              	<p><small>Construcción de Edificio moderno de tres plantas en el bonito prueblo de Candás</small>
+		          		</p>
+		      </div>
+		   </div>
+		</div>
+		<div class="col-xs-6 col-md-3">
+		   <div class="thumbnail">
+		      <img src="<s:url value="/images/prendes1.jpg"/>" class="img-responsive img-rounded">
+		      <div class="caption">
+		          <h2><small>Casa Prendes</small></h2>
+		              	<p><small>Rehabilitación exterior de una casa en Prendes</small>
+		          		</p>
+		      </div>
+		   </div>
+		</div>
+		<div class="col-xs-6 col-md-3">
+		   <div class="thumbnail">
+		      <img src="<s:url value="/images/candas2.jpg"/>" class="img-responsive img-rounded">
+		      <div class="caption">
+		          <h2><small>Edificio Candás</small></h2>
+		              	<p><small>Construcción de Edificio moderno de tres plantas en el bonito prueblo de Candás</small>
+		          		</p>
+		      </div>
+		   </div>
+		</div>
+		<div class="col-xs-6 col-md-3">
+		   <div class="thumbnail">
+		      <img src="<s:url value="/images/prendes3.jpg"/>" class="img-responsive img-rounded">
+		      <div class="caption">
+		          <h2><small>Casa Prendes</small></h2>
+		              	<p><small>Rehabilitación exterior de una casa en Prendes</small>
+		          		</p>
+		      </div>
+		   </div>
+		</div>
+	</div>
 				
-	</p>
 	<div class="row">
 		<div class="col-md-8">
 			<h3>
@@ -99,7 +134,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			</p>
 		
 			<h3>
-				<strong>Información de la empresa</strong>
+				<strong>Información de interés</strong>
 			</h3>
 			<h4>
 				<em>Certificado de calidad</em>
@@ -140,12 +175,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
 				8.30h - 20:00h
 			</address>
 			<img src="<s:url value="/images/logo_BPeran.jpg"/>"
-				class="img-rounded" alt="Logo Bahia de Peran" />
+				class="img-responsive img-rounded thumbnail" alt="Logo Bahia de Peran" />
 			
 			<h4>
 				<strong>Localización</strong>
 			</h4>
-			<div id="googleMap" style="width:350px;height:350px;"></div>
+			<div id="googleMap" class="img-responsive img-rounded thumbnail" style="width:350px;height:350px;"></div>
 
 		</div>
 

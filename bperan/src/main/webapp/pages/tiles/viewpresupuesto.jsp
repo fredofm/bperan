@@ -49,7 +49,7 @@
 								<th>Nombre Empresa</th>
 								<th>CIF/NIF</th>
 								<th>Estado</th>
-								<th></th>
+								
 							</tr>
 						</thead>
 						<tbody>

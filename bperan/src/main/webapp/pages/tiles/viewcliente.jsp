@@ -81,7 +81,7 @@
 								<th>Fecha Fin</th>
 								<th>Estado</th>
 								<th>Obra</th>
-								<th></th>
+								
 							</tr>
 						</thead>
 						<tbody>

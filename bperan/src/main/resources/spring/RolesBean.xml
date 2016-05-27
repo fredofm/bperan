@@ -14,5 +14,7 @@
 
 	<bean id="roleBo" class="es.project.bperan.bo.impl.RolesBoImpl">
 		<property name="roleDAO" ref="roleDAO" />
+		<property name="usuarioDAO" ref="usuarioDAO" />
+		
 	</bean>	
 </beans>

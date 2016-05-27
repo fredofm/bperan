@@ -74,6 +74,8 @@
 		<th>Estado</th>
 		<th>Obra</th>
 		<th></th>
+		<th></th>
+		<th></th>
 	</tr>
 </thead>
 <tbody>

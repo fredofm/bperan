@@ -68,7 +68,6 @@ public class ObrasBoImpl implements GenericBO<Obras> {
 		Empleado empleado = new Empleado();
 		empleado.setObras(obra);
 		Collection<Empleado> listaEmpleadoObra = empleadoBo.findByPojo(empleado); 	
-		
 		Iterator<Empleado> itEmpleado = listaEmpleadoObra.iterator();		 
 		while (itEmpleado.hasNext()) {		
 			Empleado empleadoAux = itEmpleado.next();
