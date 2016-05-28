@@ -4965,6 +4965,12 @@ a.badge:focus {
   color: inherit;
   background-color: #eee;
 }
+.jumbotronBahia
+{
+  background-image: url('/images/bahiaperan.jpg"');
+  color:white;
+	
+}
 .jumbotron h1,
 .jumbotron .h1 {
   color: inherit;

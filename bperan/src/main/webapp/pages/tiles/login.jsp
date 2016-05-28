@@ -6,7 +6,7 @@
 <div class="col-md-4"></div>
 <div class="col-md-4">
 
-<div class="panel panel-default">
+<div class="panel panel-info">
 	<div class="panel-heading clearfix">
     	<h3 class="panel-title">Inicio de Sesión</h3>
     </div>
@@ -18,7 +18,7 @@
 		<div class="form-group">
 			<s:password cssClass="form-control" id="pwd" label="Password" placeholder="Password" name="password" value="" />
 		</div>
-		<s:submit class="btn btn-primary btn-md btn-block" value="Login" />			
+		<s:submit class="btn btn-success btn-md btn-block" value="Login" />			
 	</s:form>
 	</div>
 </div>
