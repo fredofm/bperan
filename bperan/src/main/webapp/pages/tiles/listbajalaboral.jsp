@@ -44,6 +44,8 @@
 <thead>
 	<tr>
 		<th>Nombre Empleado</th>
+		<th>Apellidos</th>
+		<th>NIF</th>
 		<th>Fecha Inicio</th>
 		<th>Fecha Fin</th>
 		<th>Tipo</th>
@@ -57,6 +59,8 @@
 	<s:iterator status="bajalaboral" value="%{#request.listaBajalaboral}">
 		<tr>
 			<td><s:property value="empleado.nombre" /></td>
+			<td><s:property value="empleado.apellidos" /></td>
+			<td><s:property value="empleado.nif" /></td>
 			<td><s:date name="fechaInicio" format="dd/MM/yyyy"/></td>
 			<td><s:date name="fechaFin" format="dd/MM/yyyy"/></td>
 			<td><s:property value="tipo" /></td>
