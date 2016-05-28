@@ -11,6 +11,11 @@
     	<h3 class="panel-title">Inicio de Sesión</h3>
     </div>
     <div class="panel-body">
+    	<s:if test="%{#parameters.error != null}">
+    		<div class="alert alert-danger">
+			  El usuario o la password introducidos no son válidos.
+			</div>
+        </s:if>
 	<s:form action="j_spring_security_check"  method="post" id="homeLogin" theme="simple">
 		<div class="form-group">
 			<s:textfield cssClass="form-control" id="loginid" label="Usuario" placeholder="Usuario" name="username" value=""/>
