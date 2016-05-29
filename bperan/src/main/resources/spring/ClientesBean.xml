@@ -17,6 +17,7 @@
 
 	<bean id="clienteBo" class="es.project.bperan.bo.impl.ClienteBoImpl">
 		<property name="clienteDAO" ref="clienteDAO" />
+		<property name="presupuestoDAO" ref="presupuestoDAO" />
 	</bean>
 	
 	<bean id="cliente" class="es.project.bperan.pojo.Cliente"  scope="prototype">		
