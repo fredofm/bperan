@@ -50,10 +50,12 @@
 							lang: 'es',
 							rules : {
 								fechaInicio : {
-									required : true
+									required : true,
+									date : true
 								},
 								fechaFin : {
-									required : true
+									required : true,
+									date : true
 								},
 								"empleado.idempleado": {
 									required: true

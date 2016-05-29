@@ -74,10 +74,12 @@
 							lang: 'es',
 							rules : {
 								fechaInicio : {
-									required : true
+									required : true,
+							        date : true
 								},
 								fechaFin : {
-									required : true
+									required : true,
+									date : true
 								},
 								"nombreobra": {
 									required: true

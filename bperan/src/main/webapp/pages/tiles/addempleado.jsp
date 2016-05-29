@@ -138,7 +138,8 @@
 									required: true
 								},
 								fechanacimiento: {
-									required: true
+									required: true,
+									date : true
 								},
 								telefono: {
 									required: true,
