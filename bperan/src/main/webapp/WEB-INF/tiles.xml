@@ -8,9 +8,41 @@
 		<put-attribute name="body" value=""/>
 		<put-attribute name="footer" value="/pages/tiles/comun/footer.jsp" />
    </definition>
+   
+   <definition name="company-template-welcome" template="/pages/tiles/layouts/common-layout-welcome.jsp">
+		<put-attribute name="header" value="/pages/tiles/comun/header.jsp" />
+		<put-attribute name="menu" value="/pages/tiles/comun/menu.jsp"/>
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/pages/tiles/comun/footer.jsp" />
+   </definition>
 					 
-	<definition name="bperan.welcome" extends="company-template">
+	<definition name="bperan.welcome" extends="company-template-welcome">
 		<put-attribute name="body" value="/pages/tiles/welcome.jsp"/>
+		
+	</definition>
+	
+	<definition name="bperan.inicio.servicios" extends="company-template-welcome">
+		<put-attribute name="body" value="/pages/tiles/welcomeservicios.jsp"/>
+	</definition>
+	
+	<definition name="bperan.inicio.equipo" extends="company-template-welcome">
+		<put-attribute name="body" value="/pages/tiles/welcomeequipo.jsp"/>
+	</definition>
+	
+	<definition name="bperan.inicio.informacion" extends="company-template-welcome">
+		<put-attribute name="body" value="/pages/tiles/welcomeinformacion.jsp"/>
+	</definition>
+	
+	<definition name="bperan.inicio.fotosobras" extends="company-template-welcome">
+		<put-attribute name="body" value="/pages/tiles/welcomefotosobras.jsp"/>
+	</definition>
+	
+	<definition name="bperan.inicio.contacto" extends="company-template-welcome">
+		<put-attribute name="body" value="/pages/tiles/welcomecontacto.jsp"/>
+	</definition>
+	
+	<definition name="bperan.inicio.localizacion" extends="company-template-welcome">
+		<put-attribute name="body" value="/pages/tiles/welcomelocalizacion.jsp"/>
 	</definition>
 	
 	<definition name="bperan.login" extends="company-template">

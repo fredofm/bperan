@@ -23,7 +23,9 @@
 		<div class="form-group">
 			<s:password cssClass="form-control" id="pwd" label="Password" placeholder="Password" name="password" value="" />
 		</div>
-		<s:submit class="btn btn-success btn-md btn-block" value="Login" />			
+		<s:submit class="btn btn-success btn-md btn-block" value="Login" />	
+		<s:url action="welcome" var="urlTag" />
+				<a class="btn btn-danger btn-md btn-block" href="<s:property value="#urlTag"/>">Cancelar</a>		
 	</s:form>
 	</div>
 </div>

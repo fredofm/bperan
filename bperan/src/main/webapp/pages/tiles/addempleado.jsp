@@ -5,7 +5,7 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form id="empleadoForm" action="add_empleado" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de empleados">
+<s:form id="empleadoForm" action="add_empleado" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de datos de empleado">
 				<s:hidden name="idempleado" />
                 <s:textfield
                         label="Nombre"
@@ -138,12 +138,10 @@
 									required: true
 								},
 								fechanacimiento: {
-									required: true,
-									date : true
+									required: true
 								},
 								telefono: {
-									required: true,
-									number : true
+									required: true
 								},
 								direccion: {
 									required: true

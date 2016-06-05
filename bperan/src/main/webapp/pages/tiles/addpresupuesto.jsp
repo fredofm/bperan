@@ -5,7 +5,7 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form id="presupuestoForm" action="add_presupuesto" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de presupuestos">
+<s:form id="presupuestoForm" action="add_presupuesto" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de datos de presupuestos">
 				<s:hidden name="idpresupuesto" />
                
                  <s:select
@@ -76,12 +76,10 @@
 							lang: 'es',
 							rules : {
 								fechaInicio : {
-									required : true,
-									date : true
+									required : true
 								},
 								fechaFin : {
-									required : true,
-									date : true
+									required : true
 								},
 								"obras.idobra": {
 									required: true

@@ -13,9 +13,10 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<s:url action="welcome" var="urlTag" />
-			<a class="navbar-brand" href="<s:property value="#urlTag"/>">Bahía
-				de Perán</a>
+			<sec:authorize access="isFullyAuthenticated()">	
+				<s:url action="welcome" var="urlTag" />
+				<a class="navbar-brand" href="<s:property value="#urlTag"/>">Inicio</a>
+			</sec:authorize>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">

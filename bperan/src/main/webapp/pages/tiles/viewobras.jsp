@@ -5,12 +5,8 @@
 <script src="http://maps.googleapis.com/maps/api/js">	
 </script>
 
-<s:actionerror theme="bootstrap" />
-<s:actionmessage theme="bootstrap" />
-<s:fielderror theme="bootstrap" />
 
-
-	<div class="row">
+<div class="row">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading clearfix">
@@ -35,22 +31,25 @@
 					            <div class="col-md-4">Fecha Inicio</div>
 					            <div class="col-md-8"><s:date name="fechaInicio" format="dd/MM/yyyy"/></div>
 					        </div>
-					         <div class="row">
+					        <div class="row">
 					            <div class="col-md-4">Fecha Fin</div>
 					            <div class="col-md-8"><s:date name="fechaFin" format="dd/MM/yyyy"/></div>
 					        </div>
+					         <div class="row">
+					            <div class="col-md-4">Estado</div>
+					            <div class="col-md-8"><s:property value="estado" /></div>
+					        </div>
 				        </div>
-				        <div class="col-md-4">
+				        <div class="col-md-4">Localización
 							<div id="googleMap" style="width: 200px; height: 200px;"></div>
 						</div>
 			        </div>
 	       		</div>
 			</div>
 		</div>
-		
-	</div>
+</div>
 	
-	<div class="row">
+<div class="row">
 		<div class="col-md-12">
 		
 		<div class="panel panel-default">
@@ -58,25 +57,27 @@
 		    	<h3 class="panel-title">Fotos Obra</h3>
 		    </div>
 		    <div class="panel-body">
-		    <div class="row">
-			<s:iterator status="foto" value="%{#request.listaFotos}">
-				<div class="col-md-4 thumb">
-				<s:url action="displayFoto" var="url">
-					<s:param name="id" value="idfoto"/>
-				</s:url>
-					<a class="thumbnail" href="#">
-                    	<img class="img-responsive" src="<s:property value="#url"/>"/>
-                    </a>
+			    <div class="row">
+					<s:iterator status="foto" value="%{#request.listaFotos}">
+						<div class="col-md-4 thumb">
+						<s:url action="displayFoto" var="url">
+							<s:param name="id" value="idfoto"/>
+						</s:url>
+							<a class="thumbnail" href="#">
+		                    	<img src="<s:property value="#url"/>"                    	
+		                    		class="img-responsive img-rounded" 
+							      	style="width: 250px; height: 200px;">
+		                    </a>
+						</div>
+					</s:iterator>
 				</div>
-			</s:iterator>
-			</div>
 			</div>
 		</div>
 		</div>
-	</div>
+</div>
 	
 	
-	<div class="row">
+<div class="row">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading clearfix">
@@ -110,9 +111,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+</div>
 	
-	<div class="row">
+<div class="row">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading clearfix">
@@ -124,9 +125,6 @@
 							<tr>
 								<th>Nombre</th>
 								<th>Apellidos</th>
-								<th>NIF</th>
-								<th>Teléfono</th>
-								<th>Número Seguridad Social</th>
 								<th>Categoría</th>
 								<th>Fecha Alta</th>
 								<th>Estado</th>
@@ -137,9 +135,6 @@
 								<tr>
 									<td> <s:property value="nombre" /></td>
 									<td><s:property value="apellidos" /></td>
-									<td><s:property value="nif" /></td>
-									<td><s:property value="telefono" /></td>
-									<td><s:property value="numseguridadsocial" /></td>
 									<td><s:property value="categoria" /></td>
 									<td><s:date name="fechaalta" format="dd/MM/yyyy"/></td>
 									<td><s:property value="estado" /></td>
@@ -147,22 +142,24 @@
 							</s:iterator>
 						</tbody>
 					</table>
+					<div class="row">
+						<div class="col-md-2 left">
+							<div class="btn-toolbar">
+								<div class="btn-group pull-left">
+									<s:url action="list_obras" var="urlTag" />
+									<a role="button" class="btn btn-primary btn-sm"
+										href="<s:property value="#urlTag"/>"
+										title="Haga clic aquí para volver al listado"> Volver </a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+</div>
 
-	<div class="btn-toolbar">
-		<div class="btn-group pull-left">
-			<s:url action="list_obras" var="urlTag" />
-			<a role="button" class="btn btn-primary btn-sm"
-				href="<s:property value="#urlTag"/>"
-				title="Haga clic aquí para volver al listado"> Volver </a>
-		</div>
-	</div>
-
-
-
+	
 
 <script type="text/javascript">
 

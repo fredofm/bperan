@@ -126,15 +126,15 @@
 			    </div>
 			    <div class="panel-body">
 					<table class="table table-striped table-hover">
-					<thead>
-						<tr>
-							<th>Nombre Empleado</th>
-							<th>Fecha Inicio</th>
-							<th>Fecha Fin</th>
-							<th>Tipo</th>
-							<th></th>
-						</tr>
-					</thead>
+						<thead>
+							<tr>
+								<th>Nombre Empleado</th>
+								<th>Fecha Inicio</th>
+								<th>Fecha Fin</th>
+								<th>Tipo</th>
+								<th></th>
+							</tr>
+						</thead>
 						<tbody>
 							<s:iterator status="bajalaboral" value="%{#request.listaBajalaboralEmpleado}">
 								<tr>
@@ -176,17 +176,20 @@
 							</tr>							
 						</tbody>
 					</table>
+					<div class="row">
+						<div class="col-md-2 left">
+							<div class="btn-toolbar">
+									<div class="btn-group pull-left">
+										<s:url action="list_empleado" var="urlTag" />
+										<a role="button" class="btn btn-primary btn-sm"
+											href="<s:property value="#urlTag"/>"
+											title="Haga clic aquí para volver al listado"> Volver </a>
+									</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-</div>
-
-<div class="btn-toolbar">
-		<div class="btn-group pull-left">
-			<s:url action="list_empleado" var="urlTag" />
-			<a role="button" class="btn btn-primary btn-sm"
-				href="<s:property value="#urlTag"/>"
-				title="Haga clic aquí para volver al listado"> Volver </a>
 		</div>
 </div>
 

@@ -5,7 +5,7 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form id="clienteForm" action="add_cliente" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de clientes">
+<s:form id="clienteForm" action="add_cliente" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de datos de cliente">
                 <s:hidden name="idcliente" />
                 <s:textfield
                         label="Nombre Cliente"
@@ -111,7 +111,8 @@
 									required: true
 								},
 								codigopostal: {
-									required: true
+									required: true,
+									number : true
 								},
 								estado: {
 									required: true

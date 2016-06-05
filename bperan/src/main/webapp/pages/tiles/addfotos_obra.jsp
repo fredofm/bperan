@@ -15,14 +15,18 @@
 							<s:url action="deleteFoto" var="url" escapeAmp="false">
 								<s:param name="id" value="idfoto"/>
 								<s:param name="idobra" value="idobra"/>
-							</s:url>					
-							<a class="close delete" href="<s:property value="#url"/>">
-		                    	x 
-		                    </a>
+							</s:url>	
+							<sec:authorize access="hasRole('admin')">				
+								<a class="close delete" href="<s:property value="#url"/>">
+			                    	x 
+			                    </a>
+			                </sec:authorize>
 		                    <s:url action="displayFoto" var="url">
 								<s:param name="id" value="idfoto"/>
 							</s:url>
-		                    <img class="img-responsive" src="<s:property value="#url"/>"/>
+		                    <img src="<s:property value="#url"/>"                    	
+                    			class="img-responsive img-rounded" 
+					      		style="width: 250px; height: 200px;">
 	                    </div>
 					</div>
 				</s:iterator>

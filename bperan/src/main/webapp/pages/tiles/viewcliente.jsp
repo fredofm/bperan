@@ -57,7 +57,7 @@
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Usuario</div>
-					            <div class="col-md-8"><s:property value="usuario"/></div>
+					            <div class="col-md-8"><s:property value="usuario.nombre"/></div>
 					        </div>
 				        </div>
 			        </div>
@@ -96,19 +96,24 @@
 							</s:iterator>
 						</tbody>
 					</table>
+					<div class="row">
+						<div class="col-md-2 left">
+							<div class="btn-toolbar">
+									<div class="btn-group pull-left">
+										<s:url action="list_cliente" var="urlTag" />
+										<a role="button" class="btn btn-primary btn-sm"
+											href="<s:property value="#urlTag"/>"
+											title="Haga clic aquí para volver al listado"> Volver </a>
+									</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 </div>		
 	
-<div class="btn-toolbar">
-		<div class="btn-group pull-left">
-			<s:url action="list_cliente" var="urlTag" />
-			<a role="button" class="btn btn-primary btn-sm"
-				href="<s:property value="#urlTag"/>"
-				title="Haga clic aquí para volver al listado"> Volver </a>
-		</div>
-</div>
+
 
 
 

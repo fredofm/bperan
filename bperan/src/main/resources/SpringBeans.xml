@@ -18,6 +18,12 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	<import resource="spring/VacacionesBean.xml"/>
 	<import resource="spring/BajalaboralesBean.xml"/>
 	<import resource="spring/FotosBean.xml"/>
+	<import resource="spring/ServiciosBean.xml"/>
+	<import resource="spring/EquipoBean.xml"/>
+	<import resource="spring/InformacionBean.xml"/>
+	<import resource="spring/FotosobrasBean.xml"/>
+	<import resource="spring/ContactoBean.xml"/>
+	<import resource="spring/LocalizacionBean.xml"/>
 	
 	
 </beans>

@@ -1,8 +1,63 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-image: url("../images/img-fondo.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+
 }
 
 .navbar {
   margin-bottom: 20px;
+}
+
+.jumbotron.jumbohead {
+    padding-bottom: 0;
+    padding-top: 15px;
+    margin-bottom: 10px;
+	background-image: url("../images/banner.jpg");
+    background-position: 100% 95%;
+    background-repeat: no-repeat;
+}
+
+.row.menu {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.row.menu ul li a {
+    color: white;
+}
+
+.row.menu ul li {
+	background: darkblue;
+}
+
+.row.menu ul li:hover {
+	background: none;
+}
+
+.row.menu ul li a:hover {
+	color: darkblue;
+}
+
+.jumbotron.jumbohead strong {
+    color: white;
+}
+
+.white-back {
+	background-color: #fff;
+}
+
+#googleMap {
+    border: 5px solid white;
+}
+
+.col-md-4 #googleMap {
+    border: 5px solid grey;
+}
+.margen-superior {
+	margin-top: 15px;
 }

@@ -11,7 +11,11 @@
 		<result-types>
 			<result-type name="tiles"
 				class="org.apache.struts2.views.tiles.TilesResult" />
-		</result-types>				
+		</result-types>		
+		
+		<action name="inicio_*" class="{1}Action" method="inicio">
+			<result name="*" type="tiles">bperan.inicio.{1}</result>
+		</action>		
 		
 		<action name="prepare_*" class="{1}Action" method="prepare">	    	
 			<result name="*" type="tiles">bperan.add.{1}</result>
@@ -26,7 +30,7 @@
 		<action name="list_*" class="{1}Action" method="list">
 			<result name="*" type="tiles">bperan.list.{1}</result>
 		</action>
-		
+				
 		<action name="buscar_*" class="{1}Action" method="buscar">
 			<result name="*" type="tiles">bperan.list.{1}</result>
 		</action>

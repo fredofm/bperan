@@ -5,16 +5,16 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form id ="usuarioForm" action="add_usuario" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de usuarios">
+<s:form id ="usuarioForm" action="add_usuario" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de datos de usuario">
 				<s:hidden name="idusuario" />
                 <s:textfield
                         label="Nombre"
                         name="nombre"
                         tooltip="Introduzca el nombre del usuario" placeholder="Nombre"/>
                         
-                <s:textfield
-                        label="Password"
-                        name="password"
+                <s:password 
+                		name="password" 
+                		key="password"
                         tooltip="Introduzca la password del usuario" placeholder="Password"/>
 
                 <s:select

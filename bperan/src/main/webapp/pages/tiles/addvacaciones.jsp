@@ -5,7 +5,7 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form id="vacacionesForm"  action="add_vacaciones" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de vacaciones">
+<s:form id="vacacionesForm"  action="add_vacaciones" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de datos de vacaciones">
 				<s:hidden name="idvacaciones" />
                              
                   <s:select
@@ -50,12 +50,10 @@
 							lang: 'es',
 							rules : {
 								fechaInicio : {
-									required : true,
-									date : true
+									required : true
 								},
 								fechaFin : {
-									required : true,
-									date : true
+									required : true
 								},
 								"empleado.idempleado": {
 									required: true

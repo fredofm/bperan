@@ -6,7 +6,7 @@
 <s:fielderror theme="bootstrap" />
 
 
-<s:form id="obrasForm"  action="add_obras" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de obras">
+<s:form id="obrasForm"  action="add_obras" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de datos de obra">
                 <s:hidden name="idobra" />
                 <s:textfield
                         label="Nombre Obra"
@@ -73,23 +73,25 @@
 						{
 							lang: 'es',
 							rules : {
+								nombreobra : {
+									required: true
+								},
+								latitud : {
+									number : true
+								},
+								longitud : {
+									number : true
+								},
+								direccion : {
+									required: true
+								},
 								fechaInicio : {
-									required : true,
-							        date : true
+									required : true
 								},
 								fechaFin : {
-									required : true,
-									date : true
+									required : true
 								},
-								"nombreobra": {
-									required: true
-									}
-								,
-								direccion: {
-									required: true
-								}
-								,
-								estado: {
+								estado : {
 									required: true
 								}
 							},

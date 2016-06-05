@@ -5,7 +5,7 @@
 <s:actionmessage theme="bootstrap" />
 <s:fielderror theme="bootstrap" />
 
-<s:form id="bajalaboralForm" action="add_bajalaboral" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de creación de baja laboral">
+<s:form id="bajalaboralForm" action="add_bajalaboral" theme="bootstrap" cssClass="well form-horizontal" label="Formulario de datos de baja laboral">
 				<s:hidden name="idbajalaboral" />
                              
                   <s:select
@@ -60,12 +60,10 @@
 							lang: 'es',
 							rules : {
 								fechaInicio : {
-									required : true,
-									date : true
+									required : true
 								},
 								fechaFin : {
-									required : true,
-									date : true
+									required : true
 								},
 								"empleado.idempleado": {
 									required: true
