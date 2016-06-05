@@ -14,52 +14,58 @@
 			    </div>
 			    <div class="panel-body">
 				    <div class="row">
-					    <div class="col-md-12">
+					    <div class="col-md-8">
 							<div class="row">
 					            <div class="col-md-4">Nombre Cliente</div>
-					            <div class="col-md-8"><s:property value="nombreempresa" /></div>
+					            <div class="col-md-4"><s:property value="nombreempresa" /></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">CIF/NIF</div>
-					            <div class="col-md-8"><s:property value="cifNif" /></div>
+					            <div class="col-md-4"><s:property value="cifNif" /></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Teléfono</div>
-					            <div class="col-md-8"><s:property value="telefono"/></div>
+					            <div class="col-md-4"><s:property value="telefono"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">FAX</div>
-					            <div class="col-md-8"><s:property value="fax"/></div>
+					            <div class="col-md-4"><s:property value="fax"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Dirección</div>
-					            <div class="col-md-8"><s:property value="direccion"/></div>
+					            <div class="col-md-4"><s:property value="direccion"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Población</div>
-					            <div class="col-md-8"><s:property value="poblacion"/></div>
+					            <div class="col-md-4"><s:property value="poblacion"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Provincia</div>
-					            <div class="col-md-8"><s:property value="provincia"/></div>
+					            <div class="col-md-4"><s:property value="provincia"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Código Postal</div>
-					            <div class="col-md-8"><s:property value="codigopostal"/></div>
+					            <div class="col-md-4"><s:property value="codigopostal"/></div>
 					        </div>
 					    	<div class="row">
 					            <div class="col-md-4">Email</div>
-					            <div class="col-md-8"><s:property value="emial"/></div>
+					            <div class="col-md-4"><s:property value="emial"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Estado</div>
-					            <div class="col-md-8"><s:property value="estado"/></div>
+					            <div class="col-md-4"><s:property value="estado"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Usuario</div>
-					            <div class="col-md-8"><s:property value="usuario.nombre"/></div>
+					            <div class="col-md-4"><s:property value="usuario.nombre"/></div>
 					        </div>
 				        </div>
+				        <div class="col-md-4">
+						      <img src="<s:url value="/images/cliente_view.jpg"/>" 
+						      		class="img-responsive img-rounded" 
+						      		style="width: 250px; height: 200px;">
+	
+						</div>
 			        </div>
 	       		</div>
 			</div>

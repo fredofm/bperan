@@ -58,6 +58,11 @@ body {
 .col-md-4 #googleMap {
     border: 5px solid grey;
 }
+
 .margen-superior {
 	margin-top: 15px;
+}
+
+.margen-view{
+	margin-top: 45px;
 }

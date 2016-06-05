@@ -13,24 +13,30 @@
 			    </div>
 			    <div class="panel-body">
 				    <div class="row">
-					    <div class="col-md-12">
+					    <div class="col-md-8">
 					       <div class="row">
 								<div class="col-md-4">Coste Total</div>
-								<div class="col-md-8"><s:property value="costeTotal"/></div>
+								<div class="col-md-4"><s:property value="costeTotal"/></div>
 						   </div>
 					       <div class="row">
 								 <div class="col-md-4">Fecha Inicio</div>
-								 <div class="col-md-8"><s:date name="fechaInicio" format="dd/MM/yyyy"/></div>
+								 <div class="col-md-4"><s:date name="fechaInicio" format="dd/MM/yyyy"/></div>
 							</div>
 							<div class="row">
 								<div class="col-md-4">Fecha Fin</div>
-								<div class="col-md-8"><s:date name="fechaFin" format="dd/MM/yyyy"/></div>
+								<div class="col-md-4"><s:date name="fechaFin" format="dd/MM/yyyy"/></div>
 							</div>
 							<div class="row">
 								<div class="col-md-4">Estado</div>
-								<div class="col-md-8"><s:property value="estado"/></div>
+								<div class="col-md-4"><s:property value="estado"/></div>
 							</div>
      					</div>
+     					<div class="col-md-4">
+						      <img src="<s:url value="/images/presupuesto.jpg"/>" 
+						      		class="img-responsive img-rounded" 
+						      		style="width: 250px; height: 200px;">
+	
+						</div>
 			        </div>
 	       		</div>
 			</div>

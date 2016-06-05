@@ -14,69 +14,75 @@
 			    </div>
 			    <div class="panel-body">
 				    <div class="row">
-					    <div class="col-md-12">
+					    <div class="col-md-8">
 							<div class="row">
 					            <div class="col-md-4">Nombre Empleado</div>
-					            <div class="col-md-8"><s:property value="nombre" /></div>
+					            <div class="col-md-4"><s:property value="nombre" /></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Apellidos</div>
-					            <div class="col-md-8"><s:property value="apellidos" /></div>
+					            <div class="col-md-4"><s:property value="apellidos" /></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">NIF</div>
-					            <div class="col-md-8"><s:property value="nif" /></div>
+					            <div class="col-md-4"><s:property value="nif" /></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Fecha Nacimiento</div>
-					            <div class="col-md-8"><s:date name="fechanacimiento" format="dd/MM/yyyy"/></div>
+					            <div class="col-md-4"><s:date name="fechanacimiento" format="dd/MM/yyyy"/></div>
 					        </div>
 					         <div class="row">
 					            <div class="col-md-4">Teléfono</div>
-					            <div class="col-md-8"><s:property value="telefono"/></div>
+					            <div class="col-md-4"><s:property value="telefono"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Dirección</div>
-					            <div class="col-md-8"><s:property value="direccion"/></div>
+					            <div class="col-md-4"><s:property value="direccion"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Población</div>
-					            <div class="col-md-8"><s:property value="poblacion"/></div>
+					            <div class="col-md-4"><s:property value="poblacion"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Provincia</div>
-					            <div class="col-md-8"><s:property value="provincia"/></div>
+					            <div class="col-md-4"><s:property value="provincia"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Código Postal</div>
-					            <div class="col-md-8"><s:property value="codigopostal"/></div>
+					            <div class="col-md-4"><s:property value="codigopostal"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Nacionalidad</div>
-					            <div class="col-md-8"><s:property value="nacionalidad"/></div>
+					            <div class="col-md-4"><s:property value="nacionalidad"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Nº Seguridad Social</div>
-					            <div class="col-md-8"><s:property value="numseguridadsocial"/></div>
+					            <div class="col-md-4"><s:property value="numseguridadsocial"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Tipo de Contrato</div>
-					            <div class="col-md-8"><s:property value="tipocontrato"/></div>
+					            <div class="col-md-4"><s:property value="tipocontrato"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Fecha Alta</div>
-					            <div class="col-md-8"><s:date name="fechaalta" format="dd/MM/yyyy"/></div>
+					            <div class="col-md-4"><s:date name="fechaalta" format="dd/MM/yyyy"/></div>
 					        </div>
 					        <div class="row">
 					        	<div class="col-md-4">Categoría</div>
-					            <div class="col-md-8"><s:property value="categoria"/></div>
+					            <div class="col-md-4"><s:property value="categoria"/></div>
 					        </div>
 					        <div class="row">
 					            <div class="col-md-4">Estado</div>
-					            <div class="col-md-8"><s:property value="estado"/></div>
+					            <div class="col-md-4"><s:property value="estado"/></div>
 					        </div>
 					        
 				        </div>
+				        <div class="col-md-4 margen-view">
+						      <img src="<s:url value="/images/obrero.jpg"/>" 
+						      		class="img-responsive img-rounded" 
+						      		style="width: 250px; height: 200px;">
+	
+						</div>
 			        </div>
 	       		</div>
 			</div>

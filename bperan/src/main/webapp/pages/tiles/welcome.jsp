@@ -3,7 +3,7 @@
 <!-- Main component for a primary marketing message or call to action -->
 <div class="jumbotron">
 			
-			<h3>CONSTRUCCIONES BAHÍA DE PERÁN, S.L.U.</h3>
+			<h3><strong>CONSTRUCCIONES BAHÍA DE PERÁN, S.L.U.</strong></h3>
 			<p>
 				<small>Es una empresa dedicada a la construcción, obras y
 					reformas de todo tipo. Construimos viviendas, oficinas y locales
