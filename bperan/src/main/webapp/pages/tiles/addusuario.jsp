@@ -12,10 +12,23 @@
                         name="nombre"
                         tooltip="Introduzca el nombre del usuario" placeholder="Nombre"/>
                         
-                <s:password 
-                		name="password" 
-                		key="password"
+                
+                        
+                <s:if test="idusuario != null">
+                	<s:checkbox id="resetPass" label="Cambiar Contraseña" name="resetPassword"/>
+                	<s:password 
+                		id="password"
+ 		               	disabled="true"
+                		label="Contraseña"
+                		name="password"
                         tooltip="Introduzca la password del usuario" placeholder="Password"/>
+			    </s:if>
+			    <s:else>
+			    	<s:password 
+                		label="Contraseña"
+                		name="password"
+                        tooltip="Introduzca la password del usuario" placeholder="Password"/>
+			    </s:else>
 
                 <s:select
                         tooltip="Elija el rol del usuario"
@@ -38,41 +51,44 @@
 </s:form>
 <script type="text/javascript">
 <!--
-	$(document).ready(
-			function() {
+	$(document).ready(function() {
+		$('#usuarioForm').validate(
+				{
+					lang: 'es',
+					rules : {
+						nombre : {
+							required : true
+						},
+						password : {
+							required : true
+						},
+						"role.idrole": {
+							required: true
+							}
+					},
+					highlight: function(element) {
+				        $(element).closest('.form-group').addClass('has-error');
+				    },
+				    unhighlight: function(element) {
+				        $(element).closest('.form-group').removeClass('has-error');
+				    },
+				    errorElement: 'span',
+				    errorClass: 'help-block',
+				    errorPlacement: function(error, element) {
+				        if(element.parent('.input-group').length) {
+				            error.insertAfter(element.parent());
+				        } else {
+				            error.insertAfter(element);
+				        }
+				    }
+		});
 
-				$('#usuarioForm').validate(
-						{
-							lang: 'es',
-							rules : {
-								nombre : {
-									required : true
-								},
-								password : {
-									required : true
-								},
-								"role.idrole": {
-									required: true
-									}
-							},
-							highlight: function(element) {
-						        $(element).closest('.form-group').addClass('has-error');
-						    },
-						    unhighlight: function(element) {
-						        $(element).closest('.form-group').removeClass('has-error');
-						    },
-						    errorElement: 'span',
-						    errorClass: 'help-block',
-						    errorPlacement: function(error, element) {
-						        if(element.parent('.input-group').length) {
-						            error.insertAfter(element.parent());
-						        } else {
-						            error.insertAfter(element);
-						        }
-						    }
-						});
-
-			});
+		$("#resetPass").change(function() {
+		    var inputPass = $("#password");
+		    inputPass.attr("disabled", !this.checked);
+		    inputPass.attr("value", "");
+		});		
+	});
 //-->
 </script>
 

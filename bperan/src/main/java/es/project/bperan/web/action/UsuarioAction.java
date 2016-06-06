@@ -8,8 +8,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 import es.project.bperan.bo.GenericBO;
-import es.project.bperan.pojo.Empleado;
-import es.project.bperan.pojo.Presupuesto;
+import es.project.bperan.bo.UsuarioBO;
 import es.project.bperan.pojo.Role;
 import es.project.bperan.pojo.Usuario;
 
@@ -20,13 +19,22 @@ import es.project.bperan.pojo.Usuario;
 public class UsuarioAction extends BperanAction implements ModelDriven<Usuario>  {
 	
 		private Usuario usuario; 		
-		private GenericBO<Usuario> usuarioBo;
-		private GenericBO<Role> roleBo;				
+		private UsuarioBO<Usuario> usuarioBo;
+		private GenericBO<Role> roleBo;			
+		private Boolean resetPassword = false;
 		
-		public void setUsuarioBo(GenericBO<Usuario> usuarioBo) {
+		public void setUsuarioBo(UsuarioBO<Usuario> usuarioBo) {
 			this.usuarioBo = usuarioBo;
 		}
 		
+		public Boolean getResetPassword() {
+			return resetPassword;
+		}
+
+		public void setResetPassword(Boolean resetPassword) {
+			this.resetPassword = resetPassword;
+		}
+
 		public void setRoleBo(GenericBO<Role> roleBo) {
 			this.roleBo = roleBo;
 		}				
@@ -55,13 +63,18 @@ public class UsuarioAction extends BperanAction implements ModelDriven<Usuario> 
 
 		/*prepare carga la lista de roles*/
 		public String prepare() throws Exception {
-			getServletRequest().setAttribute("listaRoles", roleBo.findAll());																		
-			
+			getServletRequest().setAttribute("listaRoles", roleBo.findAll());
+									
 			return ActionSupport.SUCCESS;
 		}
 		
-		public String create() throws Exception{				
-			usuarioBo.add(usuario);
+		public String create() throws Exception{
+			
+			if ( usuario.getIdusuario() != null) {
+				usuarioBo.update(usuario, resetPassword);
+			} else {
+				usuarioBo.add(usuario);
+			}			 						
 			
 			return ActionSupport.SUCCESS;
 		}
