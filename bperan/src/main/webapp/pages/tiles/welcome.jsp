@@ -1,9 +1,10 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
-			
-<!-- Main component for a primary marketing message or call to action -->
+
 <div class="jumbotron">
-			
-			<h3><strong>CONSTRUCCIONES BAHÍA DE PERÁN, S.L.U.</strong></h3>
+	<div class="row">
+		<h3>
+			<strong>CONSTRUCCIONES BAHÍA DE PERÁN, S.L.U.</strong>
+		</h3>
 			<p>
 				<small>Es una empresa dedicada a la construcción, obras y
 					reformas de todo tipo. Construimos viviendas, oficinas y locales
@@ -13,6 +14,17 @@
 					Llevamos muchos años establecidos en Asturias, donde contamos con un
 					gran número de clientes satisfechos.</small>
 			</p>
-			
+	</div>
+	<div class="row">
+		<div class="col-md-4">	
+		</div>
+		<div class="col-md-4">	
+			<img src="<s:url value="/images/logo_BPeran.jpg"/>" 
+					class="img-responsive img-rounded" 
+					style="width: 250px; height: 110px;">
+		</div>
+		<div class="col-md-4">	
+		</div>
+	</div>		
 		
 </div>

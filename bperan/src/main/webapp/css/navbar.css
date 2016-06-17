@@ -55,7 +55,11 @@ body {
     border: 5px solid white;
 }
 
-.col-md-4 #googleMap {
+.col-md-6 #googleMap {
+    border: 5px solid grey;
+}
+
+.borde-imagen {
     border: 5px solid grey;
 }
 
@@ -65,4 +69,8 @@ body {
 
 .margen-view{
 	margin-top: 45px;
+}
+
+.margen-map-right{
+	margin-right: 15px
 }

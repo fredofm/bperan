@@ -10,14 +10,12 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.dao.utils.DAOUtils;
 import es.project.bperan.pojo.Bajalaboral;
-import es.project.bperan.pojo.Obras;
-import es.project.bperan.pojo.Presupuesto;
 
 public class BajalaboralDAOImpl extends HibernateDaoSupport implements GenericDAO<Bajalaboral> {
 
 	public void add(Bajalaboral bajalaboral) {
 		/*Utiliza SessionFactory de Hibernate para crear la sesión y, finalmente, 
-		se utiliza el método .save () para añadir el objeto usuario en base de datos */
+		se utiliza el método .saveOrUpdate () para añadir o modificarel objeto usuario en base de datos */
 		getHibernateTemplate().saveOrUpdate(bajalaboral);	
 	}
 

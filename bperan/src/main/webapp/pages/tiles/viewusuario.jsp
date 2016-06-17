@@ -10,21 +10,21 @@
 			    </div>
 			    <div class="panel-body">
 				    <div class="row">
-					    <div class="col-md-8">
+					    <div class="col-md-6">
 							<div class="row">
-					            <div class="col-md-4">Nombre Usuario</div>
+					            <div class="col-md-3">Nombre Usuario</div>
 					            <div class="col-md-4"><s:property value="nombre" /></div>
 					        </div>
 					        <div class="row">
-					            <div class="col-md-4">Role</div>
+					            <div class="col-md-3">Role</div>
 					            <div class="col-md-4"><s:property value="role.nombre" /></div>
 					        </div>
 					        <div class="row">
-					            <div class="col-md-4">Fecha creación</div>
+					            <div class="col-md-3">Fecha creación</div>
 					            <div class="col-md-4"><s:date name="fechacreacion" format="dd/MM/yyyy"/></div>
 					        </div>
 				        </div>
-				        <div class="col-md-4">
+				        <div class="col-md-6">
 						      <img src="<s:url value="/images/usuario1.jpg"/>" 
 						      		class="img-responsive img-rounded" 
 						      		style="width: 250px; height: 200px;">

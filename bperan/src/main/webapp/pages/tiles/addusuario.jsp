@@ -63,7 +63,7 @@
 							required : true
 						},
 						"role.idrole": {
-							required: true
+							required : true
 							}
 					},
 					highlight: function(element) {

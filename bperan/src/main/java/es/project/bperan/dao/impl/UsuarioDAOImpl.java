@@ -8,8 +8,6 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.dao.utils.DAOUtils;
-import es.project.bperan.pojo.Empleado;
-import es.project.bperan.pojo.Obras;
 import es.project.bperan.pojo.Usuario;
 
 public class UsuarioDAOImpl extends HibernateDaoSupport implements GenericDAO<Usuario> {

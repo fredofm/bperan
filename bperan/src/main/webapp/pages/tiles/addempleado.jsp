@@ -141,7 +141,8 @@
 									required: true
 								},
 								telefono: {
-									required: true
+									required: true,
+									number : true
 								},
 								direccion: {
 									required: true

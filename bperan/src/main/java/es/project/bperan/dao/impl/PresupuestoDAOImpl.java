@@ -9,7 +9,6 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.dao.utils.DAOUtils;
-import es.project.bperan.pojo.Fotos;
 import es.project.bperan.pojo.Presupuesto;
 
 public class PresupuestoDAOImpl extends HibernateDaoSupport implements GenericDAO<Presupuesto> {

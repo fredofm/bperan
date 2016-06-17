@@ -2,7 +2,6 @@ package es.project.bperan.dao.impl;
 
 import java.util.Collection;
 
-import org.apache.commons.beanutils.BeanUtils;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Example;
 import org.hibernate.criterion.Restrictions;
@@ -10,8 +9,6 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.dao.utils.DAOUtils;
-import es.project.bperan.pojo.Bajalaboral;
-import es.project.bperan.pojo.Fotos;
 import es.project.bperan.pojo.Vacaciones;
 
 

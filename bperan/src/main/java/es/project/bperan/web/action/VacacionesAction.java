@@ -12,10 +12,7 @@ import es.project.bperan.bo.GenericBO;
 import es.project.bperan.pojo.Empleado;
 import es.project.bperan.pojo.Vacaciones;
 
-/**
- * @author Carol
- *
- */
+
 public class VacacionesAction extends BperanAction implements ModelDriven<Vacaciones>  {
 	
 		private Vacaciones vacaciones; 		

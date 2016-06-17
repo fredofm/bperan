@@ -75,6 +75,9 @@
 						{
 							lang: 'es',
 							rules : {
+								"cliente.idcliente": {
+									required : true
+								}, 
 								fechaInicio : {
 									required : true
 								},
@@ -82,20 +85,14 @@
 									required : true
 								},
 								"obras.idobra": {
-									required: true
-									}
-								,
-								"cliente.idcliente": {
-									required: true
-									}
-								,
+									required : true
+								},
 								costeTotal: {
-									number: true,
-									required: true
-								}
-								,
+									number : true,
+									required : true
+								},
 								estado: {
-									required: true
+									required : true
 								}
 							},
 							highlight: function(element) {

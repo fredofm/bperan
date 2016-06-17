@@ -10,17 +10,17 @@
 			    </div>
 			    <div class="panel-body">
 				    <div class="row">
-					    <div class="col-md-8">
+					    <div class="col-md-6">
 					       <div class="row">
-								 <div class="col-md-4">Fecha Inicio</div>
+								 <div class="col-md-3">Fecha Inicio</div>
 								 <div class="col-md-4"><s:date name="fechaInicio" format="dd/MM/yyyy"/></div>
 							</div>
 							<div class="row">
-								<div class="col-md-4">Fecha Fin</div>
+								<div class="col-md-3">Fecha Fin</div>
 								<div class="col-md-4"><s:date name="fechaFin" format="dd/MM/yyyy"/></div>
 							</div>
      					</div>
-     					<div class="col-md-4">
+     					<div class="col-md-6">
 						      <img src="<s:url value="/images/calendar.jpg"/>" 
 						      		class="img-responsive img-rounded" 
 						      		style="width: 250px; height: 200px;">

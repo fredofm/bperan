@@ -14,34 +14,37 @@
 			    </div>
 			    <div class="panel-body">
 				    <div class="row">
-					    <div class="col-md-8">
+					    <div class="col-md-6">
 							<div class="row">
-					            <div class="col-md-4">Nombre Obra</div>
-					            <div class="col-md-8"><s:property value="nombreobra" /></div>
+					            <div class="col-md-3">Nombre Obra</div>
+					            <div class="col-md-4"><s:property value="nombreobra" /></div>
 					        </div>
 					        <div class="row">
-					            <div class="col-md-4">Dirección</div>
-					            <div class="col-md-8"><s:property value="direccion" /></div>
+					            <div class="col-md-3">Dirección</div>
+					            <div class="col-md-4"><s:property value="direccion" /></div>
 					        </div>
 					        <div class="row">
-					            <div class="col-md-4">Descripción</div>
-					            <div class="col-md-8"><s:property value="descripcion" /></div>
+					            <div class="col-md-3">Descripción</div>
+					            <div class="col-md-6"><s:property value="descripcion" /></div>
 					        </div>
 					        <div class="row">
-					            <div class="col-md-4">Fecha Inicio</div>
-					            <div class="col-md-8"><s:date name="fechaInicio" format="dd/MM/yyyy"/></div>
+					            <div class="col-md-3">Fecha Inicio</div>
+					            <div class="col-md-4"><s:date name="fechaInicio" format="dd/MM/yyyy"/></div>
 					        </div>
 					        <div class="row">
-					            <div class="col-md-4">Fecha Fin</div>
-					            <div class="col-md-8"><s:date name="fechaFin" format="dd/MM/yyyy"/></div>
+					            <div class="col-md-3">Fecha Fin</div>
+					            <div class="col-md-4"><s:date name="fechaFin" format="dd/MM/yyyy"/></div>
 					        </div>
 					         <div class="row">
-					            <div class="col-md-4">Estado</div>
-					            <div class="col-md-8"><s:property value="estado" /></div>
+					            <div class="col-md-3">Estado</div>
+					            <div class="col-md-4"><s:property value="estado" /></div>
 					        </div>
 				        </div>
-				        <div class="col-md-4">Localización
-							<div id="googleMap" style="width: 200px; height: 200px;"></div>
+				        <div class="col-md-6">Localización
+				        	<div id="googleMap" 
+							     class="img-responsive img-rounded thumbnail"
+								 style="width: 350px; height: 250px;">
+							</div>
 						</div>
 			        </div>
 	       		</div>

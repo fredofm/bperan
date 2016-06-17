@@ -13,10 +13,7 @@ import es.project.bperan.pojo.Empleado;
 import es.project.bperan.pojo.Obras;
 import es.project.bperan.pojo.Presupuesto;
 
-/**
- * @author Carol
- *
- */
+
 public class PresupuestoAction extends BperanAction implements ModelDriven<Presupuesto> {
 
 	private Presupuesto presupuesto;
@@ -58,7 +55,7 @@ public class PresupuestoAction extends BperanAction implements ModelDriven<Presu
 		return ActionSupport.SUCCESS;
 	}
 
-	/* prepare carga la lista de obras y lista */
+	/* prepare carga la lista de obras y lista de clientes*/
 	public String prepare() throws Exception {
 		getServletRequest().setAttribute("listaObras", obrasBo.findAll());
 		getServletRequest().setAttribute("listaCliente", clienteBo.findAll());

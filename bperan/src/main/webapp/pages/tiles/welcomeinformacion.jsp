@@ -2,7 +2,7 @@
 
 <div class="jumbotron">
 	<h3>
-		<strong>Información de interés</strong> </a>
+		<span class="glyphicon glyphicon-info-sign"></span><strong>       Información de interés</strong> </a>
 	</h3>
 	
 		<h4>

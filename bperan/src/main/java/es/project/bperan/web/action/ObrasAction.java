@@ -17,10 +17,7 @@ import es.project.bperan.pojo.Obras;
 import es.project.bperan.pojo.Presupuesto;
 import es.project.bperan.pojo.Usuario;
 
-/**
- * @author Carol
- *
- */
+
 public class ObrasAction extends BperanAction implements ModelDriven<Obras>  {
 	
 		private Obras obras; 		

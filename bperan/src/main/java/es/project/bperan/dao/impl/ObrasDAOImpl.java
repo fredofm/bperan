@@ -2,7 +2,6 @@ package es.project.bperan.dao.impl;
 
 import java.util.Collection;
 
-import org.apache.commons.beanutils.BeanUtils;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Example;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;

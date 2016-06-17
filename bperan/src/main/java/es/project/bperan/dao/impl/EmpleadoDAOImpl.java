@@ -9,9 +9,8 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import es.project.bperan.dao.GenericDAO;
 import es.project.bperan.dao.utils.DAOUtils;
-import es.project.bperan.pojo.Bajalaboral;
 import es.project.bperan.pojo.Empleado;
-import es.project.bperan.pojo.Presupuesto;
+
 
 public class EmpleadoDAOImpl extends HibernateDaoSupport implements GenericDAO<Empleado> {
 

@@ -11,10 +11,7 @@ import es.project.bperan.bo.GenericBO;
 import es.project.bperan.pojo.Bajalaboral;
 import es.project.bperan.pojo.Empleado;
 
-/**
- * @author Carol
- *
- */
+
 public class BajalaboralAction extends BperanAction implements ModelDriven<Bajalaboral>  {
 	
 		private Bajalaboral bajalaboral; 		

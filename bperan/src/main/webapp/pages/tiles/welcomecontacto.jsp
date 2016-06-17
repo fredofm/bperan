@@ -30,22 +30,22 @@
 	<div class="row"> 				
 		<div class="col-lg-6">	
 			<h3>
-				<strong>Contacto</strong> </a>
+				<strong>Contacto</strong>
 			</h3>	
-				<address>
-					CONSTRUCCIONES BAHIA DE PERÁN, S.L.U.<br> Barreres, nº7, Oficina 2<br>
-					33438 - Carreño<br> <abbr title="Phone">Teléfono:</abbr> 619 25 74
-					18
+				<address> 
+					CONSTRUCCIONES BAHIA DE PERÁN, S.L.U.<br><br>
+					<span class="glyphicon glyphicon-home"></span>     Barreres, nº7, Oficina 2, 33438 - Carreño<br> 
+				</address>
+				<address>				
+					<span class="glyphicon glyphicon-phone"></span><abbr title="Phone">     Teléfono:</abbr> 619 25 74 18
 				</address>
 				<address>
-					<strong>Mail</strong><br> <a href="mailto:#">info@construccionesbahiadeperan.es</a>
+					<span class="glyphicon glyphicon-envelope"></span><strong>     Mail</strong><br> <a href="mailto:#">info@construccionesbahiadeperan.es</a>
 				</address>
 				<address>
-					<strong>Horario</strong><br> <abbr title="Phone">L-V</abbr> 8.30h - 20:00h
+					<span class="glyphicon glyphicon-time"></span><strong>     Horario</strong><br> <abbr title="Phone">L-V</abbr> 8.30h - 20:00h
 				</address>
-				<img src="<s:url value="/images/logo_BPeran.jpg"/>" 
-					class="img-responsive img-rounded" 
-					style="width: 250px; height: 110px;">
+				
 				
 		</div>
 		<div class="col-lg-6">	

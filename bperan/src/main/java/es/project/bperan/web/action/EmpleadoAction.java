@@ -19,10 +19,7 @@ import es.project.bperan.pojo.Presupuesto;
 import es.project.bperan.pojo.Usuario;
 import es.project.bperan.pojo.Vacaciones;
 
-/**
- * @author Carol
- *
- */
+
 public class EmpleadoAction extends BperanAction implements ModelDriven<Empleado> {
 	
 		private Empleado empleado; 		

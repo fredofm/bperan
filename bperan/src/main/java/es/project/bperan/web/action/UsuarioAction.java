@@ -12,10 +12,7 @@ import es.project.bperan.bo.UsuarioBO;
 import es.project.bperan.pojo.Role;
 import es.project.bperan.pojo.Usuario;
 
-/**
- * @author Carol
- *
- */
+
 public class UsuarioAction extends BperanAction implements ModelDriven<Usuario>  {
 	
 		private Usuario usuario; 		
