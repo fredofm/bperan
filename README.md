@@ -1,2 +1,1 @@
-# bperan
-Contrucciones Bahía Perán
+Struts2 + Hibernate project example
